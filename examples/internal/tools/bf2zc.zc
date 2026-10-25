@@ -96,7 +96,7 @@ fn transpile(input: char*) -> String {
 }
 
 fn main(argc: int, argv: char**) {
-    guard argc >= 2 else {
+    if argc < 2 {
         print_usage();
         return 0;
     }
@@ -105,7 +105,7 @@ fn main(argc: int, argv: char**) {
     let output_path: char* = argc > 2 ? argv[2] : "out.zc";
 
     let content_res = File::read_all(input_path);
-    guard content_res.is_ok() else {
+    if !content_res.is_ok() {
         !"Error: Could not read file {input_path}";
         return 1;
     }
@@ -117,7 +117,7 @@ fn main(argc: int, argv: char**) {
     defer transpiled.destroy();
     
     let out_file_res = File::open(output_path, "w");
-    guard out_file_res.is_ok() else {
+    if !out_file_res.is_ok() {
         !"Error: Could not open output file {output_path}";
         return 1;
     }

@@ -1,5 +1,6 @@
 fn count_digits_in_e(n: int) {
-    autofree let l: int* = malloc(n * sizeof(int));
+    let l: int* = malloc(n * sizeof(int));
+    defer free(l);
     for i in 0..n { l[i] = 1; }
     let dc: [int; 10];
     dc[2] = 1;  // to count the non-fractional digit

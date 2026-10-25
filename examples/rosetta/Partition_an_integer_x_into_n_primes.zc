@@ -7,7 +7,8 @@ fn prime_sieve(n: int) -> Vec<int> {
     primes << 2;
     if n == 2 { return primes; }
     let k = (n - 3) / 2 + 1;
-    autofree let marked = (bool*)malloc(k * sizeof(bool));
+    let marked = (bool*)malloc(k * sizeof(bool));
+    defer free(marked);
     for i in 0..k { marked[i] = true; }
     let limit = ((int)Math::sqrt((f64)n) - 3) / 2 + 1;
     if limit < 0 { limit = 0; }
@@ -71,7 +72,8 @@ fn partition(x: int, m: int) {
         eprintln "Not enough primes.";
         return;
     }
-    autofree let combo = (int*)calloc(m, sizeof(int));
+    let combo = (int*)calloc(m, sizeof(int));
+    defer free(combo);
     found_combo = false;
     find_combo(0,  x,  m, n, combo, m);
     if !found_combo {

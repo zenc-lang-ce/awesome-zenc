@@ -3,7 +3,8 @@ import "std/sort.zc"
 fn median(a: f64*, len: const usize) -> f64 {
     // Avoid mutating 'a' by copying it to a new buffer 'b'.
     let bytes = len * sizeof(f64);
-    autofree let b = (f64*)malloc(bytes);
+    let b = (f64*)malloc(bytes);
+    defer free(b);
     memcpy(b, a, bytes);
     sort_double(b, len);
     let hl = len / 2;

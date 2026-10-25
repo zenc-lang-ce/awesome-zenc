@@ -53,8 +53,10 @@ fn chao(input: const char*, output: char*, mode: CMode, show_steps: bool) {
 
 fn main() {
     let plain_text = "WELLDONEISBETTERTHANWELLSAID";
-    autofree let cipher_text = (char*)malloc(strlen(plain_text) + 1);
-    autofree let plain_text2 = (char*)malloc(strlen(plain_text) + 1);
+    let cipher_text = (char*)malloc(strlen(plain_text) + 1);
+    defer free(cipher_text);
+    let plain_text2 = (char*)malloc(strlen(plain_text) + 1);
+    defer free(plain_text2);
     println "The original plaintext is : {plain_text}";
     println "\nThe left and right alphabets after each permutation during encryption are :\n";
     chao(plain_text, cipher_text, CMode::ENCRYPT, true);

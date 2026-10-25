@@ -9,7 +9,7 @@ struct Node {
 impl Node {
     fn new(v: int) -> Self* {
         let n = alloc<Node>();
-        guard n != NULL else {
+        if n == NULL {
             "Out of memory!";
             return NULL;
         }
@@ -30,7 +30,7 @@ impl LinkedList {
     
     fn push(self, v: int) {
         let new_node = Node::new(v);
-        guard new_node != NULL else { return; }
+        if new_node == NULL { return; }
         
         new_node.next = self.head;
         self.head = new_node;
@@ -52,7 +52,8 @@ impl LinkedList {
     fn free(self) {
         let current: Node* = self.head;
         while current != NULL {
-            autofree let temp = current;
+            let temp = current;
+            defer free(temp);
             current = current.next;
         }
         self.head = NULL;

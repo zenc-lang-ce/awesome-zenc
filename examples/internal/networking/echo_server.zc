@@ -8,7 +8,7 @@ fn main() {
     "Starting Echo Server on 127.0.0.1:8080...";
     
     let listener_res = TcpListener::bind("127.0.0.1", 8080);
-    guard listener_res.is_ok() else {
+    if !listener_res.is_ok() {
         !"Failed to bind: {listener_res.err}";
         return 1;
     }

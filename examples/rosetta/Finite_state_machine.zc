@@ -15,25 +15,28 @@ fn fsm() {
     loop {
         match state {
             READY => {
-                do {
+                loop {
                     ? "\n(D)ispense or (Q)uit : " (input);
                     trans = tolower(input[0]);
-                } while trans != 'd' && trans != 'q';
+                    if trans == 'd' || trans == 'q' { break; }
+                }
                 state = (trans == 'd') ? WAITING : EXIT;
             },
             WAITING => {
                 println "OK, put your money in the slot";
-                do {
+                loop {
                     ? "(S)elect product or choose a (R)efund : " (input);
                     trans = tolower(input[0]);
-                } while trans != 's' && trans != 'r';
+                    if trans == 's' || trans == 'r' { break; }
+                }
                 state = (trans == 's') ? DISPENSE : REFUNDING ;
             },
             DISPENSE => {
-                do {
+                loop {
                     ? "(R)emove product : " (input);
                     trans = tolower(input[0]);
-                } while trans != 'r' ;
+                    if trans == 'r' { break; }
+                }
                 state = READY;
             },
             REFUNDING => {

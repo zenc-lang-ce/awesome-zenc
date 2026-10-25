@@ -6,9 +6,11 @@ fn main() {
     println "Enter three variables:";
     for _ in 0..3 {
         print "  name  : ";
-        autofree let name = readln();
+        let name = readln();
+        defer free(name);
         print "  value : ";
-        autofree let value = readln();
+        let value = readln();
+        defer free(value);
         vars.put(name, atoi(value));
         println "";
     }

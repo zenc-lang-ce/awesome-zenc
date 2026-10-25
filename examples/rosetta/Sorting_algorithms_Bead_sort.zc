@@ -6,7 +6,8 @@ fn bead_sort(a: uint*, len: const usize) -> Vec<uint> {
     for i in 1..len {
         if a[i] > max { max = a[i]; }
     }
-    autofree let trans = (int*)calloc(max, sizeof(int));
+    let trans = (int*)calloc(max, sizeof(int));
+    defer free(trans);
     for i in 0..len {
         for n in 0..a[i] { trans[n]++; }
     }

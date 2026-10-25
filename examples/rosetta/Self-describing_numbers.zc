@@ -3,7 +3,8 @@ import "std/string.zc"
 fn is_self_describing(n: u64) -> bool {
     let ns = "{n}";
     let nc = strlen(ns);
-    autofree let count = (int*)calloc(nc, sizeof(int));
+    let count = (int*)calloc(nc, sizeof(int));
+    defer free(count);
     let sum = 0;
     while n > 0 {
         let d = n % 10;

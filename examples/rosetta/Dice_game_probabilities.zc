@@ -14,11 +14,13 @@ fn throw_die(n_sides: int, n_dice: int, s: int, counts: int*) {
 
 fn beating_probability(n_sides1: int, n_dice1: int, n_sides2: int, n_dice2: int) -> f64 {
     let len1 = (n_sides1 + 1) * n_dice1;
-    autofree let c1: int* = calloc(len1, sizeof(int));
+    let c1: int* = calloc(len1, sizeof(int));
+    defer free(c1);
     throw_die(n_sides1, n_dice1, 0, c1);
 
     let len2 = (n_sides2 + 1) * n_dice2;
-    autofree let c2: int* = calloc(len2, sizeof(int));
+    let c2: int* = calloc(len2, sizeof(int));
+    defer free(c2);
     throw_die(n_sides2, n_dice2, 0, c2);
 
     let p12 = Math::pow(n_sides1, n_dice1) * Math::pow(n_sides2, n_dice2);

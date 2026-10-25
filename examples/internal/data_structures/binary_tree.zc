@@ -26,7 +26,7 @@ impl BST {
     }
     
     fn _insert(node: Node*, v: int) -> Node* {
-        guard node != NULL else {
+        if node == NULL {
             return Node::new(v);
         }
         

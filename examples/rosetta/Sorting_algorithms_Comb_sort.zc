@@ -6,7 +6,7 @@ fn comb_sort(a: int*, len: const usize) {
         let swaps = false;
         let ugap = (usize)gap;
         let i: usize = 0
-        do {
+        loop {
             if a[i] > a[i + ugap] {
                 let t = a[i];
                 a[i] = a[i + ugap];
@@ -14,7 +14,8 @@ fn comb_sort(a: int*, len: const usize) {
                 swaps = true;
             }
             i++;
-        } while i + ugap < len;
+            if i + ugap >= len { break; }
+        }
         if ugap == 1 && !swaps { return; }
     }
 }

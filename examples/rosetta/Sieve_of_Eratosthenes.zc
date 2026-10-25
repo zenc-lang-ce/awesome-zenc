@@ -3,7 +3,8 @@ import "std/vec.zc"
 fn sieve_of_eratosthenes(n: int) -> Vec<int> {
     let primes = Vec<int>::new();
     if n < 2 { return primes; }
-    autofree let comp = (bool*)calloc(n - 1, sizeof(bool));
+    let comp = (bool*)calloc(n - 1, sizeof(bool));
+    defer free(comp);
     let p = 2;
     loop {
         let p2 = p * p;

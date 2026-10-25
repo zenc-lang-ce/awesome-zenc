@@ -5,11 +5,12 @@ alias deriv = fn*(f64, f64) -> f64;
 fn euler(f: deriv, y: f64, step: int, end: int) {
     let t = 0;
     print " Step {step:2d}: ";
-    do {
+    loop {
         if !(t % 10) { print " {y:7.3f}"; }
         y += step * f(t, y);
         t += step;
-    } while t <= end;
+        if t > end { break; }
+    }
     println "";
 }
 

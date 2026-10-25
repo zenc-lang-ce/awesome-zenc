@@ -49,7 +49,8 @@ fn is_practical(n: int) -> bool {
     if n == 1 { return true; }
     let divs = proper_divisors(n);
     let subsets = powerset(&divs);
-    autofree let found = (bool*)calloc(n, sizeof(bool));
+    let found = (bool*)calloc(n, sizeof(bool));
+    defer free(found);
     let count = 0;
     for i in 0..subsets.length() {
         let subset = subsets[i];

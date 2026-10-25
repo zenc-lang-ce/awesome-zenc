@@ -32,7 +32,8 @@ fn main() {
     println "";
     let count = 1;
     let limit = 10_000_000;
-    autofree let c = (bool*)calloc(limit, sizeof(bool));
+    let c = (bool*)calloc(limit, sizeof(bool));
+    defer free(c);
     sieve(c, limit);
     let power = 100;
     for let i = 3; i < limit; i += 2 {

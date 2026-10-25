@@ -1,5 +1,6 @@
 fn counting_sort(a: int*, len: const usize, min: int, max: int) {
-    autofree let count = (int*)calloc(max - min + 1, sizeof(int));
+    let count = (int*)calloc(max - min + 1, sizeof(int));
+    defer free(count);
     for i in 0..len { count[a[i] - min]++; }
     let z = 0;
     for i in min..=max {

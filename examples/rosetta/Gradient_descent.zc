@@ -19,7 +19,8 @@ fn steepest_descent(x: f64*, n: const usize, alpha: f64, tol: f64) {
     let g0 = g(x);  // Initial estimate of result.
 
     // Calculate initial gradient.
-    autofree let fi = (f64*)malloc(n * sizeof(f64));
+    let fi = (f64*)malloc(n * sizeof(f64));
+    defer free(fi);
     gradG(x, fi);
 
     // Calculate initial norm.

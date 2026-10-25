@@ -1,4 +1,5 @@
 fn main() {
-    autofree let dup = strdup("I'm a duplicate!");
+    let dup = strdup("I'm a duplicate!");
+    defer free(dup);
     println "{dup}";
 }

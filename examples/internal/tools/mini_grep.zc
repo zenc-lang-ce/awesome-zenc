@@ -165,7 +165,7 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
 
 fn visit_dir(path: string, config: GrepConfig*) {
     let entries_res = File::read_dir(path);
-    guard entries_res.is_ok() else return;
+    if !entries_res.is_ok() { return; }
     
     let entries = entries_res.unwrap();
     let p_base = Path::new(path);

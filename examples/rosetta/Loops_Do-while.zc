@@ -1,6 +1,7 @@
 fn main() {
     let v = 0;
-    do {
+    loop {
        println "{++v}";
-    } while v % 6;
+        if v % 6 == 0 { break; }
+    }
 }
