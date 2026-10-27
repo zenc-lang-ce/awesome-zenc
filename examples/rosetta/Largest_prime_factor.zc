@@ -31,5 +31,5 @@ fn largest_prime_factor(n: u64) -> u64 {
 
 fn main() {
     let n: u64 = 600_851_475_143;
-    println "{largest_prime_factor(n)}";
+    println f"{largest_prime_factor(n)}";
 }

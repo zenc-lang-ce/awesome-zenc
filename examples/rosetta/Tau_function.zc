@@ -16,7 +16,7 @@ fn divisor_count(n: int) -> int {
 fn main() {
     println "The number of divisors for the first 100 positive integers is:";
     for i in 1..=100 {
-        print "{divisor_count(i):3d} ";
+        print f"{divisor_count(i):3d} ";
         if !(i % 10) { println ""; }
     }
 }

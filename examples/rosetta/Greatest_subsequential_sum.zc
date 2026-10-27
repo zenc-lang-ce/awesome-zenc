@@ -28,17 +28,17 @@ fn main() {
     for i in 0..4 {
         let tt = ts[i];
         print "Input:   [";
-        for j in 0..lens[i] { print "{tt[j]}, "; }
+        for j in 0..lens[i] { print f"{tt[j]}, "; }
         println "\b\b]";
         let res = gss((int*)tt, lens[i]);
         let (start, end, best) = res;
         print "Sub seq: [";
         if start < end {
-            for j in start..end { print "{tt[j]}, "; }
+            for j in start..end { print f"{tt[j]}, "; }
             println "\b\b]";
         } else {
             println "]";
         }
-        println "Sum:     {best}\n";
+        println f"Sum:     {best}\n";
     }
 }

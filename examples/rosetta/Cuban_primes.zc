@@ -60,9 +60,9 @@ fn main() {
     println "The first 200 cuban primes are:-";
     for i in 0..20 {
         let j = i * 10;
-        for k in j..(j + 10) { print "{cubans[k]:'10lu}"; } // 10 per line say
+        for k in j..(j + 10) { print f"{cubans[k]:'10lu}"; } // 10 per line say
         println "";
     }
 
-    println "\nThe 100,000th cuban prime is {big_cuban:'lu}";
+    println f"\nThe 100,000th cuban prime is {big_cuban:'lu}";
 }

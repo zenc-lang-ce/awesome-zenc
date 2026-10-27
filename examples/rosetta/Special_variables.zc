@@ -16,15 +16,15 @@ impl Person {
 
     // Instance method which is automatically called by string interpolation.
     fn to_string(self) -> string {
-        return "Person: name = {self.name}, age = {self.age}";
+        return f"Person: name = {self.name}, age = {self.age}";
     }
 }
 
 fn main() {
     let p = Person::new("fred", 40);
-    println "{p}";
+    println f"{p}";
     p.change_name("george");
-    println "{p}\n";
+    println f"{p}\n";
 
     // Prints Hello 3 times without requiring a 'normal' control variable.
     for _ in 0..3 {

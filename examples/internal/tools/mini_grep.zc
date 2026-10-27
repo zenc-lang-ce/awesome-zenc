@@ -55,14 +55,14 @@ fn str_find_case(haystack: string, needle: string, ignore_case: bool) -> Option<
 fn print_highlight(line: string, match_ptr: string, match_len: usize, config: GrepConfig*) {
     if (!config.color) 
     {
-        "{line}";
+        f"{line}";
         return;
     }
     
     let current = line;
     while (current < match_ptr) 
     {
-        "{*current}"..;
+        f"{*current}"..;
         current++;
     }
     
@@ -73,7 +73,7 @@ fn print_highlight(line: string, match_ptr: string, match_len: usize, config: Gr
 
     for i in 0..match_len 
     {
-        "{*(match_ptr + i)}"..;
+        f"{*(match_ptr + i)}"..;
     }
     if (config.color) 
     {
@@ -81,7 +81,7 @@ fn print_highlight(line: string, match_ptr: string, match_len: usize, config: Gr
     }
     
     current = match_ptr + match_len;
-    "{current}";
+    f"{current}";
 }
 
 fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
@@ -110,17 +110,17 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
                 if (config.path) 
                 {
                     if (config.color) 
-                        "\x1b[35m{path}\x1b[0m:"..;
+                        f"\x1b[35m{path}\x1b[0m:"..;
                     else 
-                        "{path}:"..;
+                        f"{path}:"..;
                 }
                 
                 if (config.line_numbers) 
                 {
                     if (config.color) 
-                        "\x1b[32m{line_num}\x1b[0m:"..;
+                        f"\x1b[32m{line_num}\x1b[0m:"..;
                     else 
-                        "{line_num}:"..;
+                        f"{line_num}:"..;
                 }
                 
                 if (match_opt.is_some()) 
@@ -129,7 +129,7 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
                 } 
                 else 
                 {
-                    "{line_start}";
+                    f"{line_start}";
                 }
             }
             
@@ -148,15 +148,15 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
          
          if ((match_opt.is_some() and !config.invert) || (!match_opt.is_some() and config.invert)) 
          {
-             if (config.path) "{path}:"..;
-             if (config.line_numbers) "{line_num}:"..;
+             if (config.path) f"{path}:"..;
+             if (config.line_numbers) f"{line_num}:"..;
              if (match_opt.is_some()) 
              {
                  print_highlight(line_start, found_str, q_len, config);
              } 
              else 
              {
-                 "{line_start}";
+                 f"{line_start}";
              }
          }
     }
@@ -233,7 +233,7 @@ fn main(argc: int, argv: string*)
                  } 
                  else 
                  {
-                     "Unknown option: {arg}";
+                     f"Unknown option: {arg}";
                      print_usage();
                      return 0;
                  }
@@ -250,7 +250,7 @@ fn main(argc: int, argv: string*)
                         'v' => config.invert = true,
                         'r' => config.recursive = true,
                         _ => {
-                            !"Unknown option flag: '{c}' in {arg}";
+                            !f"Unknown option flag: '{c}' in {arg}";
                             print_usage();
                             exit(1);
                         }
@@ -278,7 +278,7 @@ fn main(argc: int, argv: string*)
         let meta_res = File::metadata(config.path);
         if (meta_res.is_err()) 
         {
-             !"grep: {config.path}: Error reading metadata";
+             !f"grep: {config.path}: Error reading metadata";
              return 1;
         }
         let meta = meta_res.unwrap();
@@ -291,21 +291,21 @@ fn main(argc: int, argv: string*)
             } 
             else 
             {
-                "grep: {config.path}: Is a directory";
+                f"grep: {config.path}: Is a directory";
             }
         } 
         else 
         {
             let res = grep_file(config.path, &config);
             if (res.is_err()) {
-                !"Error: {res.err}";
+                !f"Error: {res.err}";
                 return 1;
             }
         }
     } 
     else 
     {
-        "grep: {config.path}: No such file or directory";
+        f"grep: {config.path}: No such file or directory";
     }
     return 0;
 }

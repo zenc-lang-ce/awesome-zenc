@@ -19,21 +19,21 @@ fn main() {
         bells[i] = (&a[0]).clone();
         
         let pr = i < 10;
-        if pr { print "{a[0]} "; }
+        if pr { print f"{a[0]} "; }
         
         for j in 1..=i {
             let next_val = (&a[j]).clone();
             a[j] = prev + &a[j-1];
             prev = next_val;
             
-            if pr { print "{a[j]} "; }
+            if pr { print f"{a[j]} "; }
         }
         if pr { println ""; }
     }
     
     println "\nFirst 15 Bell Numbers";
-    for i in 0..15 { println "B({i}) = {bells[i]}"; }
+    for i in 0..15 { println f"B({i}) = {bells[i]}"; }
     
     println "\n50th Bell Number";
-    println "B(50) = {bells[50]}";
+    println f"B(50) = {bells[50]}";
 }

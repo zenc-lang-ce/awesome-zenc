@@ -14,9 +14,9 @@ fn main() {
     y = arr[1];
     z = arr[2];
     println "After sorting strings:";
-    println "  x = {x}";
-    println "  y = {y}";
-    println "  z = {z}";
+    println f"  x = {x}";
+    println f"  y = {y}";
+    println f"  z = {z}";
 
     let i = 77444;
     let j = -12;
@@ -27,9 +27,9 @@ fn main() {
     j = arr2[1];
     k = arr2[2];
     println "\nAfter sorting integers:";
-    println "  i = {i}";
-    println "  j = {j}";
-    println "  k = {k}";
+    println f"  i = {i}";
+    println f"  j = {j}";
+    println f"  k = {k}";
 
     let f: f32 = 11.3;
     let g: f32 = -9.7;
@@ -40,7 +40,7 @@ fn main() {
     g = arr3[1];
     h = arr3[2];
     println "\nAfter sorting floats:";
-    println "  f = {f:g}";
-    println "  g = {g:g}";
-    println "  h = {h:g}";
+    println f"  f = {f:g}";
+    println f"  g = {g:g}";
+    println f"  h = {h:g}";
 }

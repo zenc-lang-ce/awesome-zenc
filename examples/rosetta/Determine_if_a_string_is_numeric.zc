@@ -11,6 +11,6 @@ fn main() {
     for t in tests {
         let isnum = is_numeric(t);
         let yn = isnum ? "yes" : "no";
-        println "{t:-6s} -> {yn}";
+        println f"{t:-6s} -> {yn}";
     }
 }

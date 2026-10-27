@@ -85,7 +85,7 @@ impl Allocator {
         let curr = self.free_list;
         let i = 0;
         while curr != NULL {
-            println "Block {i}: size={curr.size}, free={(int)curr.is_free}";
+            println f"Block {i}: size={curr.size}, free={(int)curr.is_free}";
             curr = curr.next;
             i += 1;
         }
@@ -103,17 +103,17 @@ impl Drop for Allocator {
 
 fn main() {
     def POOL_SIZE = 1024 * 1024;
-    println "Memory Pool Size: {POOL_SIZE} bytes";
-    println "BlockHeader Overhead: {sizeof(BlockHeader)} bytes\n";
+    println f"Memory Pool Size: {POOL_SIZE} bytes";
+    println f"BlockHeader Overhead: {sizeof(BlockHeader)} bytes\n";
     
     let allocator = Allocator::new(POOL_SIZE);
     
     let ptr1 = (int*)allocator.alloc(sizeof(int) * 10);
-    println "Allocated ptr1 (10 ints = {sizeof(int) * 10} bytes)";
+    println f"Allocated ptr1 (10 ints = {sizeof(int) * 10} bytes)";
     allocator.print_state();
 
     let ptr2 = (int*)allocator.alloc(sizeof(int) * 50);
-    println "Allocated ptr2 (50 ints = {sizeof(int) * 50} bytes)";
+    println f"Allocated ptr2 (50 ints = {sizeof(int) * 50} bytes)";
     allocator.print_state();
     
     println "Freeing ptr1...";
@@ -121,7 +121,7 @@ fn main() {
     allocator.print_state();
 
     let ptr3 = (int*)allocator.alloc(sizeof(int) * 5);
-    println "Allocated ptr3 (5 ints = {sizeof(int) * 5} bytes). Should split and fit in ptr1's old freed spot!";
+    println f"Allocated ptr3 (5 ints = {sizeof(int) * 5} bytes). Should split and fit in ptr1's old freed spot!";
     allocator.print_state();
     
     println "Freeing all remaining pointers to trigger coalescing...";

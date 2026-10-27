@@ -18,5 +18,5 @@ fn main() {
     let r: char* = malloc(strlen(s) + 1);
     defer free(r);
     rot13(s, r);
-    println "{r}";
+    println f"{r}";
 }

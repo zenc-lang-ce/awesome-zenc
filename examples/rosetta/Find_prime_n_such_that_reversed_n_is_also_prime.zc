@@ -28,10 +28,10 @@ fn main() {
     let i = 3;
     while i < 500 {
         if is_prime(i) && is_prime(reverse_digits(i)) {
-            print "{i:3d} ";
+            print f"{i:3d} ";
             if !(++count % 15) { println ""; }
         }
         i += 2;
     }
-    println "\n\n{count} such primes found.";
+    println f"\n\n{count} such primes found.";
 }

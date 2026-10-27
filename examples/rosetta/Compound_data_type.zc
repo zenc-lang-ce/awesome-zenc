@@ -9,7 +9,7 @@ struct Point {
 impl Point {
     // instance method
     fn to_string(self) -> String {
-        let s = "({self.x}, {self.y})";
+        let s = f"({self.x}, {self.y})";
         return String::from(s);
     }
 
@@ -24,8 +24,8 @@ impl Point {
 fn main() {
     let p1 = Point{x: 0, y: 0};
     let p2 = Point{x: 3, y: 4};
-    println "Point 1 : {p1.to_string()}";
-    println "Point 2 : {p2.to_string()}";
+    println f"Point 1 : {p1.to_string()}";
+    println f"Point 2 : {p2.to_string()}";
     let dist = Point::distance(p1, p2);
-    println "Distance: {dist:g}";
+    println f"Distance: {dist:g}";
 }

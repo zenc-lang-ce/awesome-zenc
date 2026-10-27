@@ -8,7 +8,7 @@ fn mode<T>(a: T*, n: const usize) {
     }
     let m = Map<int>::new();
     for i in 0..n {
-        let k = "{a[i]}";
+        let k = f"{a[i]}";
         if m.contains(k) {
             let val = m[k].unwrap();
             m.put(k, ++val);
@@ -25,11 +25,11 @@ fn mode<T>(a: T*, n: const usize) {
         if entry.val == most { modes << entry.key; }
     }
     print "For the array : [";
-    for i in 0..n { print "{a[i]}, "; }
+    for i in 0..n { print f"{a[i]}, "; }
     println "\b\b]";
     print "  mode(s)     : ";
-    for mo in modes { print "{mo}, "; }
-    println "\b\b \n  occurrences : {most}";
+    for mo in modes { print f"{mo}, "; }
+    println f"\b\b \n  occurrences : {most}";
 }
 
 fn main() {

@@ -22,7 +22,7 @@ fn GET_START_DAY(Y: int, M: int) -> int {
 fn PRINT_MONTH_NAME(M: int) {
     let NAMES: char*[12] = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
     let NAME = NAMES[M-1];
-    print "      {NAME}";
+    print f"      {NAME}";
     // Simple padding for 20-char width
     for I in 0..(14 - (M == 9 ? 9 : (M == 1 || M == 3 || M == 7 || M == 8 ? 7 : 8))) { print " "; }
 }
@@ -47,7 +47,7 @@ fn main() {
     println "                             |____________________|";
     println "                             |____________________|";
     println "                             |____________________|";
-    println "                               CALENDAR FOR {YEAR}";
+    println f"                               CALENDAR FOR {YEAR}";
 
     for ROW in 0..(12 / MONTHS_PER_ROW) {
         let START_M = ROW * MONTHS_PER_ROW + 1;
@@ -68,7 +68,7 @@ fn main() {
                     let DATE = W * 7 + D - S + 1;
                     if DATE > 0 && DATE <= D_MAX {
                         if DATE < 10 print " ";
-                        print "{DATE} ";
+                        print f"{DATE} ";
                     } else {
                         print "   ";
                     }

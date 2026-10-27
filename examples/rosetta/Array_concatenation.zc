@@ -11,7 +11,7 @@ fn main() {
     
     print "Concatenated array: [";
     for let i = 0; i < 5; i += 1 {
-        print "{c[i]}";
+        print f"{c[i]}";
         if i < 4 {
             print ", ";
         }

@@ -22,14 +22,14 @@ fn recurse(a: int*, len: const usize, last: int) -> bool {
 fn main() {
     let a = [170, 45, 75, -90, -802, 24, 2, 66];
     print "Unsorted: [";
-    for e in a { print "{e}, "; }
+    for e in a { print f"{e}, "; }
     println "\b\b]";
     let count = a.len;
     if count > 1 && !recurse(a, count, count - 1) {
         eprintln "Sorted permutation not found!";
     } else {
         print "Sorted  : [";
-        for e in a { print "{e}, "; }
+        for e in a { print f"{e}, "; }
         println "\b\b]";
     }
 }

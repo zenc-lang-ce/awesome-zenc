@@ -63,6 +63,6 @@ fn main() {
     let c  = String::from(C);
     let cs = c.split('\n');
     for i in 0..12 {
-        println "{zs[i]}{es[i]}{ns[i]} {cs[i]}";
+        println f"{zs[i]}{es[i]}{ns[i]} {cs[i]}";
     }
 }

@@ -22,6 +22,6 @@ fn main() {
 
     for s in strings {
         let t = strip_comments(s);
-        println "'{s}' -> '{t}'";
+        println f"'{s}' -> '{t}'";
     }
 }

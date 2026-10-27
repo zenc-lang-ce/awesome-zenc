@@ -19,7 +19,7 @@ fn main() {
     let i = 2;
     while count < 4 {
         if is_perfect(i) {
-            println "{i} ";
+            println f"{i} ";
             count++;
         }
         i += 2;  // there are no known odd perfect numbers

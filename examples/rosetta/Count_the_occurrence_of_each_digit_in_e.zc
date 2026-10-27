@@ -14,10 +14,10 @@ fn count_digits_in_e(n: int) {
         }
         dc[c]++;
     }
-    for d in 0..=9 { println "{d}: {dc[d]}"; }
+    for d in 0..=9 { println f"{d}: {dc[d]}"; }
     let t = 0;
     for d in dc { t += d; }
-    println "Total digits: {t}";
+    println f"Total digits: {t}";
 }
 
 fn main() {

@@ -10,11 +10,11 @@ fn main() {
     let x = accumulator(1.0);
     x(5.0);
     accumulator(3.0);
-    println "{x(2.3):g}";
+    println f"{x(2.3):g}";
 
     // Example with ints.
     let y = accumulator(1);
     y(5);
     accumulator(3);
-    println "{y(2)}";
+    println f"{y(2)}";
 }

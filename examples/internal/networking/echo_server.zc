@@ -9,7 +9,7 @@ fn main() {
     
     let listener_res = TcpListener::bind("127.0.0.1", 8080);
     if !listener_res.is_ok() {
-        !"Failed to bind: {listener_res.err}";
+        !f"Failed to bind: {listener_res.err}";
         return 1;
     }
 
@@ -28,7 +28,7 @@ fn main() {
                 let read_res = stream.read(&buf[0], SIZE);
                 
                 if read_res.is_err() {
-                    !"Read error: {read_res.err}";
+                    !f"Read error: {read_res.err}";
                     break;
                 }
                 
@@ -40,11 +40,11 @@ fn main() {
                 
                 let write_res = stream.write((u8*)&buf[0], bytes);
                  if write_res.is_err() {
-                    !"Write error: {write_res.err}";
+                    !f"Write error: {write_res.err}";
                     break;
                 }
 
-                "Echoed {bytes} bytes.";
+                f"Echoed {bytes} bytes.";
             }
         }
     }

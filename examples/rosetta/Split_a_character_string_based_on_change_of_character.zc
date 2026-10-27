@@ -5,9 +5,9 @@ fn split(s: string) {
     for i in 0..len {
         let curr = s[i];
         if curr == last {
-            print "{curr:c}";
+            print f"{curr:c}";
         } else {
-            print ", {curr:c}";
+            print f", {curr:c}";
             last = curr;
         }
     }

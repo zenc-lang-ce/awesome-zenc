@@ -43,7 +43,7 @@ impl MaxTropical {
     }
 
     fn to_string(self) -> string {
-        return "{self.r:g}";
+        return f"{self.r:g}";
     }
 }
 
@@ -66,20 +66,20 @@ fn main() {
         let a = MaxTropical::new(data[i][0]);
         let b = MaxTropical::new(data[i][1]);
         if ops[i] == "⊕" {
-            println "{a} ⊕ {b} = {a + b}";
+            println f"{a} ⊕ {b} = {a + b}";
         } else {
-            println "{a} ⊗ {b} = {a * b}";
+            println f"{a} ⊗ {b} = {a * b}";
         }
     }
 
     let c = MaxTropical::new(5.0);
-    println "{c} ^ 7 = {c ^ 7}";
+    println f"{c} ^ 7 = {c ^ 7}";
 
     let d = MaxTropical::new(8.0);
     let e = MaxTropical::new(7.0);
     let f = c * (d + e);
     let g = c * d + c * e;
-    println "{c} ⊗ ({d} ⊕ {e}) = {f}";
-    println "{c} ⊗ {d} ⊕ {c} ⊗ {e} = {g}";
-    println "{c} ⊗ ({d} ⊕ {e}) == {c} ⊗ {d} ⊕ {c} ⊗ {e} is {btos(f == g)}";
+    println f"{c} ⊗ ({d} ⊕ {e}) = {f}";
+    println f"{c} ⊗ {d} ⊕ {c} ⊗ {e} = {g}";
+    println f"{c} ⊗ ({d} ⊕ {e}) == {c} ⊗ {d} ⊕ {c} ⊗ {e} is {btos(f == g)}";
 }

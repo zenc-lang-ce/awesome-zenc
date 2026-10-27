@@ -53,7 +53,7 @@ fn main() {
         for j in 0..3 {
             let a = vals[i];
             let b = vals[j];
-            println "{a.to_string()} {b.to_string()} | {(!a).to_string()}  | { (a&b).to_string() }   | { (a|b).to_string() }   | { (a^b).to_string() }";
+            println f"{a.to_string()} {b.to_string()} | {(!a).to_string()}  | { (a&b).to_string() }   | { (a|b).to_string() }   | { (a^b).to_string() }";
         }
     }
 
@@ -69,7 +69,7 @@ fn main() {
 
     for i in 0..4 {
         let r = results[i];
-        print "Result {i+1}: {r.to_string()} -> ";
+        print f"Result {i+1}: {r.to_string()} -> ";
         if r.val == 2 println "Authorized";
         else if r.val == 1 println "Manual Review Required";
         else println "Denied";

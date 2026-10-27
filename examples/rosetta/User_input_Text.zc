@@ -8,6 +8,6 @@ fn main() {
     // Prompt for the integer (infers %d for the int)
     ? "Enter the integer 75000: " (int_val);
     
-    println "\nYou entered the string: {str_val}";
-    println "You entered the integer: {int_val}";
+    println f"\nYou entered the string: {str_val}";
+    println f"You entered the integer: {int_val}";
 }

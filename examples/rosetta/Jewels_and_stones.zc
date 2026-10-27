@@ -11,5 +11,5 @@ fn count_jewels(stones: string, jewels: string) -> int {
 fn main() {
     let stones = "aAAbbbb";
     let jewels = "aA";
-    println "{count_jewels(stones, jewels)}";
+    println f"{count_jewels(stones, jewels)}";
 }

@@ -32,6 +32,6 @@ fn main() {
     for j = p; j <= p + ONE; ++j            { process(j); }
 
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println "sum  = {sum:' d}";
-    println "prod = {prod:' d}";
+    println f"sum  = {sum:' d}";
+    println f"prod = {prod:' d}";
 }

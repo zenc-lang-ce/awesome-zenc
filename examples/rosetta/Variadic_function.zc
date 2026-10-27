@@ -2,7 +2,7 @@ fn variadic(count: int, ...) {
     let args: va_list;
     va_start(args, count);
     for i in 0..count {
-        println "{va_arg(args, string)}";
+        println f"{va_arg(args, string)}";
     }
     va_end(args);
 }

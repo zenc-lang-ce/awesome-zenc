@@ -31,8 +31,8 @@ fn main() {
         }
     }
     setlocale(LC_NUMERIC, "");
-    println "Between  1 and {LIMIT:'d} there are:";
-    println "  {d:'6d} deficient numbers";
-    println "  {a:'6d} abundant numbers";
-    println "  {p:'6d} perfect numbers";
+    println f"Between  1 and {LIMIT:'d} there are:";
+    println f"  {d:'6d} deficient numbers";
+    println f"  {a:'6d} abundant numbers";
+    println f"  {p:'6d} perfect numbers";
 }

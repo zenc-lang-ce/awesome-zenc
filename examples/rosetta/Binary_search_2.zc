@@ -23,9 +23,9 @@ fn main() {
     for target in targets {
         let index = binary_search_recursive(arr, target, 0, n - 1);
         if index != -1 {
-            println "Value {target} found at index {index}.";
+            println f"Value {target} found at index {index}.";
         } else {
-            println "Value {target} not found.";
+            println f"Value {target} not found.";
         }
     }
 }

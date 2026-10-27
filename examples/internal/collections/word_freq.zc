@@ -29,7 +29,7 @@ fn main() {
         if counts.is_slot_occupied(i) {
             let k = counts.key_at(i);
             let v = counts.val_at(i);
-            println "{k}: {v}";
+            println f"{k}: {v}";
         }
     }
 }

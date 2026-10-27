@@ -4,7 +4,7 @@ fn main() {
             0           => { println "FizzBuzz" },
             3, 6, 9, 12 => { println "Fizz" },
             5, 10       => { println "Buzz" },
-            _           => { println "{i}" },
+            _           => { println f"{i}" },
         }
     }
 }

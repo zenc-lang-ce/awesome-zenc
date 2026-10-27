@@ -38,7 +38,7 @@ fn main() {
     let i = 3;
     while count < 20 {
         if is_emirp(i) { 
-            print "{i:3d} ";
+            print f"{i:3d} ";
             if !(++count % 10) { println ""; }
         }
         i += 2;
@@ -49,7 +49,7 @@ fn main() {
     i = 7701;
     while i < 8000 {
         if is_emirp(i) {
-            print "{i:'4d} ";
+            print f"{i:'4d} ";
             if !(++count % 7) { println ""; }
         }
         i += 2;
@@ -62,5 +62,5 @@ fn main() {
         i += 2;
         if is_emirp(i) { count++; }
     }
-    println "{i:'d}.";
+    println f"{i:'d}.";
 }

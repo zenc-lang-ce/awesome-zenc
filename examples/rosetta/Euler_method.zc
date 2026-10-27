@@ -4,9 +4,9 @@ alias deriv = fn*(f64, f64) -> f64;
 
 fn euler(f: deriv, y: f64, step: int, end: int) {
     let t = 0;
-    print " Step {step:2d}: ";
+    print f" Step {step:2d}: ";
     loop {
-        if !(t % 10) { print " {y:7.3f}"; }
+        if !(t % 10) { print f" {y:7.3f}"; }
         y += step * f(t, y);
         t += step;
         if t > end { break; }
@@ -16,11 +16,11 @@ fn euler(f: deriv, y: f64, step: int, end: int) {
 
 fn analytic() {
     print "    Time: ";
-    for let t = 0; t <= 100; t += 10 { print " {(f64)t:7g}"; }
+    for let t = 0; t <= 100; t += 10 { print f" {(f64)t:7g}"; }
     print "\nAnalytic: ";
     for let t = 0; t <= 100; t += 10 {
         let v = 20.0 + 80.0 * Math::exp(-0.07 * (f64)t);
-        print " {v:7.3f}";
+        print f" {v:7.3f}";
     }
     println "";
 }

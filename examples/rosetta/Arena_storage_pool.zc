@@ -8,14 +8,14 @@ fn main() {
     let arr = a.alloc_n<int>(8);
     for i in 0..8 {
         arr[i] = i + 1;
-        print "{arr[i]} ";
+        print f"{arr[i]} ";
     }
     println "";
 
     // Duplicate a C string into the arena.
     let s = a.dup_str("Rosetta Code"); // uses 13 bytes including final '\0'
-    println "{s}";
+    println f"{s}";
 
-    println "Arena has used     : {a.bytes_used()} bytes";
-    println "Capacity remaining : {a.bytes_free()} bytes";
+    println f"Arena has used     : {a.bytes_used()} bytes";
+    println f"Capacity remaining : {a.bytes_free()} bytes";
 }

@@ -28,12 +28,12 @@ fn main() {
     println "\nRecursive:";
     for i in 0..=20 {
         let res = fib_rec(i);
-        println "fib({i}) = {res}";
+        println f"fib({i}) = {res}";
     }
 
     println "\nIterative:";
     for i in 0..=20 {
         let res = fib_iter(i);
-        println "fib({i}) = {res}";
+        println f"fib({i}) = {res}";
     }
 }

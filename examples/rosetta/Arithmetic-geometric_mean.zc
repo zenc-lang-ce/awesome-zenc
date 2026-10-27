@@ -12,5 +12,5 @@ fn agm(a: f64, g: f64) -> f64 {
 
 fn main() {
     let a = agm(1.0, 1.0 / Math::sqrt(2.0));
-    println "{a:0.16f}";
+    println f"{a:0.16f}";
 }

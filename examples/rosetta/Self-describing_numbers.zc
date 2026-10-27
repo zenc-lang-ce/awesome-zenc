@@ -1,7 +1,7 @@
 import "std/string.zc"
 
 fn is_self_describing(n: u64) -> bool {
-    let ns = "{n}";
+    let ns = f"{n}";
     let nc = strlen(ns);
     let count = (int*)calloc(nc, sizeof(int));
     defer free(count);
@@ -19,7 +19,7 @@ fn is_self_describing(n: u64) -> bool {
     // To be self-describing sum of digits must equal number of digits.
     if sum != nc { return false; }
     let s = String::from("");
-    for i in 0..nc { s.append_c("{count[i]}"); }
+    for i in 0..nc { s.append_c(f"{count[i]}"); }
     return strcmp(ns, s.c_str()) == 0; // there must always be at least one zero
 }
 
@@ -34,7 +34,7 @@ fn main() {
 
     let lim: u64 = 9_100_000_001; // sum of digits can't be more than 10
     while i < lim {
-        if is_self_describing(i) { println "{i:lu}"; }
+        if is_self_describing(i) { println f"{i:lu}"; }
         i += 10;
         if i > mx {
             fd++;

@@ -18,11 +18,11 @@ fn main() {
     let pow = a ** b;
     let (q, r) = divmod(a, b);
     
-    println "a + b  = {sum}";
-    println "a - b  = {diff}";
-    println "a * b  = {prod}";
-    println "a / b  = {quot}";
-    println "a % b  = {rem}";
-    println "a ** b = {pow}"; 
-    println "divmod(a, b) = ({q}, {r})";
+    println f"a + b  = {sum}";
+    println f"a - b  = {diff}";
+    println f"a * b  = {prod}";
+    println f"a / b  = {quot}";
+    println f"a % b  = {rem}";
+    println f"a ** b = {pow}"; 
+    println f"divmod(a, b) = ({q}, {r})";
 }

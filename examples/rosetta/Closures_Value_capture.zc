@@ -6,6 +6,6 @@ fn main() {
         fs[i] = fn() -> int { return i * i; }
     }
     for i in 0..9 {
-        println "Function {i} : {fs[i]()}";
+        println f"Function {i} : {fs[i]()}";
     }
 }

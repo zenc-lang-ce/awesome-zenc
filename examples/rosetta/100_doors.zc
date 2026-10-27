@@ -9,7 +9,7 @@ fn main() {
         }
     }
     for i in 0..100 {
-        if doors[i] { print "{i + 1} "; }
+        if doors[i] { print f"{i + 1} "; }
     }
     println "";
 }

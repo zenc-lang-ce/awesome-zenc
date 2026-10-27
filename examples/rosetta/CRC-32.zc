@@ -24,5 +24,5 @@ fn crc32(data: string) -> u32 {
 
 fn main() {
     let crc = crc32("The quick brown fox jumps over the lazy dog");
-    println "{crc:x}";
+    println f"{crc:x}";
 }

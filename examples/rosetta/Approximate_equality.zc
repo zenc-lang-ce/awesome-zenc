@@ -13,10 +13,10 @@ fn main() {
         (-sqrt2 * sqrt2, -2.0),
         (3.14159265358979323846, 3.14159265358979324)
     ];
-    println "Approximate equality of test cases for a tolerance of {tol:g}:";
+    println f"Approximate equality of test cases for a tolerance of {tol:g}:";
     for i in 0..pairs.len {
         let (p0, p1) = pairs[i];
         let res: bool = Math::abs(p0 - p1) < tol;
-        println "  {i + 1} -> {res}";
+        println f"  {i + 1} -> {res}";
     }
 }

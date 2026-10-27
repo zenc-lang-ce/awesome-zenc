@@ -8,12 +8,12 @@ fn look_and_say(s: string) -> String {
         if s[i] == digit {
             count++;
         } else {
-            res.append_c("{count}{digit:c}");
+            res.append_c(f"{count}{digit:c}");
             digit = s[i];
             count = 1;
         }
     }
-    res.append_c("{count}{digit:c}");
+    res.append_c(f"{count}{digit:c}");
     return res;
 }
 
@@ -21,7 +21,7 @@ fn main() {
     let s: char[100];
     strcpy(s, "1");
     for i in 1..=15 {
-        println "{s}";
+        println f"{s}";
         let las = look_and_say(s);
         strcpy(s, las.c_str());
     }

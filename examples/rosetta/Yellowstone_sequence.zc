@@ -35,7 +35,7 @@ fn main() {
     yellowstone(30, (int*)a);
     println "The first 30 Yellowstone numbers are:";
     for i in 1..=30 {
-        print "{a[i]:2d}  ";
+        print f"{a[i]:2d}  ";
         if !(i % 10) { println ""; }
     }
 }

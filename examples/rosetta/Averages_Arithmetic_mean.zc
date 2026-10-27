@@ -22,9 +22,9 @@ fn main() {
     
     let m = mean(&numbers);
     println "Numbers: 10, 20, 30, 40";
-    println "Mean: {m}";
+    println f"Mean: {m}";
 
     let empty = Vec<f64>::new();
     let m_empty = mean(&empty);
-    println "Empty mean: {m_empty}";
+    println f"Empty mean: {m_empty}";
 }

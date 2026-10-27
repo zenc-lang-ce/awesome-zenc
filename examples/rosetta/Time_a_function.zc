@@ -9,5 +9,5 @@ fn main() {
     let start = Time::now();
     for i in 0..iterations { func(); }
     let end = Time::now();
-    println "Calling 'func' {iterations} times took {end - start} ms.";
+    println f"Calling 'func' {iterations} times took {end - start} ms.";
 }

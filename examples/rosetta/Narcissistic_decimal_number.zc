@@ -25,7 +25,7 @@ fn main() {
     println "The first 25 narcissistic decimal numbers are:"
     let res = narc(25);
     for n in res {
-        print "{n} ";
+        print f"{n} ";
     }
     println "";
 }

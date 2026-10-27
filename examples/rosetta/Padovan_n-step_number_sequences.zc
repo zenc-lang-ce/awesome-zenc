@@ -13,12 +13,12 @@ fn padovan_n(n: int, t: usize, p: int*) {
 fn main() {
     let t: const usize = 15;
     let p: int[t];
-    println "First {t} terms of the Padovan n-step number sequences:";
+    println f"First {t} terms of the Padovan n-step number sequences:";
     for n in 2..=8 {
         for i in 0..t { p[i] = 0; }
         padovan_n(n, t, p);
-        print "{n}: ";
-        for i in 0..t { print "{p[i]:3d} "; }
+        print f"{n}: ";
+        for i in 0..t { print f"{p[i]:3d} "; }
         println "";
     }
 }

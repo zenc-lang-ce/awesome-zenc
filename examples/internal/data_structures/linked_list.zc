@@ -40,7 +40,7 @@ impl LinkedList {
         let current: Node* = self.head;
         "["..;
         while current != NULL {
-            "{current.value}"..;
+            f"{current.value}"..;
             current = current.next;
             if current != NULL {
                 " -> "..;
@@ -79,7 +79,7 @@ fn main() {
     list.push(20);
     list.push(30);
     
-    "List length: {list.len()}";
+    f"List length: {list.len()}";
     
     "Current List: "..;
     list.print_list();

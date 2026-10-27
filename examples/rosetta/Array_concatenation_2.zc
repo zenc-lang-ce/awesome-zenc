@@ -16,7 +16,7 @@ fn main() {
     let count = c.length();
     let i = 0;
     for val in c {
-        print "{val}";
+        print f"{val}";
         if i < count - 1 {
             print ", ";
         }

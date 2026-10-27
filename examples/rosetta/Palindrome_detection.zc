@@ -20,6 +20,6 @@ fn main() {
     println "Are the following palindromes?";
     let phrases = ["rotor", "rosetta", "step on no pets", "été", "zenc", "🦊😀🦊"];
     for phrase in phrases {
-        println "  {phrase} => {is_pal(phrase)}";
+        println f"  {phrase} => {is_pal(phrase)}";
     }
 }

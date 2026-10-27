@@ -26,7 +26,7 @@ struct Button {
 
 impl Button {
     fn draw(self) {
-        println "[Button: '{self.label}' size={self.width}x{self.height}]";
+        println f"[Button: '{self.label}' size={self.width}x{self.height}]";
     }
 }
 
@@ -50,10 +50,10 @@ fn process_event(e: Event) {
             println "Event: Quit received. Shutting down...";
         },
         Event::Click(p) => {
-            println "Event: Mouse Clicked at ({p.x}, {p.y})";
+            println f"Event: Mouse Clicked at ({p.x}, {p.y})";
         },
         Event::KeyPress(k) => {
-            println "Event: Key Pressed '{k}'";
+            println f"Event: Key Pressed '{k}'";
         },
         _ => {
             println "Event: Unknown";
@@ -93,6 +93,6 @@ fn main() {
 
     println "=> Lambdas";
     let sum = run_op(10, 20, (a, b) -> a + b);
-    println "10 + 20 = {sum}";
+    println f"10 + 20 = {sum}";
     println "";
 }

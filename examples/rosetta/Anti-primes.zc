@@ -20,7 +20,7 @@ fn main() {
     for let n = 1; count < 20; ++n {
         let d = divisor_count(n);
         if d > max_div {
-            print "{n} ";
+            print f"{n} ";
             max_div = d;
             count++;
         }

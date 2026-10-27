@@ -27,7 +27,7 @@ fn sieve(c: bool*, limit: const int) {
 fn main() {
     setlocale(LC_NUMERIC, "");
     for let i = 1; i <= 37; ++i {
-        println "chowla({i:2d}) = {chowla(i)}";
+        println f"chowla({i:2d}) = {chowla(i)}";
     }
     println "";
     let count = 1;
@@ -39,7 +39,7 @@ fn main() {
     for let i = 3; i < limit; i += 2 {
         if !c[i] { count++; }
         if i == power - 1 {
-            println "Count of primes up to {power:'-10d} = {count:'d}";
+            println f"Count of primes up to {power:'-10d} = {count:'d}";
             power *= 10;
         }
     }
@@ -50,9 +50,9 @@ fn main() {
         let p = (1 << (i - 1)) * ((1 << i) - 1) // perfect numbers must be of this form
         if p > limit { break; }
         if chowla(p) == p - 1 {
-            println "{p:'d} is a perfect number.";
+            println f"{p:'d} is a perfect number.";
             count++;
         }
     }
-    println "\nThere are {count} perfect numbers <= 35,000,000.";
+    println f"\nThere are {count} perfect numbers <= 35,000,000.";
 }

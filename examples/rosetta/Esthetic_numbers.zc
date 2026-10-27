@@ -39,16 +39,16 @@ fn list_esths(n: u64, n2: u64, m: u64, m2: u64, per_line: int, all: bool) {
     esths.clear();
     for let i: u64 = 0; i < 10; ++i { dfs(n2, m2, i); }
     let le = esths.length();
-    println "Base 10: {le:'lu} esthetic numbers between {n:'lu} and {m:'lu:}";
+    println f"Base 10: {le:'lu} esthetic numbers between {n:'lu} and {m:'lu:}";
     if all {
         for c, esth in esths {
-            print "{esth} ";
+            print f"{esth} ";
             if (c + 1) % per_line == 0 { println ""; }
         }
     } else {
-        for i in 0..per_line { print "{esths[i]:lu} "; }
+        for i in 0..per_line { print f"{esths[i]:lu} "; }
         println "\n............\n";
-        for i in (le - per_line)..le { print "{esths[i]:lu} "; }
+        for i in (le - per_line)..le { print f"{esths[i]:lu} "; }
     }
     println "\n";
 }
@@ -71,12 +71,12 @@ fn main() {
     esths = Vec<u64>::new();
     setlocale(LC_NUMERIC, "");
     for let b: u64 = 2; b <= 16; ++b {
-        println "Base {b}: {4 * b}th to {6 * b}th esthetic numbers:";
+        println f"Base {b}: {4 * b}th to {6 * b}th esthetic numbers:";
         let c: u64 = 0;
         for let n: u64 = 1; c < 6 * b; ++n {
             if is_esthetic(n, b) {
                 c++;
-                if c >= 4 * b { print "{itoa(n, b)} "; }
+                if c >= 4 * b { print f"{itoa(n, b)} "; }
             }
         }
         println "\n";

@@ -15,6 +15,6 @@ fn main() {
         output.std_out.print();
         "--------------";
     } else {
-        !"Command failed with exit code: {output.exit_code}";
+        !f"Command failed with exit code: {output.exit_code}";
     }
 }

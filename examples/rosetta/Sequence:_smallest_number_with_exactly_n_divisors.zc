@@ -30,8 +30,8 @@ fn main() {
             if all { break; }
         } 
     }
-    println "The first {LIMIT} terms are:";
+    println f"The first {LIMIT} terms are:";
     print "[";
-    for i in 0..LIMIT { print "{numbers[i]}, "; }
+    for i in 0..LIMIT { print f"{numbers[i]}, "; }
     println "\b\b]";
 }

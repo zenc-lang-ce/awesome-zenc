@@ -16,7 +16,7 @@ fn chao(input: const char*, output: char*, mode: CMode, show_steps: bool) {
     temp[26] = '\0';
 
     for i in 0..len {
-        if show_steps { println "{left}  {right}"; }
+        if show_steps { println f"{left}  {right}"; }
         let index: int;
         if mode == CMode::ENCRYPT {
             index = strchr(right, input[i]) - right;
@@ -57,10 +57,10 @@ fn main() {
     defer free(cipher_text);
     let plain_text2 = (char*)malloc(strlen(plain_text) + 1);
     defer free(plain_text2);
-    println "The original plaintext is : {plain_text}";
+    println f"The original plaintext is : {plain_text}";
     println "\nThe left and right alphabets after each permutation during encryption are :\n";
     chao(plain_text, cipher_text, CMode::ENCRYPT, true);
-    println "\nThe ciphertext is : {cipher_text}";
+    println f"\nThe ciphertext is : {cipher_text}";
     chao(cipher_text, plain_text2, CMode::DECRYPT, false);
-    println "\nThe recovered plaintext is : {plain_text2}";
+    println f"\nThe recovered plaintext is : {plain_text2}";
 }

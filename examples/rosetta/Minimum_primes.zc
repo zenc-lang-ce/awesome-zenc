@@ -35,6 +35,6 @@ fn main() {
         min_primes[i] = get_min_prime(numbers, 3);
     }
     print "[";
-    for i in 0..5 { print "{min_primes[i]}, "; }
+    for i in 0..5 { print f"{min_primes[i]}, "; }
     println "\b\b]";
 }

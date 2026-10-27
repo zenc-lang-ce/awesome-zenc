@@ -45,9 +45,9 @@ fn main() {
     setlocale(LC_NUMERIC, "");
     println "First 50 De Polignac numbers:";
     for i in 0..dp.length() {
-        print "{dp[i]:'5d} ";
+        print f"{dp[i]:'5d} ";
         if !((i + 1) % 10) { println ""; }
     }
-    println "\nOne thousandth: {dp1000:'d}";
-    println "\nTen thousandth: {dp10000:'d}";
+    println f"\nOne thousandth: {dp1000:'d}";
+    println f"\nTen thousandth: {dp10000:'d}";
 }

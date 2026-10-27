@@ -17,7 +17,7 @@ fn main() {
         let c: int* = realloc(b, new_len * sizeof(int));
         defer free(c);
         for i in 0..new_len {
-            print "{c[i]}, ";
+            print f"{c[i]}, ";
         }
         println "\b\b ";
     } else {

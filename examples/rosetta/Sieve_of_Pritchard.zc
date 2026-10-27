@@ -86,13 +86,13 @@ fn main() {
     let limit: usize = 150;
     let primes = sieve_of_pritchard(limit);
     
-    print "Primes up to {limit}: [";
+    print f"Primes up to {limit}: [";
     for i in 0..primes.len {
-        print "{primes[i]}";
+        print f"{primes[i]}";
         if i < primes.len - 1 {
             print ", ";
         }
     }
     println "]";
-    println "Total primes found: {primes.len}";
+    println f"Total primes found: {primes.len}";
 }

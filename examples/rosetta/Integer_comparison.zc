@@ -5,14 +5,14 @@ fn main() {
     ? "Enter two integers separated by a space: " (a, b);
     
     if a < b {
-        println "{a} is less than {b}";
+        println f"{a} is less than {b}";
     }
     
     if a == b {
-        println "{a} is equal to {b}";
+        println f"{a} is equal to {b}";
     }
     
     if a > b {
-        println "{a} is greater than {b}";
+        println f"{a} is greater than {b}";
     }
 }

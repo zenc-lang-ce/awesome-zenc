@@ -13,29 +13,29 @@ fn main() {
     let x = 42;
     let x_ptr = &x; // Take the address of a stack variable
 
-    println "Value of x: {x}";
-    println "Address of x: {(usize)x_ptr}";
-    println "Value via x_ptr: {*x_ptr}";
+    println f"Value of x: {x}";
+    println f"Address of x: {(usize)x_ptr}";
+    println f"Value via x_ptr: {*x_ptr}";
 
     // Modifying via pointer
     *x_ptr = 100;
-    println "New value of x: {x}";
+    println f"New value of x: {x}";
 
     // Pass by reference
     increment(&x);
-    println "Value after increment(ptr): {x}";
+    println f"Value after increment(ptr): {x}";
 
     println "\nSTRUCT POINTERS & AUTO-DEREF";
     let d = Data { id: 1, active: true };
     let d_ptr = &d;
 
     // Zen C supports auto-dereferencing for struct fields
-    println "id via d_ptr.id: {d_ptr.id}";
+    println f"id via d_ptr.id: {d_ptr.id}";
     d_ptr.active = false;
-    println "Active via d.active: {d.active}";
+    println f"Active via d.active: {d.active}";
 
     // Manual dereferencing for clarity or specific cases
-    println "id via (*d_ptr).id: {(*d_ptr).id}";
+    println f"id via (*d_ptr).id: {(*d_ptr).id}";
 
     println "\nHEAP POINTERS";
     // Allocate memory for an integer on the heap
@@ -47,7 +47,7 @@ fn main() {
     }
 
     *h_ptr = 500;
-    println "Value on heap: {*h_ptr}";
+    println f"Value on heap: {*h_ptr}";
 
     // Always free heap memory
     free(h_ptr);

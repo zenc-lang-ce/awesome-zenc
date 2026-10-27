@@ -8,11 +8,11 @@ fn digit_sum(n: int) -> int {
 }
 
 fn niven(number: int, minimum: int) {
-    println "First {number} Harshad or Niven numbers >= {minimum}:";
+    println f"First {number} Harshad or Niven numbers >= {minimum}:";
     let count = 0;
     for let n = minimum; count < number; ++n {
         if !(n % digit_sum(n)) {
-            print "{n} ";
+            print f"{n} ";
             count++;
         }
     }

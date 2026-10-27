@@ -29,6 +29,6 @@ fn main() {
     ];
     for candidate in candidates {
         let b = is_cusip(candidate) ? "correct" : "incorrect";
-        println "{candidate} -> {b}";
+        println f"{candidate} -> {b}";
     }
 }

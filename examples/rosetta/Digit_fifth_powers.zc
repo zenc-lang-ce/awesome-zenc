@@ -26,9 +26,9 @@ fn main() {
         let total_dp = 0;
         for j in 0..digs.length() { total_dp += dp5[digs[j]]; }
         if total_dp == i {
-            if sum > 0 { print " + {i}"; } else { print "{i}" };
+            if sum > 0 { print f" + {i}"; } else { print f"{i}" };
             sum += i;
         }
     }
-    println " = {sum}";
+    println f" = {sum}";
 }

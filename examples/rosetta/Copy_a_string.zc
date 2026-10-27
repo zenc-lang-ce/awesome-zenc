@@ -1,5 +1,5 @@
 fn main() {
     let dup = strdup("I'm a duplicate!");
     defer free(dup);
-    println "{dup}";
+    println f"{dup}";
 }

@@ -16,14 +16,14 @@ fn binomial(n: uint, k: uint) -> u64 {
 fn main() {
     def LIMIT = 14;
     print "n/k |";
-    for k in 0..=LIMIT { print "{k:5d}"; }
+    for k in 0..=LIMIT { print f"{k:5d}"; }
     println "";
     print "----+";
     for i in 0..=LIMIT{ print "-----"; }
     println "";
     for n in 0..=LIMIT {
-        print "{n:3d} |";
-        for k in 0..=n { print "{binomial(n, k):5lu}"; }
+        print f"{n:3d} |";
+        for k in 0..=n { print f"{binomial(n, k):5lu}"; }
         println "";
     }
 }

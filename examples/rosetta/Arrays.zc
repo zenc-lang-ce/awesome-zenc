@@ -13,11 +13,11 @@ fn main() {
     
     println "Iterating over ints array:";
     for val in ints {
-        println "{val}";
+        println f"{val}";
     }
     
     println "\nIterating over zeros array:";
     for val in zeros {
-        println "{val}";
+        println f"{val}";
     }
 }

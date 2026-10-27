@@ -11,12 +11,12 @@ fn main() {
     println "Numbers under 1,000 whose sum of digits is a substring of themselves:"
     let count = 0;
     for n in 0..<1000 {
-        let ns = "{n}";
-        let ds = "{digit_sum(n)}";
+        let ns = f"{n}";
+        let ds = f"{digit_sum(n)}";
         if strstr(ns, ds) {
-            print "{n:3d} ";
+            print f"{n:3d} ";
             if ++count % 8 == 0 { println ""; }
         }
     }
-    println "\n{count} such numbers found."
+    println f"\n{count} such numbers found."
 }

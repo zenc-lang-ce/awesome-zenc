@@ -58,7 +58,7 @@ impl Vector {
 
     fn show(self) {
         let s = self.to_string();
-        println "{s}";
+        println f"{s}";
         free(s);
     }
 }
@@ -66,18 +66,18 @@ impl Vector {
 fn main() {
     // Initialization
     let v1 = Vector::new(3.0, 4.0);
-    println "v1 (new): {v1}";
+    println f"v1 (new): {v1}";
 
     let v2 = Vector::from_points(0.0, 0.0, -1.0, 2.0);
-    println "v2 (from_points): {v2}";
+    println f"v2 (from_points): {v2}";
 
-    println "v_polar (from_polar): {Vector::from_polar(Math::PI() / 4.0, 5.0)}";
+    println f"v_polar (from_polar): {Vector::from_polar(Math::PI() / 4.0, 5.0)}";
 
     println "";
 
     // Operations
-    println "v1 + v2: {v1 + v2}";
-    println "v1 - v2: {v1 - v2}";
-    println "v1 * 2.5: {v1 * 2.5}";
-    println "v1 / 2.0: {v1 / 2.0}";
+    println f"v1 + v2: {v1 + v2}";
+    println f"v1 - v2: {v1 - v2}";
+    println f"v1 * 2.5: {v1 * 2.5}";
+    println f"v1 / 2.0: {v1 / 2.0}";
 }

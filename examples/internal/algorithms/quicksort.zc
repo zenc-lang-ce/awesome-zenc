@@ -32,7 +32,7 @@ fn quicksort(arr: int*, low: isize, high: isize) {
 fn print_array(arr: int*, size: isize) {
     "["..;
     for i in 0..size {
-        "{arr[i]}"..;
+        f"{arr[i]}"..;
         if i < size - 1 { ", "..; }
     }
     "]";

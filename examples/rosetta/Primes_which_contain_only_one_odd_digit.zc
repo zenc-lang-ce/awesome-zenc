@@ -58,11 +58,11 @@ fn main() {
             }
         }
         if all {
-            print "{primes[i]:3d} ";
+            print f"{primes[i]:3d} ";
             if !(++count % 9) { println ""; }
         }
     }
-    println "\nFound {count} such primes.";
+    println f"\nFound {count} such primes.";
 
     limit = 999_999_999;
     primes.free();
@@ -81,9 +81,9 @@ fn main() {
         }
         if all { count++; }
         if primes[i] > pow {
-            println "There are {count:'7d} such primes under {pow:'d}";
+            println f"There are {count:'7d} such primes under {pow:'d}";
             pow *= 10;
         }
     }
-    println "There are {count:'7d} such primes under {pow:'d}";
+    println f"There are {count:'7d} such primes under {pow:'d}";
 }

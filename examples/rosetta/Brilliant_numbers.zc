@@ -97,7 +97,7 @@ fn main() {
     let brilliant = get_brilliant(2, 10000, false);
     sort_long(brilliant.data, brilliant.len);
     for i in 0..100 {
-        print "{brilliant[i]:4lu} ";
+        print f"{brilliant[i]:4lu} ";
         if !((i + 1) % 10) { println ""; }
     }
     println "";
@@ -110,7 +110,7 @@ fn main() {
         let count = res[0] + 1;
         let next = res[1];
         ord(count, ch);
-        println "First >= {limit:'18lu} is {count:'14lu}{ch} in the series: {next:'18lu}";
+        println f"First >= {limit:'18lu} is {count:'14lu}{ch} in the series: {next:'18lu}";
     }
     all_primes.free();
 }
