@@ -1,8 +1,9 @@
+import "std/io.zc"
 fn main() {
     let fruits: string[2] = ["apple", "orange"];
     
     // Calculate the number of elements using sizeof
     let count = sizeof(fruits) / sizeof(fruits[0]);
     
-    println f"Raw array length: {count}";
+    println(f"Raw array length: {count}");
 }

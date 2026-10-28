@@ -1,23 +1,24 @@
+import "std/io.zc"
 import "std/fs.zc"
 
 fn try_create_file(path: char*) {
-    println f"Creating file: {path}";
+    println(f"Creating file: {path}");
     let res = File::open(path, "w");
     if res.is_ok() {
-        println f"Success: {path} created.";
+        println(f"Success: {path} created.");
         res.unwrap().close();
     } else {
-        println f"Error: {res.err}";
+        println(f"Error: {res.err}");
     }
 }
 
 fn try_create_dir(path: char*) {
-    println f"Creating directory: {path}";
+    println(f"Creating directory: {path}");
     let res = File::create_dir(path);
     if res.is_ok() {
-        println f"Success: {path} created.";
+        println(f"Success: {path} created.");
     } else {
-        println f"Error: {res.err}";
+        println(f"Error: {res.err}");
     }
 }
 

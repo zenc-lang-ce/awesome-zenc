@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn main() {
@@ -8,5 +9,5 @@ fn main() {
     let c = a.utf8_substr(0, l - 1);
     let d = a.utf8_substr(1, l - 2);
     let e: String[4] = [a, b, c, d];
-    for i in 0..e.len { println f"{e[i]}"; }
+    for i in 0..e.len { println(f"{e[i]}"); }
 }

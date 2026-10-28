@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 let inc = [4, 2, 4, 2, 4, 6, 2, 6];
@@ -50,18 +51,18 @@ fn main() {
                 counts[i % 10]++;
                 bc++;
                 if bc == 50 {
-                    println "First 50 Blum integers:";
+                    println("First 50 Blum integers:");
                     for j in 0..50 {
-                        print f"{blum[j]:3d} ";
-                        if !((j + 1) % 10) { println ""; }
+                        print(f"{blum[j]:3d} ");
+                        if !((j + 1) % 10) { println(""); }
                     }
-                    println "";
+                    println("");
                 } else if bc == 26_828 || bc % 100_000 == 0 {
-                    println f"The {bc:'7d}th Blum integer is: {i:'9d}";
+                    println(f"The {bc:'7d}th Blum integer is: {i:'9d}");
                     if bc == 400_000 {
-                        println "\n% distribution of the first 400,000 Blum integers:";
+                        println("\n% distribution of the first 400,000 Blum integers:");
                         for j in digits {
-                            println f"  {counts[j] / 4000.0:6.3f}% end in {j}";
+                            println(f"  {counts[j] / 4000.0:6.3f}% end in {j}");
                         }
                         break;
                     }

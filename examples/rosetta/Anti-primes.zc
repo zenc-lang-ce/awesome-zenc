@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn divisor_count(n: int) -> int {
     let i = 1;
     let k = (n % 2 == 0) ? 1 : 2;
@@ -14,16 +15,16 @@ fn divisor_count(n: int) -> int {
 }
 
 fn main() {
-    println "The first 20 anti-primes are:";
+    println("The first 20 anti-primes are:");
     let max_div = 0;
     let count = 0;
     for let n = 1; count < 20; ++n {
         let d = divisor_count(n);
         if d > max_div {
-            print f"{n} ";
+            print(f"{n} ");
             max_div = d;
             count++;
         }
     }
-    println "";
+    println("");
 }

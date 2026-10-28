@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 struct Lady {
@@ -72,13 +73,13 @@ fn main() {
         if loves_sailor { eligibles.push(lady); }
         printf(format, lady.name, btos(loves_sailor), btos(lady.is_lovable()));
     }
-    println "\nBased on this analysis:";
-    println "\nThe dating agency should suggest the following ladies:";
-    for eligible in eligibles { print f"{eligible.name}, "; }
-    println "\b\b ";
-    println f"\nand {sailor.name} should offer to date these ones:";
+    println("\nBased on this analysis:");
+    println("\nThe dating agency should suggest the following ladies:");
+    for eligible in eligibles { print(f"{eligible.name}, "); }
+    println("\b\b ");
+    println(f"\nand {sailor.name} should offer to date these ones:");
     for eligible in eligibles {
-        if sailor.loves(eligible) { print f"{eligible.name}, "; }
+        if sailor.loves(eligible) { print(f"{eligible.name}, "); }
     }
-    println "\b\b ";
+    println("\b\b ");
 }

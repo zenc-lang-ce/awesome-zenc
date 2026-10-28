@@ -1,33 +1,34 @@
 
+import "std/io.zc"
 import "std/cuda.zc"
 import "std/string.zc"
 
 fn main() {
     let count = cuda_device_count();
-    "---------------------------";
-    f"CUDA Device Count: {count}";
-    "---------------------------";
+    println("---------------------------");
+    println(f"CUDA Device Count: {count}");
+    println("---------------------------");
     
     if (count > 0) {
         let props = cuda_device_properties(0);
         
-        f"Device Name: {props.name.vec.data}";
-        f"Total Global Mem: {props.total_global_mem}";
-        f"SM Count: {props.multi_processor_count}";
-        f"Compute Capability: {props.major}.{props.minor}";
-        f"Max Threads per Block: {props.max_threads_per_block}";
-        f"Warp Size: {props.warp_size}";
+        println(f"Device Name: {props.name.vec.data}");
+        println(f"Total Global Mem: {props.total_global_mem}");
+        println(f"SM Count: {props.multi_processor_count}");
+        println(f"Compute Capability: {props.major}.{props.minor}");
+        println(f"Max Threads per Block: {props.max_threads_per_block}");
+        println(f"Warp Size: {props.warp_size}");
         
         props.name.free();
         
         let driver = cuda_driver_version();
         let runtime = cuda_runtime_version();
         
-        f"Driver Version: {driver}";
-        f"Runtime Version: {runtime}";
+        println(f"Driver Version: {driver}");
+        println(f"Runtime Version: {runtime}");
         
         let mem = cuda_mem_info();
-        f"Free Mem: {mem.free}";
-        f"Total Mem: {mem.total}";
+        println(f"Free Mem: {mem.free}");
+        println(f"Total Mem: {mem.total}");
     }
 }

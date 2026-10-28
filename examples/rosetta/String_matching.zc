@@ -1,38 +1,39 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn main() {
     let text = String::from("The quick brown fox jumps over the lazy dog. The fox is quick.");
     let target = "fox";
 
-    println f"Text: {text}";
-    println f"Target: {target}";
+    println(f"Text: {text}");
+    println(f"Target: {target}");
 
     // Starts with
     if (text.starts_with("The quick")) {
-        println "The text starts with 'The quick'.";
+        println("The text starts with 'The quick'.");
     }
 
     // Contains (and Optional Requirements)
     if (text.contains_str(target)) {
-        println f"The text contains '{target}'.";
+        println(f"The text contains '{target}'.");
         
         // Optional: Print the location of the match
         let first_match = text.find_str(target);
         if (first_match.is_some()) {
-            println f"First match at index: {first_match.unwrap()}";
+            println(f"First match at index: {first_match.unwrap()}");
         }
 
         // Optional: Handle multiple occurrences
         let all_matches = text.find_all_str(target);
-        print "All match indices: ";
+        print("All match indices: ");
         for idx in all_matches {
-            print f"{idx} ";
+            print(f"{idx} ");
         }
-        println "";
+        println("");
     }
 
     // Ends with
     if (text.ends_with("quick.")) {
-        println "The text ends with 'quick.'.";
+        println("The text ends with 'quick.'.");
     }
 }

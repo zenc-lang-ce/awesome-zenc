@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/map.zc"
 
 fn main() {
@@ -11,10 +12,10 @@ fn main() {
         }
         seen.put(sn, n);
     }
-    println "The first ten terms of the Van Eck sequence are:";
-    for i in 0..10 { print f"{a[i]}, "; }
-    println "\b\b \n";
-    println "Terms 991 to 1000 of the sequence are:";
-    for i in 990..1000 { print f"{a[i]}, "; }
-    println "\b\b \n";
+    println("The first ten terms of the Van Eck sequence are:");
+    for i in 0..10 { print(f"{a[i]}, "); }
+    println("\b\b \n");
+    println("Terms 991 to 1000 of the sequence are:");
+    for i in 990..1000 { print(f"{a[i]}, "); }
+    println("\b\b \n");
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn main() {
@@ -12,15 +13,15 @@ fn main() {
     
     let c = a + b;
     
-    print "Concatenated array: [";
+    print("Concatenated array: [");
     let count = c.length();
     let i = 0;
     for val in c {
-        print f"{val}";
+        print(f"{val}");
         if i < count - 1 {
-            print ", ";
+            print(", ");
         }
         i += 1;
     }
-    println "]";
+    println("]");
 }

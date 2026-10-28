@@ -1,3 +1,4 @@
+import "std/io.zc"
 alias clos = fn() -> int;
 
 fn main() {
@@ -6,6 +7,6 @@ fn main() {
         fs[i] = fn() -> int { return i * i; }
     }
     for i in 0..9 {
-        println f"Function {i} : {fs[i]()}";
+        println(f"Function {i} : {fs[i]()}");
     }
 }

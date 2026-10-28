@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "rat.zc"
 
@@ -23,12 +24,12 @@ fn divisors(n: int) -> Vec<int> {
 }
 
 fn main() {
-    println "The following numbers (less than 2^19) are perfect:";
+    println("The following numbers (less than 2^19) are perfect:");
     let one: const Rat = Rat::new(1);
     for i in 2..(1 << 19) {
         let sum = Rat::new(1, i);
         let pd = divisors(i);
         for j in 1..(pd.length() - 1) { sum += Rat::new(1, pd[j]); }
-        if sum == one { println f"  {i}"; }
+        if sum == one { println(f"  {i}"); }
     }
 }

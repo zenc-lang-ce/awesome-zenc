@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/random.zc"
 
 fn knuth_shuffle<T>(a: T*, len: usize) {
@@ -19,10 +20,10 @@ fn main() {
     let aa: int*[3] = [a1, a2, a3];
     for i in 0..3 {
         let a = aa[i];
-        for j in 0..(i + 1) { print f"{a[j]}, "; }
-        print "\b\b -> ";
+        for j in 0..(i + 1) { print(f"{a[j]}, "); }
+        print("\b\b -> ");
         knuth_shuffle<int>(a, (usize)(i + 1));
-        for j in 0..(i + 1) { print f"{a[j]}, "; }
-        println "\b\b ";
+        for j in 0..(i + 1) { print(f"{a[j]}, "); }
+        println("\b\b ");
     }
 }

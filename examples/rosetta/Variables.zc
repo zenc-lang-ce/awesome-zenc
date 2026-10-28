@@ -1,4 +1,5 @@
 // Other variable related facilities: Manifest Constants (compile-time only)
+import "std/io.zc"
 def GLOBAL_LIMIT = 1024;
 
 fn main() {
@@ -24,23 +25,23 @@ fn main() {
     {
         // Block scope: shadows the outer variable 'a'
         let a = 50;
-        println f"Inner scope 'a': {a}";
+        println(f"Inner scope 'a': {a}");
         
         // Other facilities: `autofree` automatically frees resources when scope exits
         // autofree let buffer = malloc(GLOBAL_LIMIT);
     }
-    println f"Outer scope 'a' remains: {a}";
+    println(f"Outer scope 'a' remains: {a}");
     
     /* Referencing */
     // Zen C uses explicit pointers for referencing
     let ref_a: int* = &a; 
     *ref_a = 30; // Dereferencing to mutate the original variable
-    println f"Mutated 'a' via reference: {a}";
+    println(f"Mutated 'a' via reference: {a}");
     
     /* Other facilities: Tuples and Destructuring */
     // Variables can be grouped and destructured in a single line
     let pair = (1, "Apple");
     let (id, name) = pair;
     
-    println f"Destructured Tuple - ID: {id}, Name: {name}";
+    println(f"Destructured Tuple - ID: {id}, Name: {name}");
 }

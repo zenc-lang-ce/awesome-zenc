@@ -8,7 +8,7 @@ fn handler(_req: Request*, res: Response*) {
 fn main() {
     // Create a new HTTP server on port 8080 routing to the handler
     let server = Server::new(8080, handler);
-    println "Serving 'Goodbye, World!' at http://localhost:8080/";
+    println("Serving 'Goodbye, World!' at http://localhost:8080/");
     
     // Start listening for incoming connections
     server.start();

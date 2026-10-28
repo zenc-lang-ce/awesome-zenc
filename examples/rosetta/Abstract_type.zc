@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 trait Shape {
@@ -26,7 +27,7 @@ impl Shape for Circle {
 
 // Prints the area of any Shape.
 fn print_area(shape: Shape) {
-    println f"{shape.area()}";
+    println(f"{shape.area()}");
 }
 
 fn main() {

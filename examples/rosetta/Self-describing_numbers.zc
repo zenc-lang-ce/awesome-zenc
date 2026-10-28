@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn is_self_describing(n: u64) -> bool {
@@ -24,7 +25,7 @@ fn is_self_describing(n: u64) -> bool {
 }
 
 fn main() {
-    println "The self-describing numbers are:";
+    println("The self-describing numbers are:");
     let i:  u64 = 10;  // self-describing number must end in 0
     let pw: u64 = 10;  // power of 10
     let fd: u64 = 1;   // first digit
@@ -34,7 +35,7 @@ fn main() {
 
     let lim: u64 = 9_100_000_001; // sum of digits can't be more than 10
     while i < lim {
-        if is_self_describing(i) { println f"{i:lu}"; }
+        if is_self_describing(i) { println(f"{i:lu}"); }
         i += 10;
         if i > mx {
             fd++;

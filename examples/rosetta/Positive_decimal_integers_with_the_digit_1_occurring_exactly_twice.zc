@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn two_ones(n: int) -> bool {
     let s = f"{n}";
     let ones = 0;
@@ -8,13 +9,13 @@ fn two_ones(n: int) -> bool {
 }
 
 fn main() {
-    println "Decimal numbers under 1,000 whose digits include two 1's:";
+    println("Decimal numbers under 1,000 whose digits include two 1's:");
     let count = 0;
     for i in 1..1000 {
         if two_ones(i) {
-            print f"{i:3d}  ";
-            if !(++count % 9) { println ""; }
+            print(f"{i:3d}  ");
+            if !(++count % 9) { println(""); }
         }
     }
-    println f"\nFound {count} such numbers.";
+    println(f"\nFound {count} such numbers.");
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn proper_divisors(n: int) -> Vec<int> {
@@ -68,18 +69,18 @@ fn is_practical(n: int) -> bool {
 }
 
 fn main() {
-    println "In the range 1..333, there are:";
+    println("In the range 1..333, there are:");
     let practical = Vec<int>::new();
     for i in 1..=333 {
         if is_practical(i) { practical << i; }
     }
-    println  f"  {practical.length()} practical numbers";
-    print    "  The first ten are [";
-    for i in 0..10 { print f"{practical[i]}, "; }
-    println "\b\b]";
-    print    "  The final ten are [";
+    println(f"  {practical.length()} practical numbers");
+    print("  The first ten are [");
+    for i in 0..10 { print(f"{practical[i]}, "); }
+    println("\b\b]");
+    print("  The final ten are [");
     let len = practical.length();
-    for i in (len - 10)..len { print f"{practical[i]}, "; }
-    println "\b\b]";
-    println f"\n666 is practical: {is_practical(666)}";
+    for i in (len - 10)..len { print(f"{practical[i]}, "); }
+    println("\b\b]");
+    println(f"\n666 is practical: {is_practical(666)}");
 }

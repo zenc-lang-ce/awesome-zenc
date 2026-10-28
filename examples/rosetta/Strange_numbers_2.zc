@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "locale.h"
 
@@ -25,6 +26,6 @@ fn main() {
         strange_ones = new_ones;
     }
     setlocale(LC_NUMERIC, "");
-    println f"Found {strange_ones.length():'lu} {places}-digit strange numbers beginning with {start}.";
+    println(f"Found {strange_ones.length():'lu} {places}-digit strange numbers beginning with {start}.");
     for i in 0..10 { possibles[i].free(); }
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 struct City {
     name: string;
     population: f32;
@@ -27,15 +28,15 @@ fn main() {
     ];
     let pred = fn(c: City) -> bool { return c.name == "Dar Es Salaam"; }
     let index = find_first(cities, 10, &pred);
-    println f"Index of the first city whose name is 'Dar Es Salaam' is {index}.";
+    println(f"Index of the first city whose name is 'Dar Es Salaam' is {index}.");
 
     pred = fn(c: City) -> bool { return c.population < 5.0; }
     index = find_first(cities, 10, &pred);
     let name = cities[index].name;
-    println f"First city whose population is less than 5 million is {name}.";
+    println(f"First city whose population is less than 5 million is {name}.");
 
     pred = fn(c: City) -> bool { return c.name[0] == 'A'; }
     index = find_first(cities, 10, &pred);
     let pop = cities[index].population;
-    println f"The population of the first city whose name begins with 'A' is {pop:g} million.";
+    println(f"The population of the first city whose name begins with 'A' is {pop:g} million.");
 }

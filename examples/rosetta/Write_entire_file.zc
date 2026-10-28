@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/fs.zc"
 
 fn main() {
@@ -7,7 +8,7 @@ fn main() {
     // Open the file in "write" mode (overwrites if it exists, creates if not)
     let res = File::open(filename, "wb");
     if res.is_err() {
-        eprintln f"Error opening file for writing: {res.err}";
+        eprintln(f"Error opening file for writing: {res.err}");
         return 1;
     }
 
@@ -16,11 +17,11 @@ fn main() {
     
     // Explicit error handling for the write operation
     if write_res.is_err() {
-        eprintln f"Error writing to file: {write_res.err}";
+        eprintln(f"Error writing to file: {write_res.err}");
         f.close();
         return 1;
     }
 
     f.close();
-    println f"Successfully wrote to {filename}";
+    println(f"Successfully wrote to {filename}");
 }

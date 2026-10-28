@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn is_prime(n: int) -> bool {
@@ -16,13 +17,13 @@ fn is_prime(n: int) -> bool {
 
 fn main() {
     setlocale(LC_NUMERIC, "");
-    println "Triplets of primes: (n - 1, n + 3, n + 5) where n < 6,000:";
+    println("Triplets of primes: (n - 1, n + 3, n + 5) where n < 6,000:");
     let count = 0;
     for n in 4..6000 step 2 {
         if is_prime(n - 1) && is_prime(n + 3) && is_prime(n + 5) {
-            println f"{n:'5d}  =>  {n - 1:'5d}  {n + 3:'5d}  {n + 5:'5d}";
+            println(f"{n:'5d}  =>  {n - 1:'5d}  {n + 3:'5d}  {n + 5:'5d}");
             count++;
         }
     }
-    println f"\n{count} such triplets found.";
+    println(f"\n{count} such triplets found.");
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
     let doors: [bool; 100];
     for i in 0..100 { doors[i] = true; }
@@ -9,7 +10,7 @@ fn main() {
         }
     }
     for i in 0..100 {
-        if doors[i] { print f"{i + 1} "; }
+        if doors[i] { print(f"{i + 1} "); }
     }
-    println "";
+    println("");
 }

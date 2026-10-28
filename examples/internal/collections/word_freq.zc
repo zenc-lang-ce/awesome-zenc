@@ -1,4 +1,5 @@
 
+import "std/io.zc"
 import "std/map.zc"
 
 fn main() {
@@ -22,14 +23,14 @@ fn main() {
         token = strtok(NULL, delim);
     }
 
-    "Word Frequencies:";
-    "-----------------";
+    println("Word Frequencies:");
+    println("-----------------");
     
     for i in 0..counts.capacity() {
         if counts.is_slot_occupied(i) {
             let k = counts.key_at(i);
             let v = counts.val_at(i);
-            println f"{k}: {v}";
+            println(f"{k}: {v}");
         }
     }
 }

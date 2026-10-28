@@ -1,4 +1,5 @@
+import "std/io.zc"
 fn main() {
     let n = 7.125;
-    println f"{n:09.3f}";
+    println(f"{n:09.3f}");
 }

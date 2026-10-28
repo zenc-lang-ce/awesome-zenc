@@ -1,3 +1,4 @@
+import "std/io.zc"
 let powers: [uint; 10];
 
 fn init() {
@@ -17,8 +18,8 @@ fn munchausen(n: uint) -> bool {
 
 fn main() {
     init();
-    println "The Munchausen numbers <= 5000 are:";
+    println("The Munchausen numbers <= 5000 are:");
     for let i: uint = 1; i <= 5000; ++i {
-       if munchausen(i) { println f"{i}"; }
+       if munchausen(i) { println(f"{i}"); }
     }
 }

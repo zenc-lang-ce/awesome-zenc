@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "locale.h"
 
@@ -83,15 +84,15 @@ fn kempner(n: u64) -> u64 {
 }
 
 fn main() {
-    println "The first 50 Kempner numbers are:";
+    println("The first 50 Kempner numbers are:");
     for n in 1..=50 {
-        print f"{kempner(n):2lu}  ";
-        if !(n % 10) { println ""; }
+        print(f"{kempner(n):2lu}  ");
+        if !(n % 10) { println(""); }
     }
 
     setlocale(LC_NUMERIC, "");
-    println "\nKempner numbers for the range 77135679311 to 77135679321:";
+    println("\nKempner numbers for the range 77135679311 to 77135679321:");
     for n in 77135679311..=77135679321 {
-        println f"S({n}) = {kempner(n):'14lu}";
+        println(f"S({n}) = {kempner(n):'14lu}");
     }
 }

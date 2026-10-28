@@ -1,5 +1,6 @@
+import "std/io.zc"
 fn main() {
     let dup = strdup("I'm a duplicate!");
     defer free(dup);
-    println f"{dup}";
+    println(f"{dup}");
 }

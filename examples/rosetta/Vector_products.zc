@@ -1,3 +1,4 @@
+import "std/io.zc"
 struct Vector3 {
     x: double;
     y: double;
@@ -44,14 +45,14 @@ fn main() {
     let b = Vector3::new(4.0, 3.0, 5.0);
     let c = Vector3::new(-5.0, -12.0, -13.0);
 
-    println "Vectors:";
-    println f"a = {a}";
-    println f"b = {b}";
-    println f"c = {c}";
-    println "";
+    println("Vectors:");
+    println(f"a = {a}");
+    println(f"b = {b}");
+    println(f"c = {c}");
+    println("");
 
-    println f"a . b       = {a.dot(b)}";
-    println f"a x b       = {a.cross(b)}";
-    println f"a . (b x c) = {a.scalar_triple(b, c)}";
-    println f"a x (b x c) = {a.vector_triple(b, c)}";
+    println(f"a . b       = {a.dot(b)}");
+    println(f"a x b       = {a.cross(b)}");
+    println(f"a . (b x c) = {a.scalar_triple(b, c)}");
+    println(f"a x (b x c) = {a.vector_triple(b, c)}");
 }

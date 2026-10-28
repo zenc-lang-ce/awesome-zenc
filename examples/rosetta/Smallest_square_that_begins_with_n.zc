@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn low_square_start_n(n: u64) -> u64 {
@@ -23,16 +24,16 @@ fn low_square_start_n(n: u64) -> u64 {
 }
 
 fn main() {
-    println "Test 1 .. 49";
+    println("Test 1 .. 49");
     for let i: u64 = 1; i < 50; ++i {
         let t = low_square_start_n(i);
-        print f"{t * t:7lu}";
-        if !(i % 10) { println ""; }
+        print(f"{t * t:7lu}");
+        if !(i % 10) { println(""); }
     }
-    println "\n";
-    println "Test 999,991 .. 1,000,000";
+    println("\n");
+    println("Test 999,991 .. 1,000,000");
     for let i: u64 = 999_991; i <= 1_000_000; ++i {
         let t = low_square_start_n(i);
-        println f"{i:10lu} : {t:10lu} -> {t * t:14lu}";
+        println(f"{i:10lu} : {t:10lu} -> {t * t:14lu}");
     }
 }

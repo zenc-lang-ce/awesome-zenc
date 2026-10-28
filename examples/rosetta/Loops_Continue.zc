@@ -1,10 +1,11 @@
+import "std/io.zc"
 fn main() {
     for i in 1..=10 {
-        print f"{i}";
+        print(f"{i}");
         if i % 5 == 0 {
-            println "";
+            println("");
             continue;
         }
-        print ", ";
+        print(", ");
     }
 }

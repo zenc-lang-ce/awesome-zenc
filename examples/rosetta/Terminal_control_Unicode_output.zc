@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/env.zc"
 
 fn supports_unicode() -> bool {
@@ -8,8 +9,8 @@ fn supports_unicode() -> bool {
 
 fn main() {
     if supports_unicode() {
-        println "Unicode is supported on this terminal and U+25B3 is : \u25b3";
+        println("Unicode is supported on this terminal and U+25B3 is : \u25b3");
     } else {
-        println "Unicode is not supported on this terminal.";
+        println("Unicode is not supported on this terminal.");
     }
 }

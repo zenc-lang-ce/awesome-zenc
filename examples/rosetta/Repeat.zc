@@ -1,4 +1,5 @@
 // The procedure accepts a standard closure and an integer
+import "std/io.zc"
 fn times(proc: fn(), n: uint) {
     for _ in 0..n {
         proc();
@@ -7,6 +8,6 @@ fn times(proc: fn(), n: uint) {
 
 fn main() {
     times(fn() { 
-        println "Hello from closure!"; 
+        println("Hello from closure!"); 
     }, 3);
 }

@@ -1,4 +1,5 @@
 // Recursive approach using pattern matching
+import "std/io.zc"
 fn fib_rec(n: int) -> int {
     match n {
         0 => { return 0; },
@@ -23,17 +24,17 @@ fn fib_iter(n: int) -> int {
 }
 
 fn main() {
-    println "Fibonacci Sequence (0 to 20):";
+    println("Fibonacci Sequence (0 to 20):");
     
-    println "\nRecursive:";
+    println("\nRecursive:");
     for i in 0..=20 {
         let res = fib_rec(i);
-        println f"fib({i}) = {res}";
+        println(f"fib({i}) = {res}");
     }
 
-    println "\nIterative:";
+    println("\nIterative:");
     for i in 0..=20 {
         let res = fib_iter(i);
-        println f"fib({i}) = {res}";
+        println(f"fib({i}) = {res}");
     }
 }

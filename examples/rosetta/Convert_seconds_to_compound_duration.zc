@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn ends_with(s1: char*, s2: char*) -> bool {
     let l1 = strlen(s1);
     let l2 = strlen(s2);
@@ -10,7 +11,7 @@ fn ends_with(s1: char*, s2: char*) -> bool {
 
 fn duration(s: int) {
     if s < 1 {
-        println "0 sec";
+        println("0 sec");
         return;
     }
     let dur: char[30] = [0];
@@ -27,7 +28,7 @@ fn duration(s: int) {
         t /= divs[i];
     }
     if ends_with(dur, ", ") { dur[strlen(dur) - 2] = '\0'; }
-    println f"{dur}";
+    println(f"{dur}");
 }
 
 fn main() {

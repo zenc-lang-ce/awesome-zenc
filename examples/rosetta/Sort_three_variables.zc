@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/sort.zc"
 
 fn string_comparer(a: const void*, b: const void*) -> int {
@@ -13,10 +14,10 @@ fn main() {
     x = arr[0];
     y = arr[1];
     z = arr[2];
-    println "After sorting strings:";
-    println f"  x = {x}";
-    println f"  y = {y}";
-    println f"  z = {z}";
+    println("After sorting strings:");
+    println(f"  x = {x}");
+    println(f"  y = {y}");
+    println(f"  z = {z}");
 
     let i = 77444;
     let j = -12;
@@ -26,10 +27,10 @@ fn main() {
     i = arr2[0];
     j = arr2[1];
     k = arr2[2];
-    println "\nAfter sorting integers:";
-    println f"  i = {i}";
-    println f"  j = {j}";
-    println f"  k = {k}";
+    println("\nAfter sorting integers:");
+    println(f"  i = {i}");
+    println(f"  j = {j}");
+    println(f"  k = {k}");
 
     let f: f32 = 11.3;
     let g: f32 = -9.7;
@@ -39,8 +40,8 @@ fn main() {
     f = arr3[0];
     g = arr3[1];
     h = arr3[2];
-    println "\nAfter sorting floats:";
-    println f"  f = {f:g}";
-    println f"  g = {g:g}";
-    println f"  h = {h:g}";
+    println("\nAfter sorting floats:");
+    println(f"  f = {f:g}");
+    println(f"  g = {g:g}");
+    println(f"  h = {h:g}");
 }

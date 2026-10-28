@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn factorial(n: uint) -> u64 {
     let prod: u64 = 1;
     for i in 2..=n { prod *= i; }
@@ -15,15 +16,15 @@ fn binomial(n: uint, k: uint) -> u64 {
 
 fn main() {
     def LIMIT = 14;
-    print "n/k |";
-    for k in 0..=LIMIT { print f"{k:5d}"; }
-    println "";
-    print "----+";
-    for i in 0..=LIMIT{ print "-----"; }
-    println "";
+    print("n/k |");
+    for k in 0..=LIMIT { print(f"{k:5d}"); }
+    println("");
+    print("----+");
+    for i in 0..=LIMIT{ print("-----"); }
+    println("");
     for n in 0..=LIMIT {
-        print f"{n:3d} |";
-        for k in 0..=n { print f"{binomial(n, k):5lu}"; }
-        println "";
+        print(f"{n:3d} |");
+        for k in 0..=n { print(f"{binomial(n, k):5lu}"); }
+        println("");
     }
 }

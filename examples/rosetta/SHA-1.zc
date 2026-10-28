@@ -1,7 +1,8 @@
+import "std/io.zc"
 import "std/crypto/sha1.zc"
 import "std/encoding/hex.zc"
 
 fn main() {
     let digest = Sha1::hash("Rosetta Code", 12);
-    println f"{Hex::encode(digest.bytes, 20)}";
+    println(f"{Hex::encode(digest.bytes, 20)}");
 }

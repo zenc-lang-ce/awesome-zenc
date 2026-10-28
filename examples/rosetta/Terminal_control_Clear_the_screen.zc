@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
-    println "\e[2J";
+    println("\e[2J");
 }

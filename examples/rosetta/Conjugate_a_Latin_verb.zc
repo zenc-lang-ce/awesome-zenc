@@ -1,27 +1,28 @@
+import "std/io.zc"
 fn conjugate(inf: string, eng: string, stem: string, 
              e1: string, e2: string, e3: string, e4: string, e5: string, e6: string) {
              
-    println f"Present indicative tense, active voice, of '{inf}' to '{eng}':";
+    println(f"Present indicative tense, active voice, of '{inf}' to '{eng}':");
     
     let endings: string[6] = [e1, e2, e3, e4, e5, e6];
     let pronouns: string[6] = ["I", "you (singular)", "he, she or it", "we", "you (plural)", "they"];
     
     for let i = 0; i < 6; i += 1 {
-        print f"    {stem}{endings[i]}";
+        print(f"    {stem}{endings[i]}");
         
         // Calculate padding for alignment.
         let word_len = strlen(stem) + strlen(endings[i]);
         for let p = word_len; p < 12; p += 1 {
-            print " ";
+            print(" ");
         }
         
         if i == 2 {
-            println f"{pronouns[i]} {eng}s";
+            println(f"{pronouns[i]} {eng}s");
         } else {
-            println f"{pronouns[i]} {eng}";
+            println(f"{pronouns[i]} {eng}");
         }
     }
-    println "";
+    println("");
 }
 
 fn main() {

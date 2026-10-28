@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/set.zc"
 
@@ -20,17 +21,17 @@ fn main() {
             if next >= 0 && next <= 1000 { used1000.add(next); }
         }
         if n == 14 {
-            println "The first 15 terms of the Recaman's sequence are:";
-            print "[";
-            for v in a { print f"{v}, "; }
-            println "\b\b]";
+            println("The first 15 terms of the Recaman's sequence are:");
+            print("[");
+            for v in a { print(f"{v}, "); }
+            println("\b\b]");
         }
         if !found_dup && already_used {
-            println f"\nThe first duplicated term is a[{n}] = {next}.";
+            println(f"\nThe first duplicated term is a[{n}] = {next}.");
             found_dup = true;
         }
         if used1000.length() == 1001 {
-            println f"\nTerms up to a[{n}] are needed to generate 0 to 1000.";
+            println(f"\nTerms up to a[{n}] are needed to generate 0 to 1000.");
         }
         n++;
     }

@@ -1,13 +1,14 @@
+import "std/io.zc"
 struct Camera {}
 
 impl Camera {
-    fn snap(self) { println "Taking a photo."; }
+    fn snap(self) { println("Taking a photo."); }
 }
 
 struct Phone {}
 
 impl Phone {
-    fn call(self) { println "Calling home."; }
+    fn call(self) { println("Calling home."); }
 }
 
 struct CameraPhone {

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main(argc: int, argv: char**) {
-    println f"My name is: {argv[0]}";
+    println(f"My name is: {argv[0]}");
 }

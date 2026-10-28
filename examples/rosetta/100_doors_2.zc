@@ -1,10 +1,11 @@
+import "std/io.zc"
 fn main() {
     let door = 1;
     let inc = 3;
     while door <= 100 {
-        print f"{door} ";
+        print(f"{door} ");
         door += inc;
         inc += 2;
     }
-    println "";
+    println("");
 }

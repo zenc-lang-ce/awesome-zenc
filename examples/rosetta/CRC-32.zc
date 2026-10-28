@@ -1,3 +1,4 @@
+import "std/io.zc"
 let crc_table: [u32; 256];
 
 fn crc32_init() {
@@ -24,5 +25,5 @@ fn crc32(data: string) -> u32 {
 
 fn main() {
     let crc = crc32("The quick brown fox jumps over the lazy dog");
-    println f"{crc:x}";
+    println(f"{crc:x}");
 }

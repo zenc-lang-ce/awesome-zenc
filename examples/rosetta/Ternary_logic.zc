@@ -1,3 +1,4 @@
+import "std/io.zc"
 struct Trit {
     val: int; // 0: False, 1: Unknown, 2: True
 }
@@ -46,18 +47,18 @@ impl Trit {
 fn main() {
     let vals: Trit[3] = [FALSE, UNKNOWN, TRUE];
 
-    println "Truth Table (Kleene Logic):";
-    println "A B | !A | A&B | A|B | A^B";
-    println "----+----+-----+-----+----";
+    println("Truth Table (Kleene Logic):");
+    println("A B | !A | A&B | A|B | A^B");
+    println("----+----+-----+-----+----");
     for i in 0..3 {
         for j in 0..3 {
             let a = vals[i];
             let b = vals[j];
-            println f"{a.to_string()} {b.to_string()} | {(!a).to_string()}  | { (a&b).to_string() }   | { (a|b).to_string() }   | { (a^b).to_string() }";
+            println(f"{a.to_string()} {b.to_string()} | {(!a).to_string()}  | { (a&b).to_string() }   | { (a|b).to_string() }   | { (a^b).to_string() }");
         }
     }
 
-    println "\nPractical Case: SQL-style Null/Unknown Filtering";
+    println("\nPractical Case: SQL-style Null/Unknown Filtering");
     
     // Evaluation without branching
     let r1 = (TRUE & TRUE) | FALSE;      // Authorized
@@ -69,9 +70,9 @@ fn main() {
 
     for i in 0..4 {
         let r = results[i];
-        print f"Result {i+1}: {r.to_string()} -> ";
-        if r.val == 2 println "Authorized";
-        else if r.val == 1 println "Manual Review Required";
-        else println "Denied";
+        print(f"Result {i+1}: {r.to_string()} -> ");
+        if r.val == 2 println("Authorized");
+        else if r.val == 1 println("Manual Review Required");
+        else println("Denied");
     }
 }

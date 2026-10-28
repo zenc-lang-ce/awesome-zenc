@@ -2,6 +2,7 @@
 // GPU Benchmark - Zen-C CUDA
 // ========================================
 
+import "std/io.zc"
 import "std/cuda.zc"
 import "std/mem.zc"
 
@@ -151,7 +152,7 @@ fn mandelbrot_kernel(output: int*, width: int, height: int, max_iter: int) {
 fn print_gpu_info() {
 
     let device_count = cuda_device_count();
-    f"Found {device_count} CUDA device(s)\n";
+    println(f"Found {device_count} CUDA device(s)\n");
 }
 
 // ========================================
@@ -159,12 +160,12 @@ fn print_gpu_info() {
 // ========================================
 
 fn benchmark_matrix_multiply(N: int) {
-    f"Benchmark 1: Matrix Multiplication ({N}x{N}) ";
+    println(f"Benchmark 1: Matrix Multiplication ({N}x{N}) ");
 
     let size = N * N;
 
     // Allocate host memory
-    "-> Allocating host memory...";
+    println("-> Allocating host memory...");
     let h_A = alloc_n<float>(size);
     let h_B = alloc_n<float>(size);
     let h_C = alloc_n<float>(size);
@@ -173,14 +174,14 @@ fn benchmark_matrix_multiply(N: int) {
     defer free(h_C);
 
     // Initialize matrices
-    f"-> Initializing {N}x{N} matrices...";
+    println(f"-> Initializing {N}x{N} matrices...");
     for i in 0..size {
         h_A[i] = (float)(i % 100) / 100.0f;
         h_B[i] = (float)((i + 50) % 100) / 100.0f;
     }
 
     // Allocate device memory
-    "-> Allocating device memory...";
+    println("-> Allocating device memory...");
     let d_A = cuda_alloc<float>(size);
     let d_B = cuda_alloc<float>(size);
     let d_C = cuda_alloc<float>(size);
@@ -189,7 +190,7 @@ fn benchmark_matrix_multiply(N: int) {
     defer cuda_free(d_C);
 
     // Copy to device
-    "-> Copying data to GPU...";
+    println("-> Copying data to GPU...");
     cuda_copy_to_device(d_A, h_A, size * sizeof(float));
     cuda_copy_to_device(d_B, h_B, size * sizeof(float));
 
@@ -197,8 +198,8 @@ fn benchmark_matrix_multiply(N: int) {
     def BLOCK_SIZE = 16;
     let blocks_per_grid = (N + BLOCK_SIZE - 1) / BLOCK_SIZE;
 
-    f"-> Launching kernel: {blocks_per_grid}x{blocks_per_grid} blocks, {BLOCK_SIZE}x{BLOCK_SIZE} threads each";
-    " GPU IS NOW WORKING HARD - Check nvtop!\n";
+    println(f"-> Launching kernel: {blocks_per_grid}x{blocks_per_grid} blocks, {BLOCK_SIZE}x{BLOCK_SIZE} threads each");
+    println(" GPU IS NOW WORKING HARD - Check nvtop!\n");
 
     let start = clock();
 
@@ -209,18 +210,18 @@ fn benchmark_matrix_multiply(N: int) {
             block: BLOCK_SIZE
         };
         cuda_sync();
-        f"  Iteration {iter + 1}/10 complete";
+        println(f"  Iteration {iter + 1}/10 complete");
     }
 
     let elapsed = (clock() - start) / CLOCKS_PER_SEC;
-    f" Completed in {elapsed} seconds\n";
+    println(f" Completed in {elapsed} seconds\n");
 
     // Copy result back
     cuda_copy_to_host(h_C, d_C, size * sizeof(float));
 
-    "-> Sample results:";
-    f"  C[0,0] = {h_C[0]}";
-    f"  C[N-1,N-1] = {h_C[size - 1]}";
+    println("-> Sample results:");
+    println(f"  C[0,0] = {h_C[0]}");
+    println(f"  C[N-1,N-1] = {h_C[size - 1]}");
 }
 
 // ========================================
@@ -228,9 +229,9 @@ fn benchmark_matrix_multiply(N: int) {
 // ========================================
 
 fn benchmark_monte_carlo_pi(num_samples: u64) {
-    "Benchmark 2: Monte Carlo Pi Estimation ";
+    println("Benchmark 2: Monte Carlo Pi Estimation ");
 
-    f"-> Estimating Pi with {num_samples} samples";
+    println(f"-> Estimating Pi with {num_samples} samples");
 
     def BLOCK_SIZE = 256;
     def NUM_BLOCKS = 1024;
@@ -243,8 +244,8 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
     let d_results = cuda_alloc<float>(total_threads);
     defer cuda_free(d_results);
 
-    f"-> Launching kernel: {NUM_BLOCKS} blocks x {BLOCK_SIZE} threads";
-    " GPU IS NOW WORKING HARD - Check nvtop!\n";
+    println(f"-> Launching kernel: {NUM_BLOCKS} blocks x {BLOCK_SIZE} threads");
+    println(" GPU IS NOW WORKING HARD - Check nvtop!\n");
 
     let start = clock();
 
@@ -259,12 +260,12 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
         cuda_sync();
 
         if iter % 10 == 0 {
-            f"  Iteration {iter}/100 complete";
+            println(f"  Iteration {iter}/100 complete");
         }
     }
 
     let elapsed = (clock() - start) / CLOCKS_PER_SEC;
-    f"\n Completed in {elapsed} seconds\n";
+    println(f"\n Completed in {elapsed} seconds\n");
 
     // Copy results and calculate Pi
     cuda_copy_to_host(h_results, d_results, total_threads * sizeof(float));
@@ -277,10 +278,10 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
     let pi_estimate = 4.0 * (double)total_inside / (double)num_samples;
     let error = fabs(pi_estimate - 3.14159265359);
 
-    "-> Results:";
-    f"  Estimated Pi: {pi_estimate}";
-    "  Actual Pi:    3.14159265359";
-    f"  Error:        {error}";
+    println("-> Results:");
+    println(f"  Estimated Pi: {pi_estimate}");
+    println("  Actual Pi:    3.14159265359");
+    println(f"  Error:        {error}");
 }
 
 // ========================================
@@ -289,9 +290,9 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
 
 fn benchmark_nbody(num_bodies: int, num_steps: int) {
 
-    "Benchmark 3: N-Body Simulation ";
+    println("Benchmark 3: N-Body Simulation ");
 
-    f"-> Simulating {num_bodies} bodies for {num_steps} steps";
+    println(f"-> Simulating {num_bodies} bodies for {num_steps} steps");
 
     // Allocate host memory
     let h_x = alloc_n<float>(num_bodies);
@@ -308,7 +309,7 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
     defer free(h_vz);
 
     // Initialize random positions
-    "-> Initializing random positions...";
+    println("-> Initializing random positions...");
     srand(time(NULL));
     for i in 0..num_bodies {
         h_x[i] = ((float)rand() / (float)RAND_MAX) * 2.0f - 1.0f;
@@ -320,7 +321,7 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
     }
 
     // Allocate device memory
-    "-> Allocating device memory...";
+    println("-> Allocating device memory...");
     let d_x = cuda_alloc<float>(num_bodies);
     let d_y = cuda_alloc<float>(num_bodies);
     let d_z = cuda_alloc<float>(num_bodies);
@@ -346,8 +347,8 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
     let num_blocks = (num_bodies + BLOCK_SIZE - 1) / BLOCK_SIZE;
     let dt = 0.01f;
 
-    f"-> Launching simulation: {num_blocks} blocks x {BLOCK_SIZE} threads";
-    " GPU IS NOW WORKING HARD - Check nvtop!\n";
+    println(f"-> Launching simulation: {num_blocks} blocks x {BLOCK_SIZE} threads");
+    println(" GPU IS NOW WORKING HARD - Check nvtop!\n");
 
     let start = clock();
 
@@ -359,45 +360,45 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
         cuda_sync();
 
         if step % 100 == 0 {
-            f"  Step {step}/{num_steps} complete";
+            println(f"  Step {step}/{num_steps} complete");
         }
     }
 
     let elapsed = (clock() - start) / CLOCKS_PER_SEC;
-    f"\n Completed in {elapsed} seconds\n";
+    println(f"\n Completed in {elapsed} seconds\n");
 
     // Copy results back
     cuda_copy_to_host(h_x, d_x, num_bodies * sizeof(float));
     cuda_copy_to_host(h_y, d_y, num_bodies * sizeof(float));
     cuda_copy_to_host(h_z, d_z, num_bodies * sizeof(float));
 
-    "-> Sample final positions:";
-    f"  Body 0: ({h_x[0]}, {h_y[0]}, {h_z[0]})";
-    f"  Body {num_bodies-1}: ({h_x[num_bodies-1]}, {h_y[num_bodies-1]}, {h_z[num_bodies-1]})";
+    println("-> Sample final positions:");
+    println(f"  Body 0: ({h_x[0]}, {h_y[0]}, {h_z[0]})");
+    println(f"  Body {num_bodies-1}: ({h_x[num_bodies-1]}, {h_y[num_bodies-1]}, {h_z[num_bodies-1]})");
 }
 
 
 fn main() {
-    "Zen-C GPU Benchmark Suite ";
+    println("Zen-C GPU Benchmark Suite ");
 
     print_gpu_info();
 
-    "\n RUN THIS NOW: Open another terminal and run: nvtop";
-    "\nPress Enter to start benchmarks...";
+    println("\n RUN THIS NOW: Open another terminal and run: nvtop");
+    println("\nPress Enter to start benchmarks...");
     getchar();
 
     // Run all benchmarks
     benchmark_matrix_multiply(2048);
 
-    "\n  Pause (5 seconds)...";
+    println("\n  Pause (5 seconds)...");
     sleep(5);
 
     benchmark_monte_carlo_pi(10000000000);
 
-    "\n Pause (5 seconds)...";
+    println("\n Pause (5 seconds)...");
     sleep(5);
 
     benchmark_nbody(4096, 1000);
 
-    "Zen-C GPU Benchmark Suite - All tests completed.";
+    println("Zen-C GPU Benchmark Suite - All tests completed.");
 }

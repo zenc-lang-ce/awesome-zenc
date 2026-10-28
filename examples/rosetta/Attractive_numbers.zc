@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn is_prime(n: int) -> bool {
@@ -52,13 +53,13 @@ fn is_attractive(n: int) -> bool {
 
 fn main() {
     let lim: const int = 120;
-    println f"The attractive numbers up to and including {lim} are:";
+    println(f"The attractive numbers up to and including {lim} are:");
     let count = 0;
     for i in 1..=lim {
         if is_attractive(i) {
-            print f"{i:4d}";
-            if !(++count % 20) { println ""; }
+            print(f"{i:4d}");
+            if !(++count % 20) { println(""); }
         }
     }
-    println f"\n\n{count} such numbers found.";
+    println(f"\n\n{count} such numbers found.");
 }

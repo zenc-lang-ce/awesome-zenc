@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
     // In Zen C, I/O is not handled like in C. While 'printf' or 'puts'
     // among others are still available, Zen C also has special keywords,
@@ -7,5 +8,5 @@ fn main() {
     // -> "...".. is the same as print "..."
     // -> !"..." is the same as eprintln "..."
     // -> !"...".. is the same as eprint "..."
-    "Hello, World!"
+    println("Hello, World!")
 }

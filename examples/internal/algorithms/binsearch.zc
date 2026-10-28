@@ -20,12 +20,12 @@ fn binary_search(arr: int*, size: isize, target: int) -> isize {
 }
 
 fn print_array(arr: int*, size: isize) {
-    "["..;
+    print("[");
     for i in 0..size {
-        f"{arr[i]}"..;
-        if i < size - 1 { ", "..; }
+        print(f"{arr[i]}");
+        if i < size - 1 { print(", "); }
     }
-    "]";
+    println("]");
 }
 
 fn main() {
@@ -37,11 +37,11 @@ fn main() {
         v.push(values[i]);
     }
     
-    "Array: "..;
+    print("Array: ");
     print_array(v.data, (int)v.len);
     
     let target = 7;
     let result = binary_search(v.data, (isize)v.len, target);
     
-    f"Found {target} at index {result}";
+    println(f"Found {target} at index {result}");
 }

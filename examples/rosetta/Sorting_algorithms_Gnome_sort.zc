@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn gnome_sort(a: int*, size: const usize, asc: bool) {
     let i = 1;
     let j = 2;
@@ -25,15 +26,15 @@ fn main() {
     let ba: bool[2] = [true, false];
     for asc in ba {
         let dir = asc ? "ascending" : "descending";
-        println f"Sorting in {dir} order:\n";
+        println(f"Sorting in {dir} order:\n");
         for i in 0..aa.len {
-            print "  Before: [";
-            for j in 0..lens[i] { print f"{aa[i][j]}, "; }
-            println "\b\b]";
+            print("  Before: [");
+            for j in 0..lens[i] { print(f"{aa[i][j]}, "); }
+            println("\b\b]");
             gnome_sort(aa[i], lens[i], asc);
-            print "  After : [";
-            for j in 0..lens[i] { print f"{aa[i][j]}, "; }
-            println "\b\b]\n";
+            print("  After : [");
+            for j in 0..lens[i] { print(f"{aa[i][j]}, "); }
+            println("\b\b]\n");
         }
     }
 }

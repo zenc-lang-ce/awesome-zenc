@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn lpd(n: int) -> int {
     if n == 1 { return 1; }
     let lim = (n % 2) ? n / 3: n / 2;
@@ -8,9 +9,9 @@ fn lpd(n: int) -> int {
 }
 
 fn main() {
-    println "Largest proper divisor of n where 1 <= n <= 100:";
+    println("Largest proper divisor of n where 1 <= n <= 100:");
     for n in 1..101 {
-        print f"{lpd(n):2d}  ";
-        if !(n % 10) { println ""; }
+        print(f"{lpd(n):2d}  ");
+        if !(n % 10) { println(""); }
     }
 }

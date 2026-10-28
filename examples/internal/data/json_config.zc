@@ -1,4 +1,5 @@
 
+import "std/io.zc"
 import "std/fs.zc"
 import "std/json.zc"
 import "std/map.zc"
@@ -44,14 +45,14 @@ fn main() {
     
     let content_res = File::read_all(path);
     if content_res.is_err() {
-        !f"Failed to read config file: {content_res.err}";
+        eprintln(f"Failed to read config file: {content_res.err}");
         return 1;
     }
 
     let json_str = content_res.unwrap();
     let parse_res = JsonValue::parse(json_str.c_str());
     if parse_res.is_err() {
-        !"JSON Parse Error";
+        eprintln("JSON Parse Error");
         json_str.free();
         return 1;
     }
@@ -61,7 +62,7 @@ fn main() {
     // ============================================
     // Demo 1: Using accessor methods
     // ============================================
-    "=== Accessor methods ===";
+    println("=== Accessor methods ===");
 
     let server_opt = (*root).get_string("server_name");
     let server = server_opt.unwrap_or("default");
@@ -83,18 +84,18 @@ fn main() {
         metrics = metrics_opt.unwrap_or(false);
     }
 
-    f"Server:          {server}";
-    f"Port:            {port}";
-    f"Max Connections: {max_conn}";
-    f"Logging:         {logging}";
-    f"Metrics:         {metrics}";
+    println(f"Server:          {server}");
+    println(f"Port:            {port}");
+    println(f"Max Connections: {max_conn}");
+    println(f"Logging:         {logging}");
+    println(f"Metrics:         {metrics}");
 
     // Reading array: allowed_hosts
     let hosts_opt = (*root).get_array("allowed_hosts");
     if hosts_opt.is_some() {
         let hosts = hosts_opt.unwrap();
         let count = hosts.len();
-        f"Allowed Hosts:   ({count} entries)";
+        println(f"Allowed Hosts:   ({count} entries)");
         for i in 0..count {
             let host_opt = hosts.at(i);
             if host_opt.is_some() {
@@ -102,7 +103,7 @@ fn main() {
                 let host_str = (*host_val).as_string();
                 if host_str.is_some() {
                     let h = host_str.unwrap();
-                    f"  - {h}";
+                    println(f"  - {h}");
                 }
             }
         }
@@ -111,24 +112,24 @@ fn main() {
     // ============================================
     // Demo 2: from_json / to_json
     // ============================================
-    "";
-    "=== @derive(FromJson, ToJson) ===";
+    println("");
+    println("=== @derive(FromJson, ToJson) ===");
 
     let config_res = Config::from_json(root);
     let config = config_res.unwrap();
 
     let s_name = config.server_name.c_str();
-    "Config from JSON:";
-    f"  server_name:     {s_name}";
-    f"  port:            {config.port}";
-    f"  max_connections: {config.max_connections}";
-    f"  features.logging: {config.features.logging}";
-    f"  features.metrics: {config.features.metrics}";
+    println("Config from JSON:");
+    println(f"  server_name:     {s_name}");
+    println(f"  port:            {config.port}");
+    println(f"  max_connections: {config.max_connections}");
+    println(f"  features.logging: {config.features.logging}");
+    println(f"  features.metrics: {config.features.metrics}");
     let hosts_count = config.allowed_hosts.length();
-    f"  allowed_hosts:   ({hosts_count} entries)";
+    println(f"  allowed_hosts:   ({hosts_count} entries)");
     for i in 0..hosts_count {
         let host = config.allowed_hosts.get(i).c_str();
-        f"    - {host}";
+        println(f"    - {host}");
     }
 
     // Serialize back to JSON
@@ -158,13 +159,13 @@ fn main() {
         out_hosts_count = out_hosts_opt.unwrap().len();
     }
 
-    "";
-    "Round-trip to_json:";
-    f"  server_name: {out_name}";
-    f"  port:        {out_port}";
-    f"  features.logging: {out_logging}";
-    f"  features.metrics: {out_metrics}";
-    f"  allowed_hosts: {out_hosts_count} entries";
+    println("");
+    println("Round-trip to_json:");
+    println(f"  server_name: {out_name}");
+    println(f"  port:        {out_port}");
+    println(f"  features.logging: {out_logging}");
+    println(f"  features.metrics: {out_metrics}");
+    println(f"  allowed_hosts: {out_hosts_count} entries");
 
     // Cleanup - RAII handles config, json_out, and json_str automatically
     JsonValue::free(root);

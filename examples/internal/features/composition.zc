@@ -1,4 +1,5 @@
 
+import "std/io.zc"
 struct Vector2 {
     x: float;
     y: float;
@@ -22,7 +23,7 @@ struct Rigidbody {
 fn main() {
     // Mixin usage - flattened fields
     let t = Transform{ x: 10.0, y: 5.0, rotation: 90.0 };
-    println f"Transform pos: ({t.x}, {t.y})";
+    println(f"Transform pos: ({t.x}, {t.y})");
 
     // Named usage - nested fields
     let rb = Rigidbody{
@@ -34,5 +35,5 @@ fn main() {
     // Access using dot notation
     rb.position.x += rb.velocity.x;
     
-    println f"Rigidbody pos: ({rb.position.x}, {rb.position.y})";
+    println(f"Rigidbody pos: ({rb.position.x}, {rb.position.y})");
 }

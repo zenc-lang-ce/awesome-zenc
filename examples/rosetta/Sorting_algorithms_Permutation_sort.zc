@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_sorted(a: int*, len: usize) -> bool {
     for i in 1..len {
         if a[i] < a[i - 1] { return false; }
@@ -21,15 +22,15 @@ fn recurse(a: int*, len: const usize, last: int) -> bool {
 
 fn main() {
     let a = [170, 45, 75, -90, -802, 24, 2, 66];
-    print "Unsorted: [";
-    for e in a { print f"{e}, "; }
-    println "\b\b]";
+    print("Unsorted: [");
+    for e in a { print(f"{e}, "); }
+    println("\b\b]");
     let count = a.len;
     if count > 1 && !recurse(a, count, count - 1) {
-        eprintln "Sorted permutation not found!";
+        eprintln("Sorted permutation not found!");
     } else {
-        print "Sorted  : [";
-        for e in a { print f"{e}, "; }
-        println "\b\b]";
+        print("Sorted  : [");
+        for e in a { print(f"{e}, "); }
+        println("\b\b]");
     }
 }

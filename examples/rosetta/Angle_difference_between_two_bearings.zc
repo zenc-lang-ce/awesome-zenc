@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn subtract(b1: f64, b2: f64) -> f64 {
@@ -26,10 +27,10 @@ fn main() {
         (60175.77306795546, 42213.07192354373)
     ];
 
-    println "Differences (to 4dp) between these bearings:";
+    println("Differences (to 4dp) between these bearings:");
     for i in 0..pairs.len {
         let (p0, p1) = pairs[i];
         let diff = subtract(p0, p1);
-        println f"{p0:12.4f}° and {p1:12.4f}° -> {diff:9.4f}°";
+        println(f"{p0:12.4f}° and {p1:12.4f}° -> {diff:9.4f}°");
     }
 }

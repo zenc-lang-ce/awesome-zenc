@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/string.zc"
 import "locale.h"
@@ -39,18 +40,18 @@ fn list_esths(n: u64, n2: u64, m: u64, m2: u64, per_line: int, all: bool) {
     esths.clear();
     for let i: u64 = 0; i < 10; ++i { dfs(n2, m2, i); }
     let le = esths.length();
-    println f"Base 10: {le:'lu} esthetic numbers between {n:'lu} and {m:'lu:}";
+    println(f"Base 10: {le:'lu} esthetic numbers between {n:'lu} and {m:'lu:}");
     if all {
         for c, esth in esths {
-            print f"{esth} ";
-            if (c + 1) % per_line == 0 { println ""; }
+            print(f"{esth} ");
+            if (c + 1) % per_line == 0 { println(""); }
         }
     } else {
-        for i in 0..per_line { print f"{esths[i]:lu} "; }
-        println "\n............\n";
-        for i in (le - per_line)..le { print f"{esths[i]:lu} "; }
+        for i in 0..per_line { print(f"{esths[i]:lu} "); }
+        println("\n............\n");
+        for i in (le - per_line)..le { print(f"{esths[i]:lu} "); }
     }
-    println "\n";
+    println("\n");
 }
 
 def DIGITS = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -71,15 +72,15 @@ fn main() {
     esths = Vec<u64>::new();
     setlocale(LC_NUMERIC, "");
     for let b: u64 = 2; b <= 16; ++b {
-        println f"Base {b}: {4 * b}th to {6 * b}th esthetic numbers:";
+        println(f"Base {b}: {4 * b}th to {6 * b}th esthetic numbers:");
         let c: u64 = 0;
         for let n: u64 = 1; c < 6 * b; ++n {
             if is_esthetic(n, b) {
                 c++;
-                if c >= 4 * b { print f"{itoa(n, b)} "; }
+                if c >= 4 * b { print(f"{itoa(n, b)} "); }
             }
         }
-        println "\n";
+        println("\n");
     }
     list_esths(1000, 1010, 9999, 9898, 16, true);
     list_esths((u64)1e8, 101_010_101, 13 * (u64)1e7, 123_456_789, 9, true);

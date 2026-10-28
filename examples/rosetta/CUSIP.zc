@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_cusip(s: string) -> bool {
     if strlen(s) != 9 { return false; }
     let sum = 0;
@@ -29,6 +30,6 @@ fn main() {
     ];
     for candidate in candidates {
         let b = is_cusip(candidate) ? "correct" : "incorrect";
-        println f"{candidate} -> {b}";
+        println(f"{candidate} -> {b}");
     }
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/core.zc"
 import "sys/mman.h" as mman;
 
@@ -19,7 +20,7 @@ impl Allocator {
         
         let map_failed = (void*)(-1);
         if pool == (u8*)map_failed {
-            eprintln "Fatal: Failed to allocate underlying memory pool with mmap.";
+            eprintln("Fatal: Failed to allocate underlying memory pool with mmap.");
             exit(1);
         }
 
@@ -81,15 +82,15 @@ impl Allocator {
     }
 
     fn print_state(self) {
-        println "--- Memory State ---";
+        println("--- Memory State ---");
         let curr = self.free_list;
         let i = 0;
         while curr != NULL {
-            println f"Block {i}: size={curr.size}, free={(int)curr.is_free}";
+            println(f"Block {i}: size={curr.size}, free={(int)curr.is_free}");
             curr = curr.next;
             i += 1;
         }
-        println "--------------------\n";
+        println("--------------------\n");
     }
 }
 
@@ -103,28 +104,28 @@ impl Drop for Allocator {
 
 fn main() {
     def POOL_SIZE = 1024 * 1024;
-    println f"Memory Pool Size: {POOL_SIZE} bytes";
-    println f"BlockHeader Overhead: {sizeof(BlockHeader)} bytes\n";
+    println(f"Memory Pool Size: {POOL_SIZE} bytes");
+    println(f"BlockHeader Overhead: {sizeof(BlockHeader)} bytes\n");
     
     let allocator = Allocator::new(POOL_SIZE);
     
     let ptr1 = (int*)allocator.alloc(sizeof(int) * 10);
-    println f"Allocated ptr1 (10 ints = {sizeof(int) * 10} bytes)";
+    println(f"Allocated ptr1 (10 ints = {sizeof(int) * 10} bytes)");
     allocator.print_state();
 
     let ptr2 = (int*)allocator.alloc(sizeof(int) * 50);
-    println f"Allocated ptr2 (50 ints = {sizeof(int) * 50} bytes)";
+    println(f"Allocated ptr2 (50 ints = {sizeof(int) * 50} bytes)");
     allocator.print_state();
     
-    println "Freeing ptr1...";
+    println("Freeing ptr1...");
     allocator.free((void*)ptr1);
     allocator.print_state();
 
     let ptr3 = (int*)allocator.alloc(sizeof(int) * 5);
-    println f"Allocated ptr3 (5 ints = {sizeof(int) * 5} bytes). Should split and fit in ptr1's old freed spot!";
+    println(f"Allocated ptr3 (5 ints = {sizeof(int) * 5} bytes). Should split and fit in ptr1's old freed spot!");
     allocator.print_state();
     
-    println "Freeing all remaining pointers to trigger coalescing...";
+    println("Freeing all remaining pointers to trigger coalescing...");
     allocator.free((void*)ptr2);
     allocator.free((void*)ptr3);
     allocator.print_state();

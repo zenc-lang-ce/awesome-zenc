@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn sieve_of_eratosthenes(n: int) -> Vec<int> {
@@ -26,8 +27,8 @@ fn sieve_of_eratosthenes(n: int) -> Vec<int> {
 }
 
 fn main() {
-    println "Primes less than 100:";
+    println("Primes less than 100:");
     let primes = sieve_of_eratosthenes(100);
-    for p in primes { print f"{p} "; }
-    println "";
+    for p in primes { print(f"{p} "); }
+    println("");
 }

@@ -6,7 +6,7 @@ import "std/string.zc"
 def TAPE_SIZE = 30000;
 
 fn print_usage() {
-    "Usage: bf2zc <input.bf> [output.zc]";
+    println("Usage: bf2zc <input.bf> [output.zc]");
 }
 
 fn transpile(input: char*) -> String {
@@ -106,7 +106,7 @@ fn main(argc: int, argv: char**) {
 
     let content_res = File::read_all(input_path);
     if !content_res.is_ok() {
-        !f"Error: Could not read file {input_path}";
+        eprintln(f"Error: Could not read file {input_path}");
         return 1;
     }
     
@@ -118,7 +118,7 @@ fn main(argc: int, argv: char**) {
     
     let out_file_res = File::open(output_path, "w");
     if !out_file_res.is_ok() {
-        !f"Error: Could not open output file {output_path}";
+        eprintln(f"Error: Could not open output file {output_path}");
         return 1;
     }
 
@@ -126,6 +126,6 @@ fn main(argc: int, argv: char**) {
     out_file.write_string(transpiled.c_str());
     out_file.close();
 
-    f"Successfully transpiled {input_path} to {output_path}";
+    println(f"Successfully transpiled {input_path} to {output_path}");
     return 0;
 }

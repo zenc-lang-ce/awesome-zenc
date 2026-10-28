@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/math.zc"
 
@@ -21,8 +22,8 @@ fn is_square<T>(n: T) -> bool {
 }
 
 fn main() {
-    println "The first 7 sub-unit squares are:";
-    println "1";
+    println("The first 7 sub-unit squares are:");
+    println("1");
     let count = 1;
     for let i: u64 = 2; count < 7; i++ {
         let sq = i * i;
@@ -31,7 +32,7 @@ fn main() {
             let sum: u64 = digs[0] - 1;
             for j in 1..digs.length() { sum = sum * 10 + digs[j] - 1; }
             if is_square(sum) {
-                println f"{sq}";
+                println(f"{sq}");
                 count++;
             }
         }

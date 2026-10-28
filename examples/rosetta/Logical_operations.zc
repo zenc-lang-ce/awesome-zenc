@@ -1,18 +1,19 @@
+import "std/io.zc"
 fn logical_ops(a: bool, b: bool) {
-    println f"Inputs -> a: {a}, b: {b}";
-    println f"  a AND b: {a && b}";
-    println f"  a OR b:  {a || b}";
-    println f"  NOT a:   {!a}";
-    println f"  a XOR b: {a ^ b}";
+    println(f"Inputs -> a: {a}, b: {b}");
+    println(f"  a AND b: {a && b}");
+    println(f"  a OR b:  {a || b}");
+    println(f"  NOT a:   {!a}");
+    println(f"  a XOR b: {a ^ b}");
 }
 
 fn main() {
-    println "(true, false)";
+    println("(true, false)");
     logical_ops(true, false);
     
-    println "\n(true, true)";
+    println("\n(true, true)");
     logical_ops(true, true);
     
-    println "\n(false, false)";
+    println("\n(false, false)");
     logical_ops(false, false);
 }

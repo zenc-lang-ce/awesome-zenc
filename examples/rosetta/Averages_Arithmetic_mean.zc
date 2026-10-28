@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn mean(v: Vec<f64>*) -> f64 {
@@ -21,10 +22,10 @@ fn main() {
     numbers.push(40.0);
     
     let m = mean(&numbers);
-    println "Numbers: 10, 20, 30, 40";
-    println f"Mean: {m}";
+    println("Numbers: 10, 20, 30, 40");
+    println(f"Mean: {m}");
 
     let empty = Vec<f64>::new();
     let m_empty = mean(&empty);
-    println f"Empty mean: {m_empty}";
+    println(f"Empty mean: {m_empty}");
 }

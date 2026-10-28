@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc";
 
 fn main() {
@@ -5,5 +6,5 @@ fn main() {
     vec << 1;
     vec << 2;
     vec << 3;
-    for v in vec { println f"{v}"; }
+    for v in vec { println(f"{v}"); }
 }

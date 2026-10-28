@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn mult(n: u64, base: int) -> u64 {
@@ -45,9 +46,9 @@ fn main() {
     }
     printf("\n%3s: %s\n", "MDR", "First");
     for i in 0..BASE {
-        print f"{i:3d}: [";
-        for v in list[i] { print f"{v}, "; }
-        println "\b\b]";
+        print(f"{i:3d}: [");
+        for v in list[i] { print(f"{v}, "); }
+        println("\b\b]");
     }
     for i in 0..BASE { list[i].free(); }
 }

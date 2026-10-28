@@ -30,12 +30,12 @@ fn quicksort(arr: int*, low: isize, high: isize) {
 }
 
 fn print_array(arr: int*, size: isize) {
-    "["..;
+    print("[");
     for i in 0..size {
-        f"{arr[i]}"..;
-        if i < size - 1 { ", "..; }
+        print(f"{arr[i]}");
+        if i < size - 1 { print(", "); }
     }
-    "]";
+    println("]");
 }
 
 fn main() {
@@ -47,11 +47,11 @@ fn main() {
         v.push(values[i]);
     }
     
-    "Original: "..;
+    print("Original: ");
     print_array(v.data, (int)v.len);
     
     quicksort(v.data, 0, (isize)v.len - 1);
     
-    "Sorted:   "..;
+    print("Sorted:   ");
     print_array(v.data, (int)v.len);
 }

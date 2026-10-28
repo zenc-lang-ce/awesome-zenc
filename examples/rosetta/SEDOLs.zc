@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "ctype.h"
 
 fn is_upper_vowel(c: char) -> bool {
@@ -37,9 +38,9 @@ fn main() {
     for t in tests {
         let cd = sedol_checkdigit(t);
         if cd >= 0 {
-            println f"{t} -> {t}{cd}";
+            println(f"{t} -> {t}{cd}");
         } else {
-            println f"{t} -> not valid";
+            println(f"{t} -> not valid");
         }
     }
 }

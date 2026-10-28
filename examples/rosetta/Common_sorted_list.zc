@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/sort.zc"
 
@@ -21,7 +22,7 @@ fn main() {
     let du1 = distinct_union(&v1, &v2);
     let du2 = distinct_union(&du1, &v3);
     sort_int(du2.data, du2.len);
-    print "[";
-    for e in du2 { print f"{e}, "; }
-    println "\b\b]";
+    print("[");
+    for e in du2 { print(f"{e}, "); }
+    println("\b\b]");
 }

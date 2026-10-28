@@ -1,1 +1,2 @@
-fn main(){"Code Golf"..}
+import "std/io.zc"
+fn main(){print("Code Golf")}

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn is_perfect(n: int) -> bool {
@@ -14,12 +15,12 @@ fn is_perfect(n: int) -> bool {
 }
 
 fn main() {
-    println "The first four perfect numbers are:";
+    println("The first four perfect numbers are:");
     let count = 0;
     let i = 2;
     while count < 4 {
         if is_perfect(i) {
-            println f"{i} ";
+            println(f"{i} ");
             count++;
         }
         i += 2;  // there are no known odd perfect numbers

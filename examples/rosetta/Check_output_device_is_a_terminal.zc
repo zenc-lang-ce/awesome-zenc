@@ -1,6 +1,7 @@
+import "std/io.zc"
 import "unistd.h"
 
 fn main() {
     let res = isatty(fileno(stdout)) ? "true" : "false";
-    println f"Output device is a terminal? {res}";
+    println(f"Output device is a terminal? {res}");
 }
