@@ -15,7 +15,7 @@ fn main() {
     let addr = Memory::mmap(size, Z_PROT_READ | Z_PROT_WRITE, Z_MAP_PRIVATE | Z_MAP_ANONYMOUS);
     
     if (isize)addr == Z_MAP_FAILED {
-        eprintln "Failed to mmap memory";
+        eprintln("Failed to mmap memory");
         exit(1);
     }
 
@@ -27,7 +27,7 @@ fn main() {
 
     // Change memory protection to Read / Execute (Preventing W^X violations)
     if !Memory::mprotect(addr, size, Z_PROT_READ | Z_PROT_EXEC) {
-        eprintln "Failed to mprotect memory";
+        eprintln("Failed to mprotect memory");
         Memory::munmap(addr, size);
         exit(1);
     }
@@ -40,17 +40,17 @@ fn main() {
     let b = 12;
     let result = add_func(a, b);
 
-    println "Executing machine code (x86_64: mov eax, edi; add eax, esi; ret)";
-    println f"Arguments: {a}, {b}";
-    println f"Result: {result}";
+    println("Executing machine code (x86_64: mov eax, edi; add eax, esi; ret)");
+    println(f"Arguments: {a}, {b}");
+    println(f"Result: {result}");
 
     // Clean up
     Memory::munmap(addr, size);
     
     if result == 19 {
-        println "Success!";
+        println("Success!");
     } else {
-        eprintln f"Failure: expected 19, got {result}";
+        eprintln(f"Failure: expected 19, got {result}");
         exit(1);
     }
 }

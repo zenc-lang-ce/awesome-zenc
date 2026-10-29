@@ -2,11 +2,11 @@ import "std/thread.zc"
 import "std/io.zc"
 
 fn main() {
-    print "Enter number of milliseconds to sleep: ";
+    print("Enter number of milliseconds to sleep: ");
     let input = readln();
     defer free(input);
     let ms = atoi(input);
-    println "Sleeping...";
+    println("Sleeping...");
     sleep_ms(ms);
-    println "Awake!";
+    println("Awake!");
 }

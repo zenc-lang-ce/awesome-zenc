@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_prime(n: int) -> bool {
     if n < 2 { return false; }
     if n % 2 == 0 { return n == 2; }
@@ -34,7 +35,7 @@ fn main() {
         let numbers = [numbers1[i], numbers2[i], numbers3[i]];
         min_primes[i] = get_min_prime(numbers, 3);
     }
-    print "[";
-    for i in 0..5 { print f"{min_primes[i]}, "; }
-    println "\b\b]";
+    print("[");
+    for i in 0..5 { print(f"{min_primes[i]}, "); }
+    println("\b\b]");
 }

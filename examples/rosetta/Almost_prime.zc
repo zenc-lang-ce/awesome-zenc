@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn k_prime(n: int, k: int) -> bool {
@@ -24,9 +25,9 @@ fn gen(k: int, n: int) -> Vec<int> {
 
 fn main() {
     for i in 1..6 {
-        print f"{i} [";
+        print(f"{i} [");
         let res = gen(i, 10);
-        for j in res { print f"{j}, "; }
-        println "\b\b]";
+        for j in res { print(f"{j}, "); }
+        println("\b\b]");
     }
 }

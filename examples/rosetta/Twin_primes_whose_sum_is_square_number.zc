@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 import "locale.h"
 
@@ -48,5 +49,5 @@ fn main() {
         }
         p1 = p2;
     }
-    println f"\nFound {count} twin primes < {LIM:'d} whose sum is a square number.";
+    println(f"\nFound {count} twin primes < {LIM:'d} whose sum is a square number.");
 }

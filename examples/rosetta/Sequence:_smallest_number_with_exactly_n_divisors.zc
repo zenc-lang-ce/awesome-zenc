@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn divisor_count(n: int) -> int {
     let i = 1;
     let k = (n % 2 == 0) ? 1 : 2;
@@ -30,8 +31,8 @@ fn main() {
             if all { break; }
         } 
     }
-    println f"The first {LIMIT} terms are:";
-    print "[";
-    for i in 0..LIMIT { print f"{numbers[i]}, "; }
-    println "\b\b]";
+    println(f"The first {LIMIT} terms are:");
+    print("[");
+    for i in 0..LIMIT { print(f"{numbers[i]}, "); }
+    println("\b\b]");
 }

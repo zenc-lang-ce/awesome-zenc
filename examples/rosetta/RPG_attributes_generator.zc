@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/random.zc"
 import "std/sort.zc"
 
@@ -21,10 +22,10 @@ fn main() {
                 if v >= 15 { fifteens++; }
             }
             if fifteens >= 2 {
-                print "The six values are: ";
-                for v in vals { print f"{v}, "; }
-                println "\b\b ";
-                println f"Their total is: {total} and {fifteens} of them are >= 15.";
+                print("The six values are: ");
+                for v in vals { print(f"{v}, "); }
+                println("\b\b ");
+                println(f"Their total is: {total} and {fifteens} of them are >= 15.");
                 break;
             }
         }

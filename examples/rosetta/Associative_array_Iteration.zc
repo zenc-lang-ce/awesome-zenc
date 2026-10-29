@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/map.zc"
 
 fn main() {
@@ -10,18 +11,18 @@ fn main() {
 
     // Iterate through the map and print out the key/value pairs.
     for entry in capitals {
-        println f"{{{entry.key}: {entry.val}}}";
+        println(f"{{{entry.key}: {entry.val}}}");
     }
-    println "";
+    println("");
 
     // Iterate through the map's slots and, if they're occupied, print out the keys.
     for i in 0..capitals.capacity() {
-        if capitals.is_slot_occupied(i) { println f"{capitals.key_at(i)}"; }
+        if capitals.is_slot_occupied(i) { println(f"{capitals.key_at(i)}"); }
     }
-    println "";
+    println("");
 
     // Iterate through the map's slots and, if they're occupied, print out the values.
     for i in 0..capitals.capacity() {
-        if capitals.is_slot_occupied(i) { println f"{capitals.val_at(i)}"; }
+        if capitals.is_slot_occupied(i) { println(f"{capitals.val_at(i)}"); }
     }
 }

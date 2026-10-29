@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/arena.zc"
 
 fn main() {
@@ -8,14 +9,14 @@ fn main() {
     let arr = a.alloc_n<int>(8);
     for i in 0..8 {
         arr[i] = i + 1;
-        print f"{arr[i]} ";
+        print(f"{arr[i]} ");
     }
-    println "";
+    println("");
 
     // Duplicate a C string into the arena.
     let s = a.dup_str("Rosetta Code"); // uses 13 bytes including final '\0'
-    println f"{s}";
+    println(f"{s}");
 
-    println f"Arena has used     : {a.bytes_used()} bytes";
-    println f"Capacity remaining : {a.bytes_free()} bytes";
+    println(f"Arena has used     : {a.bytes_used()} bytes");
+    println(f"Capacity remaining : {a.bytes_free()} bytes");
 }

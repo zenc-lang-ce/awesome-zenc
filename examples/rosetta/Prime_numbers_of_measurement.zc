@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn binary_search(a: Vec<int>*, value: int, low: int, high: int) -> int {
@@ -36,10 +37,10 @@ fn main() {
             }
         }
     }
-    println "First hundred:";
+    println("First hundred:");
     for i in 0..100 {
-        print f"{a[i]:3d}  ";
-        if !((i + 1) % 10) { println ""; }
+        print(f"{a[i]:3d}  ");
+        if !((i + 1) % 10) { println(""); }
     }
-    println f"\nOne thousandth: {a[999]}";
+    println(f"\nOne thousandth: {a[999]}");
 }

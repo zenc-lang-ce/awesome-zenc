@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_prime(n: int) -> bool {
     if n < 2 { return false; }
     if n % 2 == 0 { return n == 2; }
@@ -22,13 +23,13 @@ fn digit_sum(n: int) -> int {
 }
 
 fn main() {
-    println "Nice primes in the open interval (500, 1000) are:";
+    println("Nice primes in the open interval (500, 1000) are:");
     let c = 0;
     for i in 501..1000 step 2 {
         if is_prime(i) {
             let s = i;
             while s >= 10  { s = digit_sum(s); }
-            if is_prime(s) { println f"{++c:2d}: {i} -> Σ = {s}"; }
+            if is_prime(s) { println(f"{++c:2d}: {i} -> Σ = {s}"); }
         }
     }
 }

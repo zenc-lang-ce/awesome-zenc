@@ -14,7 +14,7 @@ fn main(argc: int, argv: char**) {
         defer free(line);
         
         if line_mode {
-            println f"Line: [{line}]";
+            println(f"Line: [{line}]");
         } else {
             let s = String::from(line);
             let words = s.split(' ');
@@ -22,7 +22,7 @@ fn main(argc: int, argv: char**) {
             for word in words {
                 if !word.is_empty() {
                     let w = word.c_str();
-                    println f"Word: [{w}]";
+                    println(f"Word: [{w}]");
                 }
             }
         }

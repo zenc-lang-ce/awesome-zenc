@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn main() {
@@ -12,15 +13,15 @@ fn main() {
             if j < pow * 10 { break; }
             pow *= 10;
         }
-        println f"First {totals[i]} gapful numbers starting at {starts[i]:'lu}";
+        println(f"First {totals[i]} gapful numbers starting at {starts[i]:'lu}");
         while totals[i] > count {    
             let fl = j / pow * 10 + (j % 10);
             if !(j % fl) {
-                print f"{j} ";
+                print(f"{j} ");
                 count++;
             }
             if ++j >= 10 * pow { pow *= 10; }
         }
-        println "\n";
+        println("\n");
     }
 }

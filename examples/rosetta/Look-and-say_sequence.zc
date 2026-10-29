@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn look_and_say(s: string) -> String {
@@ -21,7 +22,7 @@ fn main() {
     let s: char[100];
     strcpy(s, "1");
     for i in 1..=15 {
-        println f"{s}";
+        println(f"{s}");
         let las = look_and_say(s);
         strcpy(s, las.c_str());
     }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn average_square_diff(f: f64, preds: f64*, size: usize) -> f64 {
     let sum = 0.0;
     for i in 0..<size {
@@ -28,8 +29,8 @@ fn main() {
     res[1] = diversity_theorem(truth, a2, 4);
     for i in 0..res.len {
         let (ae, ce, div) = res[i];
-        println f"Average-error {ae:6.3f}";
-        println f"Crowd-error   {ce:6.3f}";
-        println f"Diversity     {div:6.3f}\n";
+        println(f"Average-error {ae:6.3f}");
+        println(f"Crowd-error   {ce:6.3f}");
+        println(f"Diversity     {div:6.3f}\n");
     }
 }

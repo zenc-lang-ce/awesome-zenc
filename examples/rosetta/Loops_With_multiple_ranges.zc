@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 def ONE   = 1;
@@ -32,6 +33,6 @@ fn main() {
     for j = p; j <= p + ONE; ++j            { process(j); }
 
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println f"sum  = {sum:' d}";
-    println f"prod = {prod:' d}";
+    println(f"sum  = {sum:' d}");
+    println(f"prod = {prod:' d}");
 }

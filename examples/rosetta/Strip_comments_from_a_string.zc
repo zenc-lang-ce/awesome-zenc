@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn strip_comments(s: string) -> String {
@@ -22,6 +23,6 @@ fn main() {
 
     for s in strings {
         let t = strip_comments(s);
-        println f"'{s}' -> '{t}'";
+        println(f"'{s}' -> '{t}'");
     }
 }

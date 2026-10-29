@@ -120,17 +120,17 @@ fn main() {
     let order_it = g.dfs(0);
     defer order_it.free();
 
-    "DFS recursive order: "..;
+    print("DFS recursive order: ");
     for i in 0..(int)order_rec.len {
-        f"{order_rec.data[i]} "..;
+        print(f"{order_rec.data[i]} ");
     }
-    "";
+    println("");
 
-    "DFS iterative order: "..;
+    print("DFS iterative order: ");
     for i in 0..(int)order_it.len {
-        f"{order_it.data[i]} "..;
+        print(f"{order_it.data[i]} ");
     }
-    "";
+    println("");
 
-    "Expected: 0 1 4 2 3 5";
+    println("Expected: 0 1 4 2 3 5");
 }

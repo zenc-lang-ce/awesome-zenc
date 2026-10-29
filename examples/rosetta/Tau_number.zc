@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn divisor_count(n: int) -> int {
@@ -17,12 +18,12 @@ fn divisor_count(n: int) -> int {
 
 fn main() {
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println "The first 100 Tau numbers are:";
+    println("The first 100 Tau numbers are:");
     let count = 0;
     for let i = 1; count < 100; ++i {
         if !(i % divisor_count(i)) {
-            print f"{i:'5d}  ";
-            if !(++count % 10) { println ""; }
+            print(f"{i:'5d}  ");
+            if !(++count % 10) { println(""); }
         }
     }
 }

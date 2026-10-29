@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn digit_sum(n: int) -> int {
     let sum: int = 0;
     while n > 0 {
@@ -8,15 +9,15 @@ fn digit_sum(n: int) -> int {
 }
 
 fn main() {
-    println "Numbers under 1,000 whose sum of digits is a substring of themselves:"
+    println("Numbers under 1,000 whose sum of digits is a substring of themselves:")
     let count = 0;
     for n in 0..<1000 {
         let ns = f"{n}";
         let ds = f"{digit_sum(n)}";
         if strstr(ns, ds) {
-            print f"{n:3d} ";
-            if ++count % 8 == 0 { println ""; }
+            print(f"{n:3d} ");
+            if ++count % 8 == 0 { println(""); }
         }
     }
-    println f"\n{count} such numbers found."
+    println(f"\n{count} such numbers found.")
 }

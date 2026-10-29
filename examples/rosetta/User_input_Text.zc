@@ -1,13 +1,16 @@
+import "std/io.zc"
 fn main() {
     let str_val: char[256];
     let int_val: int;
     
     // Prompt for the string (infers %s for the char array)
-    ? "Enter a string: " (str_val);
+    print("Enter a string: ");
+    readln(str_val);
     
     // Prompt for the integer (infers %d for the int)
-    ? "Enter the integer 75000: " (int_val);
+    print("Enter the integer 75000: ");
+    readln(int_val);
     
-    println f"\nYou entered the string: {str_val}";
-    println f"You entered the integer: {int_val}";
+    println(f"\nYou entered the string: {str_val}");
+    println(f"You entered the integer: {int_val}");
 }

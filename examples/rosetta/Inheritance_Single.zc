@@ -1,3 +1,4 @@
+import "std/io.zc"
 trait Animal {
     fn make_noise(self);
 }
@@ -5,13 +6,13 @@ trait Animal {
 struct Dog { name: string; }
 
 impl Animal for Dog {
-    fn make_noise(self) { println f"{.name} says, woof!"; }
+    fn make_noise(self) { println(f"{.name} says, woof!"); }
 }
 
 struct Cat { name: string; }
 
 impl Animal for Cat {
-    fn make_noise(self) { println f"{.name} says, meow!" }
+    fn make_noise(self) { println(f"{.name} says, meow!") }
 }
 
 struct Lab { use dog: Dog; }

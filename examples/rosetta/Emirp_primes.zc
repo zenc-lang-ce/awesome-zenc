@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn is_prime(n: int) -> bool {
@@ -33,34 +34,34 @@ fn is_emirp(n: int) -> bool {
 
 fn main() {
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println "The first 20 emirps are:";
+    println("The first 20 emirps are:");
     let count = 0;
     let i = 3;
     while count < 20 {
         if is_emirp(i) { 
-            print f"{i:3d} ";
-            if !(++count % 10) { println ""; }
+            print(f"{i:3d} ");
+            if !(++count % 10) { println(""); }
         }
         i += 2;
     }
 
-    println "\nThe emirps between 7,700 and 8,000 are:";
+    println("\nThe emirps between 7,700 and 8,000 are:");
     count = 0;
     i = 7701;
     while i < 8000 {
         if is_emirp(i) {
-            print f"{i:'4d} ";
-            if !(++count % 7) { println ""; }
+            print(f"{i:'4d} ");
+            if !(++count % 7) { println(""); }
         }
         i += 2;
     }
 
-    print "\n\nThe 10,000th emirp is ";
+    print("\n\nThe 10,000th emirp is ");
     count = 0;
     i = 1;
     while count < 10000 {
         i += 2;
         if is_emirp(i) { count++; }
     }
-    println f"{i:'d}.";
+    println(f"{i:'d}.");
 }

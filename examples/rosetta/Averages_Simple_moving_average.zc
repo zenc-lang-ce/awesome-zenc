@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 alias clos = fn(f64) -> f64;
@@ -21,7 +22,7 @@ fn sma(period: usize) -> clos {
 fn main() {
     let sma3 = sma(3);
     let sma5 = sma(5);
-    println "  x     sma3   sma5";
+    println("  x     sma3   sma5");
     let a: f64[10] = [1.0, 2.0, 3.0, 4.0, 5.0, 5.0, 4.0, 3.0, 2.0, 1.0];
     for i in 0..10 {
         let x = a[i];

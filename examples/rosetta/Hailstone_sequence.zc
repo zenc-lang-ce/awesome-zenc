@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn hailstone(n: int) -> Vec<int> {
@@ -14,15 +15,15 @@ fn hailstone(n: int) -> Vec<int> {
 fn main() {
     let h = hailstone(27);
     let len = h.length();
-    println "For the Hailstone sequence starting with n = 27:";
-    println f"   Number of elements  = {len}";
-    print "   First four elements = ";
-    for i in 0..4 { print f"{h[i]} "; }
-    print "\n   Final four elements = ";
-    for i in (len - 4)..len { print f"{h[i]} "; }
-    println "";
+    println("For the Hailstone sequence starting with n = 27:");
+    println(f"   Number of elements  = {len}");
+    print("   First four elements = ");
+    for i in 0..4 { print(f"{h[i]} "); }
+    print("\n   Final four elements = ");
+    for i in (len - 4)..len { print(f"{h[i]} "); }
+    println("");
 
-    println "\nThe Hailstone sequence for n < 100,000 with the longest length is:";
+    println("\nThe Hailstone sequence for n < 100,000 with the longest length is:");
     let longest = 0;
     let longlen: u64 = 0;
     for n in 1..100_000 {
@@ -33,6 +34,6 @@ fn main() {
             longlen = c;
         }
     }
-    println f"   Longest = {longest}";
-    println f"   Length  = {longlen}";
+    println(f"   Longest = {longest}");
+    println(f"   Length  = {longlen}");
 }

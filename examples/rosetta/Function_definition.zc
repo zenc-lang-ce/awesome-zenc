@@ -1,4 +1,5 @@
 // Standard function with a default argument
+import "std/io.zc"
 fn increment(val: int, amount: int = 1) -> int {
     return val + amount;
 }
@@ -17,17 +18,17 @@ fn multiply_generic<T>(a: T, b: T) -> T {
 fn main() {
     // Default argument evaluated
     let res1 = increment(10);
-    println f"10 + default = {res1}";
+    println(f"10 + default = {res1}");
 
     // Inline execution
     let res2 = multiply(5.0, 4.0);
-    println f"5.0 * 4.0 = {res2}";
+    println(f"5.0 * 4.0 = {res2}");
 
     // Generic execution with f32 (float)
     let res3 = multiply_generic<f32>(2.5, 2.0);
-    println f"2.5 * 2.0 = {res3}";
+    println(f"2.5 * 2.0 = {res3}");
     
     // Generic execution with int
     let res4 = multiply_generic<int>(10, 3);
-    println f"10 * 3 = {res4}";
+    println(f"10 * 3 = {res4}");
 }

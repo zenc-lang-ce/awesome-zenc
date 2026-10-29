@@ -1,9 +1,10 @@
 
+import "std/io.zc"
 import "std/process.zc";
 import "std/string.zc";
 
 fn main() {
-    "Executing 'ls -la' using std/process...";
+    println("Executing 'ls -la' using std/process...");
     
     let output = Command::new("ls")
         .arg("-l")
@@ -11,10 +12,10 @@ fn main() {
         .output();
     
     if output.exit_code == 0 {
-        "--- Output ---";
+        println("--- Output ---");
         output.std_out.print();
-        "--------------";
+        println("--------------");
     } else {
-        !f"Command failed with exit code: {output.exit_code}";
+        eprintln(f"Command failed with exit code: {output.exit_code}");
     }
 }

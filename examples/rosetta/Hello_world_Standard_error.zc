@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
-    eprintln "Goodbye, World!";
+    eprintln("Goodbye, World!");
 }

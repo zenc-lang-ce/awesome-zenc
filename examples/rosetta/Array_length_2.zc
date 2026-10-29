@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn main() {
@@ -8,5 +9,5 @@ fn main() {
     // Retrieve the length using the built-in method
     let count = fruits.length();
     
-    println f"Vector length: {count}";
+    println(f"Vector length: {count}");
 }

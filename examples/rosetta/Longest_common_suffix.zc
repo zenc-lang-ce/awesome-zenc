@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn substring(s: char*, ss: char*, index: int, len: usize){
     strncpy(ss, s + index, len);
     ss[len] = '\0';
@@ -53,10 +54,10 @@ fn main() {
     let res: char[20];
     def BS2 = "\x08\x08";
     for i in 0..6 {
-        print "[";
-        for j in 0..lens[i] { print f"{tests[i][j]}, " };
-        print f"{BS2}] -> ";
+        print("[");
+        for j in 0..lens[i] { print(f"{tests[i][j]}, ") };
+        print(f"{BS2}] -> ");
         lcs(tests[i], res, lens[i]);
-        println f"\"{res}\"";
+        println(f"\"{res}\"");
     }
 }

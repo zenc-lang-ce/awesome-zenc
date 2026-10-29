@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn reverse_str(s: string) -> String {
@@ -17,9 +18,9 @@ fn is_pal(s: string) -> bool {
 }
 
 fn main() {
-    println "Are the following palindromes?";
+    println("Are the following palindromes?");
     let phrases = ["rotor", "rosetta", "step on no pets", "été", "zenc", "🦊😀🦊"];
     for phrase in phrases {
-        println f"  {phrase} => {is_pal(phrase)}";
+        println(f"  {phrase} => {is_pal(phrase)}");
     }
 }

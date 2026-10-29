@@ -1,4 +1,5 @@
 //> link: -lm
+import "std/io.zc"
 include <math.h>
 
 def PLUS_INF  =  1.0 / 0.0;
@@ -66,20 +67,20 @@ fn main() {
         let a = MaxTropical::new(data[i][0]);
         let b = MaxTropical::new(data[i][1]);
         if ops[i] == "⊕" {
-            println f"{a} ⊕ {b} = {a + b}";
+            println(f"{a} ⊕ {b} = {a + b}");
         } else {
-            println f"{a} ⊗ {b} = {a * b}";
+            println(f"{a} ⊗ {b} = {a * b}");
         }
     }
 
     let c = MaxTropical::new(5.0);
-    println f"{c} ^ 7 = {c ^ 7}";
+    println(f"{c} ^ 7 = {c ^ 7}");
 
     let d = MaxTropical::new(8.0);
     let e = MaxTropical::new(7.0);
     let f = c * (d + e);
     let g = c * d + c * e;
-    println f"{c} ⊗ ({d} ⊕ {e}) = {f}";
-    println f"{c} ⊗ {d} ⊕ {c} ⊗ {e} = {g}";
-    println f"{c} ⊗ ({d} ⊕ {e}) == {c} ⊗ {d} ⊕ {c} ⊗ {e} is {btos(f == g)}";
+    println(f"{c} ⊗ ({d} ⊕ {e}) = {f}");
+    println(f"{c} ⊗ {d} ⊕ {c} ⊗ {e} = {g}");
+    println(f"{c} ⊗ ({d} ⊕ {e}) == {c} ⊗ {d} ⊕ {c} ⊗ {e} is {btos(f == g)}");
 }

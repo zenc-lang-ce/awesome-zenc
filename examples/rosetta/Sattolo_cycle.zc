@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/random.zc"
 
 let rng: Random;
@@ -22,13 +23,13 @@ fn main() {
     let alen: usize[4] = [1, 2, 3, 12];
     for i in 0..4 {
         let a = aa[i];
-        print "Original: ["
-        for j in 0..alen[i] { print f"{a[j]}, "; }
-        println "\b\b]";
+        print("Original: [")
+        for j in 0..alen[i] { print(f"{a[j]}, "); }
+        println("\b\b]");
         sattolo(a, alen[i]);
-        print "Sattolo : [";
-        for j in 0..alen[i] { print f"{a[j]}, "; }
-        println "\b\b]\n";
+        print("Sattolo : [");
+        for j in 0..alen[i] { print(f"{a[j]}, "); }
+        println("\b\b]\n");
     }
 
     let b1 = ["a", "b", "c", "d", "e"];
@@ -37,12 +38,12 @@ fn main() {
     let blen: usize[2] = [5, 7];
     for i in 0..2 {
         let b = bb[i];
-        print "Original: ["
-        for j in 0..blen[i] { print f"{b[j]}, "; }
-        println "\b\b]";
+        print("Original: [")
+        for j in 0..blen[i] { print(f"{b[j]}, "); }
+        println("\b\b]");
         sattolo(b, blen[i]);
-        print "Sattolo : [";
-        for j in 0..blen[i] { print f"{b[j]}, "; }
-        println "\b\b]\n";
+        print("Sattolo : [");
+        for j in 0..blen[i] { print(f"{b[j]}, "); }
+        println("\b\b]\n");
     }
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/random.zc"
 
 fn main() {
@@ -11,12 +12,12 @@ fn main() {
 
     outer: for i in 0..=19 {
         for j in 0..=19 {
-            print f"{a[i][j]:2d} ";
+            print(f"{a[i][j]:2d} ");
             if a[i][j] == 20 {
-                println "";
+                println("");
                 break outer;
             }
-            if (j + 1) % 10 == 0 { println ""; }
+            if (j + 1) % 10 == 0 { println(""); }
         }
     }
 }

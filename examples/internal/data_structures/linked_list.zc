@@ -1,4 +1,5 @@
 
+import "std/io.zc"
 import "std/mem.zc"
 
 struct Node {
@@ -10,7 +11,7 @@ impl Node {
     fn new(v: int) -> Self* {
         let n = alloc<Node>();
         if n == NULL {
-            "Out of memory!";
+            println("Out of memory!");
             return NULL;
         }
         n.value = v;
@@ -38,15 +39,15 @@ impl LinkedList {
     
     fn print_list(self) {
         let current: Node* = self.head;
-        "["..;
+        print("[");
         while current != NULL {
-            f"{current.value}"..;
+            print(f"{current.value}");
             current = current.next;
             if current != NULL {
-                " -> "..;
+                print(" -> ");
             }
         }
-        "]";
+        println("]");
     }
     
     fn free(self) {
@@ -74,13 +75,13 @@ fn main() {
     let list = LinkedList::new();
     defer list.free();
     
-    "Pushing: 10, 20, 30...";
+    println("Pushing: 10, 20, 30...");
     list.push(10);
     list.push(20);
     list.push(30);
     
-    f"List length: {list.len()}";
+    println(f"List length: {list.len()}");
     
-    "Current List: "..;
+    print("Current List: ");
     list.print_list();
 }

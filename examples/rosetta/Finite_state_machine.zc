@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "ctype.h"
 
 def READY     = 0;
@@ -7,8 +8,8 @@ def DISPENSE  = 3;
 def REFUNDING = 4;
 
 fn fsm() {
-    println "Please enter your option when prompted";
-    println "(any characters after the first will be ignored)";
+    println("Please enter your option when prompted");
+    println("(any characters after the first will be ignored)");
     let state = READY;
     let input: char[10];
     let trans: int;
@@ -16,16 +17,18 @@ fn fsm() {
         match state {
             READY => {
                 loop {
-                    ? "\n(D)ispense or (Q)uit : " (input);
+                    print("\n(D)ispense or (Q)uit : ");
+                    readln(input);
                     trans = tolower(input[0]);
                     if trans == 'd' || trans == 'q' { break; }
                 }
                 state = (trans == 'd') ? WAITING : EXIT;
             },
             WAITING => {
-                println "OK, put your money in the slot";
+                println("OK, put your money in the slot");
                 loop {
-                    ? "(S)elect product or choose a (R)efund : " (input);
+                    print("(S)elect product or choose a (R)efund : ");
+                    readln(input);
                     trans = tolower(input[0]);
                     if trans == 's' || trans == 'r' { break; }
                 }
@@ -33,7 +36,8 @@ fn fsm() {
             },
             DISPENSE => {
                 loop {
-                    ? "(R)emove product : " (input);
+                    print("(R)emove product : ");
+                    readln(input);
                     trans = tolower(input[0]);
                     if trans == 'r' { break; }
                 }
@@ -41,11 +45,11 @@ fn fsm() {
             },
             REFUNDING => {
                 // No transitions defined.
-                println "OK, refunding your money";
+                println("OK, refunding your money");
                 state = READY;
             },
             EXIT => {
-                println "OK, quitting";
+                println("OK, quitting");
                 return;
             }
         }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn substring(s: char*, ss: char*, index: int, len: usize) {
     strncpy(ss, s + index, len);
     ss[len] = '\0';
@@ -35,16 +36,16 @@ fn rep_string(s: char*) {
             }
         }
     }
-    print f"{s:10s} -> ";
+    print(f"{s:10s} -> ");
     if strlen(rep) > 0 {
-        println f"{rep}";
+        println(f"{rep}");
     } else {
-        println "Not a rep-string";
+        println("Not a rep-string");
     }
 }
 
 fn main() {
-    println "The (longest) rep-strings are:\n";
+    println("The (longest) rep-strings are:\n");
     let strings: string[11] = [
         "1001110011",
         "1110111011",

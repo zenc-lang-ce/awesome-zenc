@@ -1,7 +1,8 @@
+import "std/io.zc"
 fn main() {
     let i = 1024;
     while i > 0 {
-        println f"{i}";
+        println(f"{i}");
         i /= 2;
     }
 }

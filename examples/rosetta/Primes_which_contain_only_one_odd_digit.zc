@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/math.zc"
 import "locale.h"
@@ -47,7 +48,7 @@ fn main() {
     let limit = 999;
     let primes = prime_sieve(limit);
     let count = 0;
-    println "Primes under 1,000 which contain only one odd digit:";
+    println("Primes under 1,000 which contain only one odd digit:");
     for i in 1..primes.length() {
         let digs = digits(primes[i]);
         let all = true;
@@ -58,11 +59,11 @@ fn main() {
             }
         }
         if all {
-            print f"{primes[i]:3d} ";
-            if !(++count % 9) { println ""; }
+            print(f"{primes[i]:3d} ");
+            if !(++count % 9) { println(""); }
         }
     }
-    println f"\nFound {count} such primes.";
+    println(f"\nFound {count} such primes.");
 
     limit = 999_999_999;
     primes.free();
@@ -81,9 +82,9 @@ fn main() {
         }
         if all { count++; }
         if primes[i] > pow {
-            println f"There are {count:'7d} such primes under {pow:'d}";
+            println(f"There are {count:'7d} such primes under {pow:'d}");
             pow *= 10;
         }
     }
-    println f"There are {count:'7d} such primes under {pow:'d}";
+    println(f"There are {count:'7d} such primes under {pow:'d}");
 }

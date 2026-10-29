@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn reverse_str(s: string) -> String {
@@ -11,6 +12,6 @@ fn main() {
     let words= ["asdf", "josé", "møøse", "was it a car or a cat I saw", "😀🚂🦊"];
     for word in words {
         let rev = reverse_str(word);
-        println f"{rev}";
+        println(f"{rev}");
     }
 }

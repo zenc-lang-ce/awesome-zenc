@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn kaprekar(n: u64, base: u64) -> (bool, int) {
@@ -45,9 +46,9 @@ fn itoa_b(n: u64, base: u64) -> String {
 
 fn main() {
     let max: u64 = 10_000;
-    println f"Kaprekar numbers < {max}:";
+    println(f"Kaprekar numbers < {max}:");
     for let m: u64 = 0; m < max; ++m {
-        if kaprekar(m, 10).v0 { println f"  {m}"; }
+        if kaprekar(m, 10).v0 { println(f"  {m}"); }
     }
 
     // extra credit
@@ -56,14 +57,14 @@ fn main() {
     for let m: u64 = 0; m < max; ++m {
         if kaprekar(m, 10).v0 { count++; }
     }
-    println f"\nThere are {count} Kaprekar numbers < {max}.";
+    println(f"\nThere are {count} Kaprekar numbers < {max}.");
 
     // extra extra credit
     let base: const int = 17;
     let max_b = "1000000";
-    println f"\nKaprekar numbers between 1 and {max_b} (base {base}):";
+    println(f"\nKaprekar numbers between 1 and {max_b} (base {base}):");
     max = atoi_b(max_b, base);
-    println f"\n Base 10  Base {base}        Square       Split";
+    println(f"\n Base 10  Base {base}        Square       Split");
     for let m: u64 = 2; m < max; ++m {
         let (is, pos) = kaprekar(m, base);
         if !is { continue; }
@@ -73,6 +74,6 @@ fn main() {
         let split = len - pos;
         let sub1 = sq.substring(0, split);
         let sub2 = sq.substring(split, len - split);
-        println f"{m:8lu}  {str.c_str():7s}  {sq.c_str():12s}  {sub1.c_str():6s} + {sub2}";
+        println(f"{m:8lu}  {str.c_str():7s}  {sq.c_str():12s}  {sub1.c_str():6s} + {sub2}");
     }
 }

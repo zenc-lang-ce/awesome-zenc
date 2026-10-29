@@ -1,3 +1,4 @@
+import "std/io.zc"
 let animals  = ["Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"];
 let aspects  = ["Yang","Yin"];
 let elements = ["Wood", "Fire", "Earth", "Metal", "Water"];
@@ -44,8 +45,8 @@ impl ChineseZodiac {
 
 fn main() {
     let years = [1935, 1938, 1968, 1972, 1976, 1984, 2017, 2020, 2026];
-    println "Year  Chinese  Pinyin      Element  Animal   Aspect  Cycle";
-    println "----  -------  ---------   -------  -------  ------  -----";
+    println("Year  Chinese  Pinyin      Element  Animal   Aspect  Cycle");
+    println("----  -------  ---------   -------  -------  ------  -----");
     for i in 0..9 {
         let cz = ChineseZodiac::new(years[i]);
         cz.display();

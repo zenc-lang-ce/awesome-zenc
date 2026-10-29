@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/sort.zc"
 import "std/math.zc"
 
@@ -13,13 +14,13 @@ fn fivenum(a: f64*, size: const usize) {
         let ceil  = (usize)Math::ceil (de - 1.0);
         n5[e++] = 0.5 * (a[floor] + a[ceil]);
     }
-    print "[";
+    print("[");
     for i in 0..5 {
-        print f"{n5[i]:0.9g}";
+        print(f"{n5[i]:0.9g}");
         if i < 4 {
-            print ", ";
+            print(", ");
         } else {
-            println "]";
+            println("]");
         }
     }
 }

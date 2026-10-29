@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn digit_sum(n: int) -> int {
     let sum = 0;
     while n > 0 {
@@ -8,19 +9,19 @@ fn digit_sum(n: int) -> int {
 }
 
 fn niven(number: int, minimum: int) {
-    println f"First {number} Harshad or Niven numbers >= {minimum}:";
+    println(f"First {number} Harshad or Niven numbers >= {minimum}:");
     let count = 0;
     for let n = minimum; count < number; ++n {
         if !(n % digit_sum(n)) {
-            print f"{n} ";
+            print(f"{n} ");
             count++;
         }
     }
-    println "";
+    println("");
 }
 
 fn main() {
     niven(20, 1);
-    println "";
+    println("");
     niven(1, 1001);
 }

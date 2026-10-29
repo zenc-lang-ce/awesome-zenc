@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn rot13(s: const char*, r: char*) {
     let len: usize = strlen(s);
     for i in 0..len {
@@ -18,5 +19,5 @@ fn main() {
     let r: char* = malloc(strlen(s) + 1);
     defer free(r);
     rot13(s, r);
-    println f"{r}";
+    println(f"{r}");
 }

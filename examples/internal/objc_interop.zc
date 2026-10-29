@@ -3,6 +3,7 @@
 //> linux: cflags: -fconstant-string-class=NSConstantString -D_NATIVE_OBJC_EXCEPTIONS -I/usr/include/x86_64-linux-gnu/GNUstep -std=gnu99
 //> linux: link: -lgnustep-base -lobjc
 
+import "std/io.zc"
 include <Foundation/Foundation.h>
 
 raw {
@@ -21,8 +22,8 @@ fn main() {
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     }
 
-    "=> Zen C + Objective-C interop demo.";
-    "=> (Make sure to run with: zc run --objc examples/internal/objc_interop.zc)";
+    println("=> Zen C + Objective-C interop demo.");
+    println("=> (Make sure to run with: zc run --objc examples/internal/objc_interop.zc)");
 
     // Call ObjC helper to create an NSString (returned as id)
     let s = make_nsstring("Hello from Objective-C!");
@@ -30,7 +31,7 @@ fn main() {
     // Pass it back to ObjC
     print_description(s);
 
-    f"Zen C interpolated string: {s}";
+    println(f"Zen C interpolated string: {s}");
 
     raw {
         // You can also  raw ObjC syntax anywhere.

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_prime(n: int) -> bool {
     if n < 2      { return false; }
     if n % 2 == 0 { return n == 2; }
@@ -13,13 +14,13 @@ fn is_prime(n: int) -> bool {
 }
 
 fn main() {
-    println "pi(n), the number of primes <= n, where n >= 1 and pi(n) < 22:";
+    println("pi(n), the number of primes <= n, where n >= 1 and pi(n) < 22:");
     let n = 1;
     let count = 0;
     while count < 22 {
-        print f"{count:2d}  ";
-        if !(n++ % 10) { println ""; }
+        print(f"{count:2d}  ");
+        if !(n++ % 10) { println(""); }
         if is_prime(n) { count++; }
     }
-    println "";
+    println("");
 }

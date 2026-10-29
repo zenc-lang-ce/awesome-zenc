@@ -1,10 +1,11 @@
+import "std/io.zc"
 fn main() {
     // Native boolean type and keywords
     let is_valid: bool = true;
     let is_empty: bool = false;
     
-    println f"Native true evaluates to: {is_valid}";
-    println f"Native false evaluates to: {is_empty}\n";
+    println(f"Native true evaluates to: {is_valid}");
+    println(f"Native false evaluates to: {is_empty}\n");
 
     // C-style truthiness evaluation
     let zero_int = 0;
@@ -12,18 +13,18 @@ fn main() {
     let zero_float = 0.0;
     
     if zero_int {
-        println "0 is true";
+        println("0 is true");
     } else {
-        println "0 evaluates to false";
+        println("0 evaluates to false");
     }
     
     if non_zero_int {
-        println "42 evaluates to true";
+        println("42 evaluates to true");
     }
     
     if zero_float {
-        println "0.0 is true";
+        println("0.0 is true");
     } else {
-        println "0.0 evaluates to false";
+        println("0.0 evaluates to false");
     }
 }

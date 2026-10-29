@@ -3,20 +3,20 @@ import "std/io.zc"
 
 fn main() {
     let vars = Map<int>::new();
-    println "Enter three variables:";
+    println("Enter three variables:");
     for _ in 0..3 {
-        print "  name  : ";
+        print("  name  : ");
         let name = readln();
         defer free(name);
-        print "  value : ";
+        print("  value : ");
         let value = readln();
         defer free(value);
         vars.put(name, atoi(value));
-        println "";
+        println("");
     }
 
-    println "Your variables are:";
+    println("Your variables are:");
     for v in vars {
-        println f"  {v.key} = {v.val}";
+        println(f"  {v.key} = {v.val}");
     }
 }

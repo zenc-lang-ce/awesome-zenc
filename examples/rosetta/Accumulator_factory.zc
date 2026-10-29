@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn accumulator<T>(acc: T) -> fn(T) -> T {
     return fn(f: T) -> T {
         acc += f;
@@ -10,11 +11,11 @@ fn main() {
     let x = accumulator(1.0);
     x(5.0);
     accumulator(3.0);
-    println f"{x(2.3):g}";
+    println(f"{x(2.3):g}");
 
     // Example with ints.
     let y = accumulator(1);
     y(5);
     accumulator(3);
-    println f"{y(2)}";
+    println(f"{y(2)}");
 }

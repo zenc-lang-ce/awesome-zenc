@@ -1,5 +1,6 @@
 //> link: -lgmp
 
+import "std/io.zc"
 import "gmp.h"
 
 fn jacobsthal(r: mpz_t, n: c_ulong) {
@@ -28,30 +29,30 @@ fn jacobsthal_lucas(r: mpz_t, n: c_ulong) {
 fn main() {
     let jac: mpz_t[30];
     let j: mpz_t;
-    println "First 30 Jacobsthal numbers:";
+    println("First 30 Jacobsthal numbers:");
     for i in 0..30 {
         mpz_init(jac[i]);
         jacobsthal(jac[i], i);
         gmp_printf("%9Zd ", jac[i]);
-        if !((i + 1) % 5) { println ""; }
+        if !((i + 1) % 5) { println(""); }
     }
 
-    println "\nFirst 30 Jacobsthal-Lucas numbers:";
+    println("\nFirst 30 Jacobsthal-Lucas numbers:");
     mpz_init(j);
     for i in 0..30 {
         jacobsthal_lucas(j, i);
         gmp_printf("%9Zd ", j);
-        if !((i + 1) % 5) { println ""; }
+        if !((i + 1) % 5) { println(""); }
     }
 
-    println "\nFirst 20 Jacobsthal oblong numbers:";
+    println("\nFirst 20 Jacobsthal oblong numbers:");
     for i in 0..20 {
         mpz_mul(j, jac[i], jac[i + 1]);
         gmp_printf("%11Zd ", j);
-        if !((i + 1) % 5) { println ""; }
+        if !((i + 1) % 5) { println(""); }
     }
 
-    println "\nFirst 20 Jacobsthal primes:";
+    println("\nFirst 20 Jacobsthal primes:");
     let count = 0;
     for let i = 0; count < 20; ++i {
         jacobsthal(j, i);

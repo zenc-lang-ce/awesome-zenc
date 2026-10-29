@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn compute_nktg(x: f64, v: f64, m: f64, dm_dt: f64) {
@@ -6,20 +7,20 @@ fn compute_nktg(x: f64, v: f64, m: f64, dm_dt: f64) {
     let nktg2 = dm_dt * p;
     let nktg  = Math::sqrt(nktg1 * nktg1 + nktg2 * nktg2);
 
-    println "--------------------------------------------";
-    println f"Position (x)         : {x:0.0f}";
-    println f"Velocity (v)         : {v:0.2f}";
-    println f"Mass (m)             : {m:0.0f}";
-    println f"Momentum (p = m * v) : {p:0.0f}";
-    println f"NKTg1 = x * p        : {nktg1:0.0f}";
-    println f"NKTg2 = dm_dt * p    : {nktg2:0.0f}";
-    println f"Total NKTg           : {nktg:0.0f}";
+    println("--------------------------------------------");
+    println(f"Position (x)         : {x:0.0f}");
+    println(f"Velocity (v)         : {v:0.2f}");
+    println(f"Mass (m)             : {m:0.0f}");
+    println(f"Momentum (p = m * v) : {p:0.0f}");
+    println(f"NKTg1 = x * p        : {nktg1:0.0f}");
+    println(f"NKTg2 = dm_dt * p    : {nktg2:0.0f}");
+    println(f"Total NKTg           : {nktg:0.0f}");
 }
 
 fn main() {
-    println "============================================";
-    println "NKTg Law - Neptune 2023 NASA Data";
-    println "============================================";
+    println("============================================");
+    println("NKTg Law - Neptune 2023 NASA Data");
+    println("============================================");
 
     // 2023 NASA Data (Neptune)
     let dm_dt = -0.00002000;
@@ -37,9 +38,9 @@ fn main() {
         compute_nktg(x, v, m, dm_dt);
     }
 
-    println "\n============================================";
-    println "NKTg Law - Neptune 2024 Simulation";
-    println "============================================";
+    println("\n============================================");
+    println("NKTg Law - Neptune 2024 Simulation");
+    println("============================================");
 
     let data2024: (f64, f64, f64)[5] = [ 
         (4498396440.0, 5.43, 1.02429900e26),
@@ -54,7 +55,7 @@ fn main() {
         compute_nktg(x, v, m, dm_dt);
     }
 
-    println "\n============================================";
-    println "Experiment Completed";
-    println "============================================";
+    println("\n============================================");
+    println("Experiment Completed");
+    println("============================================");
 }

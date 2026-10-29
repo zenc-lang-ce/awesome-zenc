@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn greedy_word_wrap(text: string, line_width: const int) -> String {
@@ -36,8 +37,8 @@ sat down by the side of the cool fountain, and when she was bored she
 took a golden ball, and threw it up on high and caught it, and this 
 ball was her favorite plaything."""
 
-    println "Greedy algorithm - wrapped at 72:";
-    println f"{greedy_word_wrap(text, 72)}";
-    println "\nGreedy algorithm - wrapped at 80:";
-    println f"{greedy_word_wrap(text, 80)}";
+    println("Greedy algorithm - wrapped at 72:");
+    println(f"{greedy_word_wrap(text, 72)}");
+    println("\nGreedy algorithm - wrapped at 80:");
+    println(f"{greedy_word_wrap(text, 80)}");
 }
