@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn count_digits_in_e(n: int) {
     let l: int* = malloc(n * sizeof(int));
     defer free(l);
@@ -14,14 +15,14 @@ fn count_digits_in_e(n: int) {
         }
         dc[c]++;
     }
-    for d in 0..=9 { println f"{d}: {dc[d]}"; }
+    for d in 0..=9 { println(f"{d}: {dc[d]}"); }
     let t = 0;
     for d in dc { t += d; }
-    println f"Total digits: {t}";
+    println(f"Total digits: {t}");
 }
 
 fn main() {
     count_digits_in_e(2000);
-    println "";
+    println("");
     count_digits_in_e(3000);
 }

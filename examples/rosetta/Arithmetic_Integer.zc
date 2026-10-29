@@ -1,4 +1,5 @@
 // Custom divmod using Tuples for multiple return values
+import "std/io.zc"
 fn divmod(a: int, b: int) -> (int, int) {
     return (a / b, a % b);
 }
@@ -8,7 +9,8 @@ fn main() {
     let b: int;
     
     // Read two integers using the input shorthand
-    ? "Enter two integers separated by a space: " (a, b);
+    print("Enter two integers separated by a space: ");
+    readln(a, b);
     
     let sum = a + b;
     let diff = a - b;
@@ -18,11 +20,11 @@ fn main() {
     let pow = a ** b;
     let (q, r) = divmod(a, b);
     
-    println f"a + b  = {sum}";
-    println f"a - b  = {diff}";
-    println f"a * b  = {prod}";
-    println f"a / b  = {quot}";
-    println f"a % b  = {rem}";
-    println f"a ** b = {pow}"; 
-    println f"divmod(a, b) = ({q}, {r})";
+    println(f"a + b  = {sum}");
+    println(f"a - b  = {diff}");
+    println(f"a * b  = {prod}");
+    println(f"a / b  = {quot}");
+    println(f"a % b  = {rem}");
+    println(f"a ** b = {pow}"); 
+    println(f"divmod(a, b) = ({q}, {r})");
 }

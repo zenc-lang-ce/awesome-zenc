@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
     let int32s: i32[5] = [
         -(-2147483647-1),
@@ -6,8 +7,8 @@ fn main() {
         46341 * 46341,
         (-2147483647-1) / -1
     ];
-    println "Signed 32-bit:";
-    for i in int32s { println f"{i}" }
+    println("Signed 32-bit:");
+    for i in int32s { println(f"{i}") }
 
     let int64s: i64[5] = [
         -(-9223372036854775807-1),
@@ -16,8 +17,8 @@ fn main() {
         3037000500 * 3037000500,
         (-9223372036854775807-1) / -1
     ];
-    println "\nSigned 64-bit:";
-    for i in int64s { println f"{i}" }
+    println("\nSigned 64-bit:");
+    for i in int64s { println(f"{i}") }
 
     let uint32s: u32[4] = [
         -4294967295,
@@ -25,8 +26,8 @@ fn main() {
         2147483647 - 4294967295,
         65537 * 65537
     ];
-    println "\nUnsigned 32-bit:";
-    for i in uint32s { println f"{i}" }
+    println("\nUnsigned 32-bit:");
+    for i in uint32s { println(f"{i}") }
 
     let uint64s: u64[4] = [
         -18446744073709551615,
@@ -34,6 +35,6 @@ fn main() {
         9223372036854775807 - 18446744073709551615,
         4294967296 * 4294967296
     ];
-    println "\nUnsigned 64-bit:";
-    for i in uint64s { println f"{i}" }
+    println("\nUnsigned 64-bit:");
+    for i in uint64s { println(f"{i}") }
 }

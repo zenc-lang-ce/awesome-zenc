@@ -1,8 +1,9 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn text_between(str: string, start: string, end: string) -> String {
     if strlen(start) == 0 || strlen(end) == 0 {
-        eprintln "Start and end must both be non-empty strings.";
+        eprintln("Start and end must both be non-empty strings.");
     }
     if strlen(str) == 0 { return String::new(""); }
     let s: int;
@@ -59,10 +60,10 @@ fn main() {
     ];
 
     for i, text in texts {
-        println f"Text   : \"{text}\"";
-        println f"Start  : \"{starts[i]}\"";
-        println f"End    : \"{ends[i]}\"";
+        println(f"Text   : \"{text}\"");
+        println(f"Start  : \"{starts[i]}\"");
+        println(f"End    : \"{ends[i]}\"");
         let b = text_between(text, starts[i], ends[i]);
-        println f"Result : \"{b}\"\n"; 
+        println(f"Result : \"{b}\"\n"); 
     }
 }

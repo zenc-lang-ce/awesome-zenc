@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/math.zc"
 
@@ -61,11 +62,11 @@ fn main() {
         count++;
     }
     totals[7] = count;
-    println f"The long primes up to {numbers[0]} are: ";
-    for i in 0..totals[0] { print f"{long_primes[i]} "; }
+    println(f"The long primes up to {numbers[0]} are: ");
+    for i in 0..totals[0] { print(f"{long_primes[i]} "); }
 
-    println "\n\nThe number of long primes up to:";
+    println("\n\nThe number of long primes up to:");
     for i, total in totals {
-        println f"  {numbers[i]:5d} is {total}";
+        println(f"  {numbers[i]:5d} is {total}");
     }
 }

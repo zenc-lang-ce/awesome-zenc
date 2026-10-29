@@ -1,5 +1,6 @@
+import "std/io.zc"
 fn main(argc: int, argv: char**) {
     for i in 0..argc {
-        println f"{argv[i]}";
+        println(f"{argv[i]}");
     }
 }

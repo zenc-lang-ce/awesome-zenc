@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn two_sum(a: int*, len: const usize, target: int) -> (int, int, bool) {
     if len < 2 { return (0, 0, false); }
     for i in 0..(len - 1) {
@@ -18,10 +19,10 @@ fn main() {
     for target in targets {
         let (p1, p2, ok) = two_sum(a, a.len, target);
         if !ok {
-            println f"No two numbers were found whose sum is {target}.";
+            println(f"No two numbers were found whose sum is {target}.");
         } else {
-            println f"The numbers with indices {p1} annd {p2} sum to {target}.";
+            println(f"The numbers with indices {p1} annd {p2} sum to {target}.");
         }
-        println "";
+        println("");
     }
 }

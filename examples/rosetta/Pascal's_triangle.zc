@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn factorial(n: uint) -> u64 {
     let prod: u64 = 1;
     for i in 2..=n { prod *= i; }
@@ -16,11 +17,11 @@ fn binomial(n: uint, k: uint) -> u64 {
 fn pascal_triangle(n: uint) {
     if n < 1 { return; }
     for i in 0..n {
-        for _ in 1..(n - i) { print "   "; }
+        for _ in 1..(n - i) { print("   "); }
         for j in 0..=i {
-            print f"{binomial(i, j):3lu}   ";
+            print(f"{binomial(i, j):3lu}   ");
         }
-        println "";
+        println("");
     }
 }
 

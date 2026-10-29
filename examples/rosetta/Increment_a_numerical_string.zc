@@ -1,5 +1,6 @@
+import "std/io.zc"
 fn main() {
     let n1 = "123";
     let n2 = f"{atoi(n1) + 1}";
-    println f"{n1} + 1 = {n2}";
+    println(f"{n1} + 1 = {n2}");
 }

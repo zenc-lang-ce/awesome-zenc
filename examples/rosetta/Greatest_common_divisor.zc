@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn gcd(x: int, y: int) -> int {
     while y {
         let t = y;
@@ -8,6 +9,6 @@ fn gcd(x: int, y: int) -> int {
 }
 
 fn main() {
-    println f"gcd(33, 77) = {gcd(33, 77)}";
-    println f"gcd(49865, 69811) = {gcd(49865, 69811)}";
+    println(f"gcd(33, 77) = {gcd(33, 77)}");
+    println(f"gcd(49865, 69811) = {gcd(49865, 69811)}");
 }

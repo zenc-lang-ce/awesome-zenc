@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/set.zc"
 
 fn are_digits_distinct(s: string) -> bool {
@@ -24,7 +25,7 @@ fn main() {
         if strchr(s, '0') { continue; }          // can't contain '0'
         if !are_digits_distinct(s) { continue; } // digits must be unique
         if is_div_by_all(i, s) {
-            println f"Largest hex number is {i:lx}.";
+            println(f"Largest hex number is {i:lx}.");
             break;
         }
     }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 struct Data {
     id: int;
     active: bool;
@@ -9,53 +10,53 @@ fn increment(ptr: int*) {
 }
 
 fn main() {
-    println "STACK POINTERS";
+    println("STACK POINTERS");
     let x = 42;
     let x_ptr = &x; // Take the address of a stack variable
 
-    println f"Value of x: {x}";
-    println f"Address of x: {(usize)x_ptr}";
-    println f"Value via x_ptr: {*x_ptr}";
+    println(f"Value of x: {x}");
+    println(f"Address of x: {(usize)x_ptr}");
+    println(f"Value via x_ptr: {*x_ptr}");
 
     // Modifying via pointer
     *x_ptr = 100;
-    println f"New value of x: {x}";
+    println(f"New value of x: {x}");
 
     // Pass by reference
     increment(&x);
-    println f"Value after increment(ptr): {x}";
+    println(f"Value after increment(ptr): {x}");
 
-    println "\nSTRUCT POINTERS & AUTO-DEREF";
+    println("\nSTRUCT POINTERS & AUTO-DEREF");
     let d = Data { id: 1, active: true };
     let d_ptr = &d;
 
     // Zen C supports auto-dereferencing for struct fields
-    println f"id via d_ptr.id: {d_ptr.id}";
+    println(f"id via d_ptr.id: {d_ptr.id}");
     d_ptr.active = false;
-    println f"Active via d.active: {d.active}";
+    println(f"Active via d.active: {d.active}");
 
     // Manual dereferencing for clarity or specific cases
-    println f"id via (*d_ptr).id: {(*d_ptr).id}";
+    println(f"id via (*d_ptr).id: {(*d_ptr).id}");
 
-    println "\nHEAP POINTERS";
+    println("\nHEAP POINTERS");
     // Allocate memory for an integer on the heap
     let h_ptr: int* = malloc(sizeof(int));
     
     if ((usize)h_ptr == 0) {
-        println "Failed to allocate memory!";
+        println("Failed to allocate memory!");
         return 0;
     }
 
     *h_ptr = 500;
-    println f"Value on heap: {*h_ptr}";
+    println(f"Value on heap: {*h_ptr}");
 
     // Always free heap memory
     free(h_ptr);
-    println "Heap memory freed.";
+    println("Heap memory freed.");
 
-    println "\nNULL POINTERS";
+    println("\nNULL POINTERS");
     let null_ptr: int* = 0;
     if ((usize)null_ptr == 0) {
-        println "null_ptr is indeed null (0).";
+        println("null_ptr is indeed null (0).");
     }
 }

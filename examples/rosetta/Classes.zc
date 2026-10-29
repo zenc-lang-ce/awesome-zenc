@@ -1,3 +1,4 @@
+import "std/io.zc"
 struct Point {
     x: int;
     y: int;
@@ -12,7 +13,7 @@ impl Point {
     // Instance method
     fn print_coords(self) {
         // Using the .field shorthand for self.x and self.y
-        println f"Point coordinates: ({.x}, {.y})";
+        println(f"Point coordinates: ({.x}, {.y})");
     }
     
     // Method that mutates state using 'self' directly
@@ -30,6 +31,6 @@ fn main() {
     // Mutate state directly
     p.move_by(5, -5);
     
-    print "After moving: ";
+    print("After moving: ");
     p.print_coords();
 }

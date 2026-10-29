@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
     for i in 0..16 {
         for let j = 32 + i; j < 128; j += 16 {
@@ -7,8 +8,8 @@ fn main() {
             } else if j == 127 {
                 c = "Del";
             }
-            print f"{j:3d} = {c:-3s}   ";
+            print(f"{j:3d} = {c:-3s}   ");
         }
-        println "";
+        println("");
     }
 }

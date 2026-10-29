@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_prime(n: int) -> bool {
     if n < 2 { return false; }
     if n % 2 == 0 { return n == 2; }
@@ -22,16 +23,16 @@ fn reverse_digits(n: int) -> int {
 }
 
 fn main() {
-    println "Primes under 500 which are also primes when the digits are reversed:";
-    print "  2 ";
+    println("Primes under 500 which are also primes when the digits are reversed:");
+    print("  2 ");
     let count = 1;
     let i = 3;
     while i < 500 {
         if is_prime(i) && is_prime(reverse_digits(i)) {
-            print f"{i:3d} ";
-            if !(++count % 15) { println ""; }
+            print(f"{i:3d} ");
+            if !(++count % 15) { println(""); }
         }
         i += 2;
     }
-    println f"\n\n{count} such primes found.";
+    println(f"\n\n{count} such primes found.");
 }

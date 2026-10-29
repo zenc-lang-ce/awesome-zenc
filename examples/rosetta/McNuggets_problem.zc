@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn mcnugget(limit: int) {
     let sv = (bool*)calloc(limit + 1, sizeof(bool));
     defer free(sv);
@@ -8,7 +9,7 @@ fn mcnugget(limit: int) {
     }
     for i in limit..=0 step -1 {
         if !sv[i] {
-            println f"Maximum non-McNuggets number is {i}.";
+            println(f"Maximum non-McNuggets number is {i}.");
             return;
         }
     }

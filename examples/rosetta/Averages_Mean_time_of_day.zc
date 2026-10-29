@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn time_to_degs(time: string) -> f64 {
@@ -36,5 +37,5 @@ fn main() {
     let mean = mean_angle(angles, 4);
     let buf: char[9];
     degs_to_time(mean, buf);
-    println f"Mean time of day is : {buf}";
+    println(f"Mean time of day is : {buf}");
 }

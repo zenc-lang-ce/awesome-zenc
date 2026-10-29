@@ -1,4 +1,5 @@
 // The procedure accepts a raw C-style function pointer
+import "std/io.zc"
 fn times_fp(proc: fn*(), n: uint) {
     for _ in 0..n {
         proc();
@@ -7,7 +8,7 @@ fn times_fp(proc: fn*(), n: uint) {
 
 // A standard named function
 fn say_hello() {
-    println "Hello from function pointer!";
+    println("Hello from function pointer!");
 }
 
 fn main() {

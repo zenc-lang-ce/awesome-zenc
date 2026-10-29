@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn d2d(d: f64) -> f64 { return Math::mod(d, 360.0); }
@@ -26,19 +27,19 @@ fn main() {
     for a in angles {
         printf(f2, a, d2d(a), d2g(a), d2m(a), d2r(a));
     }
-    println "";
+    println("");
 
     printf(f1, "gradians", "norm grds", "degrees", "mils", "radians");
     for a in angles {
         printf(f2, a, g2g(a), g2d(a), g2m(a), g2r(a));
     }
-    println "";
+    println("");
 
     printf(f1, "mils", "norm mils", "degrees", "gradians", "radians");
     for a in angles {
         printf(f2, a, m2m(a), m2d(a), m2g(a), m2r(a));
     }
-    println "";
+    println("");
 
     printf(f1, "radians", "norm rads", "degrees", "gradians", "mils");
     for a in angles {

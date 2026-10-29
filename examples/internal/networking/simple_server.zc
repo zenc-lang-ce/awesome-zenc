@@ -4,7 +4,7 @@ import "std/net/http.zc"
 let index_html = embed "examples/internal/networking/index.html" as string;
 
 fn handler(req: Request*, res: Response*) {
-    f"Received request: {req.method.c_str()} {req.path.c_str()}";
+    println(f"Received request: {req.method.c_str()} {req.path.c_str()}");
     
     if (req.path.eq_str("/")) {
         res.set_body_str(index_html);
@@ -22,6 +22,6 @@ fn main() {
     let port = 8080;
     let server = Server::new(port, handler);
     
-    f"Starting server on http://localhost:{port} ...";
+    println(f"Starting server on http://localhost:{port} ...");
     server.start();
 }

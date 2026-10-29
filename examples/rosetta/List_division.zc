@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 def BS2 = "\x08\x08";
@@ -25,13 +26,13 @@ fn list_divide(a: int*, c: const usize, n: const int) {
         start = end;
     }
 
-    print "[";
+    print("[");
     for i in 0..res.length() {
-        print "[";
-        for j in res[i] { print f"{j}, "; }
-        print f"{BS2}], ";
+        print("[");
+        for j in res[i] { print(f"{j}, "); }
+        print(f"{BS2}], ");
     }
-    println f"{BS2}]";
+    println(f"{BS2}]");
 }
 
 fn main() {

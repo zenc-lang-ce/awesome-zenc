@@ -1,14 +1,15 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn temp_conv(k: f64) {
     let c = k - 273.15;
     let f = c * 1.8 + 32.0;
     let r = f + 459.67;
-    println f"{k:7.2f}˚ Kelvin";
-    println f"{c:7.2f}˚ Celsius";
-    println f"{f:7.2f}˚ Fahrenheit";
-    println f"{r:7.2f}˚ Rankine";
-    println "";
+    println(f"{k:7.2f}˚ Kelvin");
+    println(f"{c:7.2f}˚ Celsius");
+    println(f"{f:7.2f}˚ Fahrenheit");
+    println(f"{r:7.2f}˚ Rankine");
+    println("");
 }
 
 fn main() {

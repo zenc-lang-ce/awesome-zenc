@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 import "std/core.zc"
 
@@ -47,21 +48,21 @@ fn main() {
     let original = "Hello, Zen-C World! (XYZ)";
     let key = 3;
 
-    println f"Original: {original}";
-    println f"Key: {key}";
+    println(f"Original: {original}");
+    println(f"Key: {key}");
 
     // Encode
     let encoded = encode(original, key);
-    println f"Encoded: {encoded.c_str()}";
+    println(f"Encoded: {encoded.c_str()}");
 
     // Decode
     let decoded = decode(encoded.c_str(), key);
-    println f"Decoded: {decoded.c_str()}";
+    println(f"Decoded: {decoded.c_str()}");
 
     assert(strcmp(original, decoded.c_str()) == 0, "Decode(Encode(text)) should be original");
     
     // Test wrapping
     let wrapped = encode("XYZ", 3);
-    println f"Wrap Test ('XYZ' + 3): {wrapped.c_str()}";
+    println(f"Wrap Test ('XYZ' + 3): {wrapped.c_str()}");
     assert(strcmp(wrapped.c_str(), "ABC") == 0, "XYZ should wrap to ABC");
 }

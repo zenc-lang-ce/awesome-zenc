@@ -1,13 +1,14 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn main() {
-    println f"e           = {Math::E()}";
-    println f"pi          = {Math::PI()}";
-    println f"sqrt(2)     = {Math::sqrt(2)}";
-    println f"log(3)      = {Math::log(3)}";
-    println f"exp(2)      = {Math::exp(2)}";
-    println f"abs(-1.2)   = {Math::abs(-1.2)}";
-    println f"floor(3.4)  = {Math::floor(3.4)}";
-    println f"ceil(5.6)   = {Math::ceil(5.6)}";
-    println f"pow(1.2, 3) = {Math::pow(1.2, 3.0)}";
+    println(f"e           = {Math::E()}");
+    println(f"pi          = {Math::PI()}");
+    println(f"sqrt(2)     = {Math::sqrt(2)}");
+    println(f"log(3)      = {Math::log(3)}");
+    println(f"exp(2)      = {Math::exp(2)}");
+    println(f"abs(-1.2)   = {Math::abs(-1.2)}");
+    println(f"floor(3.4)  = {Math::floor(3.4)}");
+    println(f"ceil(5.6)   = {Math::ceil(5.6)}");
+    println(f"pow(1.2, 3) = {Math::pow(1.2, 3.0)}");
 }

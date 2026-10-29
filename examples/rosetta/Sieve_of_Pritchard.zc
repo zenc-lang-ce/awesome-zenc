@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn sieve_of_pritchard(limit: usize) -> Vec<int> {
@@ -86,13 +87,13 @@ fn main() {
     let limit: usize = 150;
     let primes = sieve_of_pritchard(limit);
     
-    print f"Primes up to {limit}: [";
+    print(f"Primes up to {limit}: [");
     for i in 0..primes.len {
-        print f"{primes[i]}";
+        print(f"{primes[i]}");
         if i < primes.len - 1 {
-            print ", ";
+            print(", ");
         }
     }
-    println "]";
-    println f"Total primes found: {primes.len}";
+    println("]");
+    println(f"Total primes found: {primes.len}");
 }

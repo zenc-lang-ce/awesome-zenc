@@ -55,33 +55,33 @@ fn str_find_case(haystack: string, needle: string, ignore_case: bool) -> Option<
 fn print_highlight(line: string, match_ptr: string, match_len: usize, config: GrepConfig*) {
     if (!config.color) 
     {
-        f"{line}";
+        println(f"{line}");
         return;
     }
     
     let current = line;
     while (current < match_ptr) 
     {
-        f"{*current}"..;
+        print(f"{*current}");
         current++;
     }
     
     if (config.color) 
     {
-        "\x1b[31m"..;
+        print("\x1b[31m");
     }
 
     for i in 0..match_len 
     {
-        f"{*(match_ptr + i)}"..;
+        print(f"{*(match_ptr + i)}");
     }
     if (config.color) 
     {
-        "\x1b[0m"..;
+        print("\x1b[0m");
     }
     
     current = match_ptr + match_len;
-    f"{current}";
+    println(f"{current}");
 }
 
 fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
@@ -110,17 +110,17 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
                 if (config.path) 
                 {
                     if (config.color) 
-                        f"\x1b[35m{path}\x1b[0m:"..;
+                        print(f"\x1b[35m{path}\x1b[0m:");
                     else 
-                        f"{path}:"..;
+                        print(f"{path}:");
                 }
                 
                 if (config.line_numbers) 
                 {
                     if (config.color) 
-                        f"\x1b[32m{line_num}\x1b[0m:"..;
+                        print(f"\x1b[32m{line_num}\x1b[0m:");
                     else 
-                        f"{line_num}:"..;
+                        print(f"{line_num}:");
                 }
                 
                 if (match_opt.is_some()) 
@@ -129,7 +129,7 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
                 } 
                 else 
                 {
-                    f"{line_start}";
+                    println(f"{line_start}");
                 }
             }
             
@@ -148,15 +148,15 @@ fn grep_file(path: string, config: GrepConfig*) -> Result<int> {
          
          if ((match_opt.is_some() and !config.invert) || (!match_opt.is_some() and config.invert)) 
          {
-             if (config.path) f"{path}:"..;
-             if (config.line_numbers) f"{line_num}:"..;
+             if (config.path) print(f"{path}:");
+             if (config.line_numbers) print(f"{line_num}:");
              if (match_opt.is_some()) 
              {
                  print_highlight(line_start, found_str, q_len, config);
              } 
              else 
              {
-                 f"{line_start}";
+                 println(f"{line_start}");
              }
          }
     }
@@ -192,13 +192,13 @@ fn visit_dir(path: string, config: GrepConfig*) {
 
 fn print_usage() 
 {
-    "Usage: mini_grep [OPTIONS] <QUERY> <PATH>";
-    "Options:";
-    "  -i        Ignore case";
-    "  -n        Show line numbers";
-    "  -v        Invert match";
-    "  -r        Recursive search";
-    "  --color   Enable color output";
+    println("Usage: mini_grep [OPTIONS] <QUERY> <PATH>");
+    println("Options:");
+    println("  -i        Ignore case");
+    println("  -n        Show line numbers");
+    println("  -v        Invert match");
+    println("  -r        Recursive search");
+    println("  --color   Enable color output");
 }
 
 fn main(argc: int, argv: string*) 
@@ -233,7 +233,7 @@ fn main(argc: int, argv: string*)
                  } 
                  else 
                  {
-                     f"Unknown option: {arg}";
+                     println(f"Unknown option: {arg}");
                      print_usage();
                      return 0;
                  }
@@ -250,7 +250,7 @@ fn main(argc: int, argv: string*)
                         'v' => config.invert = true,
                         'r' => config.recursive = true,
                         _ => {
-                            !f"Unknown option flag: '{c}' in {arg}";
+                            eprintln(f"Unknown option flag: '{c}' in {arg}");
                             print_usage();
                             exit(1);
                         }
@@ -278,7 +278,7 @@ fn main(argc: int, argv: string*)
         let meta_res = File::metadata(config.path);
         if (meta_res.is_err()) 
         {
-             !f"grep: {config.path}: Error reading metadata";
+             eprintln(f"grep: {config.path}: Error reading metadata");
              return 1;
         }
         let meta = meta_res.unwrap();
@@ -291,21 +291,21 @@ fn main(argc: int, argv: string*)
             } 
             else 
             {
-                f"grep: {config.path}: Is a directory";
+                println(f"grep: {config.path}: Is a directory");
             }
         } 
         else 
         {
             let res = grep_file(config.path, &config);
             if (res.is_err()) {
-                !f"Error: {res.err}";
+                eprintln(f"Error: {res.err}");
                 return 1;
             }
         }
     } 
     else 
     {
-        f"grep: {config.path}: No such file or directory";
+        println(f"grep: {config.path}: No such file or directory");
     }
     return 0;
 }

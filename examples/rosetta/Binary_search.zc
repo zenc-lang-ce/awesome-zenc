@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn binary_search_iterative(arr: int*, value: int, low: int, high: int) -> int {
     let l = low;
     let h = high;
@@ -21,13 +22,13 @@ fn main() {
     let n = 10;
     let targets: int[3] = [12, 5, 20];
     
-    println "=> Iterative Binary Search";
+    println("=> Iterative Binary Search");
     for target in targets {
         let index = binary_search_iterative(arr, target, 0, n - 1);
         if index != -1 {
-            println f"Value {target} found at index {index}.";
+            println(f"Value {target} found at index {index}.");
         } else {
-            println f"Value {target} not found.";
+            println(f"Value {target} not found.");
         }
     }
 }

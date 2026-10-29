@@ -1,18 +1,20 @@
+import "std/io.zc"
 fn main() {
     let a: int;
     let b: int;
     
-    ? "Enter two integers separated by a space: " (a, b);
+    print("Enter two integers separated by a space: ");
+    readln(a, b);
     
     if a < b {
-        println f"{a} is less than {b}";
+        println(f"{a} is less than {b}");
     }
     
     if a == b {
-        println f"{a} is equal to {b}";
+        println(f"{a} is equal to {b}");
     }
     
     if a > b {
-        println f"{a} is greater than {b}";
+        println(f"{a} is greater than {b}");
     }
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc";
 import "std/string.zc";
 
@@ -43,12 +44,12 @@ fn main() {
     let max = 1.0;
     let coeffs: [f64; N];
     cheb_coeffs(cheb_func, N, min, max, coeffs);
-    println "Coefficients:";
+    println("Coefficients:");
     for coeff in coeffs {
         let s = coeff >= 0 ? " ": "";
-        println f"{s}{coeff:1.14f}";
+        println(f"{s}{coeff:1.14f}");
     }
-    println "\nApproximations:\n  x      func(x)    approx       diff";
+    println("\nApproximations:\n  x      func(x)    approx       diff");
     for i in 0..=20 {
         let x = map_range((f64)i, 0.0, 20.0, min, max);
         let f = Math::cos(x);
@@ -66,6 +67,6 @@ fn main() {
             ds3 = ds2.substring(0, 5);
         }
         ds3.append(&e);
-        println f"{x:1.3f}  {f:1.8f} {approx:1.8f}  {ds3}";
+        println(f"{x:1.3f}  {f:1.8f} {approx:1.8f}  {ds3}");
     }
 }

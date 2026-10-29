@@ -1,3 +1,4 @@
+import "std/io.zc"
 alias fi = fn(int) -> int;
 
 fn add_n(n: int) -> fi {
@@ -6,5 +7,5 @@ fn add_n(n: int) -> fi {
 
 fn main() {
     let adder = add_n(40);
-    println f"The answer to life is {adder(2)}.";
+    println(f"The answer to life is {adder(2)}.");
 }

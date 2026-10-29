@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/set.zc"
 
 fn are_digits_distinct(s: string) -> bool {
@@ -25,7 +26,7 @@ fn main() {
         }
         if !are_digits_distinct(s) { continue; } // digits must be unique
         if is_div_by_all(i, s) {
-            println f"Largest decimal number is {i}.";
+            println(f"Largest decimal number is {i}.");
             break;
         }
     }

@@ -1,4 +1,5 @@
 
+import "std/io.zc"
 include <stdio.h>
 include <stdlib.h>
 include <time.h>
@@ -26,7 +27,7 @@ struct Button {
 
 impl Button {
     fn draw(self) {
-        println f"[Button: '{self.label}' size={self.width}x{self.height}]";
+        println(f"[Button: '{self.label}' size={self.width}x{self.height}]");
     }
 }
 
@@ -47,25 +48,25 @@ fn run_op(a: int, b: int, op: fn(int, int) -> int) -> int {
 fn process_event(e: Event) {
     match e {
         Event::Quit => {
-            println "Event: Quit received. Shutting down...";
+            println("Event: Quit received. Shutting down...");
         },
         Event::Click(p) => {
-            println f"Event: Mouse Clicked at ({p.x}, {p.y})";
+            println(f"Event: Mouse Clicked at ({p.x}, {p.y})");
         },
         Event::KeyPress(k) => {
-            println f"Event: Key Pressed '{k}'";
+            println(f"Event: Key Pressed '{k}'");
         },
         _ => {
-            println "Event: Unknown";
+            println("Event: Unknown");
         }
     }
 }
 
 fn main() {
-    defer { println "End of demo!"; }
-    defer { println "Cleaning up resources..."; }
+    defer { println("End of demo!"); }
+    defer { println("Cleaning up resources..."); }
 
-    println "=> Generics and traits.";
+    println("=> Generics and traits.");
     let btn = Button { 
         label: "Submit", 
         width: 120, 
@@ -76,9 +77,9 @@ fn main() {
     
     let b = container.get();
     b.draw();
-    println "";
+    println("");
 
-    println "=> Enums and pattern matching.";
+    println("=> Enums and pattern matching.");
     let events: Event[4] = [
         Event::Click(Point { x: 150, y: 300 }),
         Event::KeyPress('Z'),
@@ -89,10 +90,10 @@ fn main() {
     for i in 0..4 {
         process_event(events[i]);
     }
-    println "";
+    println("");
 
-    println "=> Lambdas";
+    println("=> Lambdas");
     let sum = run_op(10, 20, (a, b) -> a + b);
-    println f"10 + 20 = {sum}";
-    println "";
+    println(f"10 + 20 = {sum}");
+    println("");
 }

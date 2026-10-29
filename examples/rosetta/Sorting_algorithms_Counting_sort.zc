@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn counting_sort(a: int*, len: const usize, min: int, max: int) {
     let count = (int*)calloc(max - min + 1, sizeof(int));
     defer free(count);
@@ -33,14 +34,14 @@ fn main() {
     let aa: int*[2] = [a1, a2];
     let lens = [a1.len, a2.len];
     for i in 0..aa.len {
-        print "Before: [";
-        for j in 0..lens[i] { print f"{aa[i][j]}, "; }
-        println "\b\b]";
+        print("Before: [");
+        for j in 0..lens[i] { print(f"{aa[i][j]}, "); }
+        println("\b\b]");
         let min = minimum(aa[i], lens[i]);
         let max = maximum(aa[i], lens[i]);
         counting_sort(aa[i], lens[i], min, max);
-        print "After : [";
-        for j in 0..lens[i] { print f"{aa[i][j]}, "; }
-        println "\b\b]\n";
+        print("After : [");
+        for j in 0..lens[i] { print(f"{aa[i][j]}, "); }
+        println("\b\b]\n");
     }
 }

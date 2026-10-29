@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn selection_sort(a: int*, len: const usize) {
     let last = len - 1;
     for i in 0..last {
@@ -21,12 +22,12 @@ fn main() {
     let aa: int*[2] = [a1, a2];
     let lens = [a1.len, a2.len];
     for i in 0..aa.len {
-        print "Before: [";
-        for j in 0..lens[i] { print f"{aa[i][j]}, "; }
-        println "\b\b]";
+        print("Before: [");
+        for j in 0..lens[i] { print(f"{aa[i][j]}, "); }
+        println("\b\b]");
         selection_sort(aa[i], lens[i]);
-        print "After : [";
-        for j in 0..lens[i] { print f"{aa[i][j]}, "; }
-        println "\b\b]\n";
+        print("After : [");
+        for j in 0..lens[i] { print(f"{aa[i][j]}, "); }
+        println("\b\b]\n");
     }
 }

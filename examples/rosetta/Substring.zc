@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn main() {
@@ -9,20 +10,20 @@ fn main() {
     let ks = String::from("δε");  // known string
 
     // for reference
-    println "Index of characters:  01234567";
-    println f"Complete string:      {s}";
+    println("Index of characters:  01234567");
+    println(f"Complete string:      {s}");
 
     // starting from n characters in and of m length
     let ss1 = s.utf8_substr(n, m);
-    println f"Start {n}, length {m}:    {ss1}";
+    println(f"Start {n}, length {m}:    {ss1}");
 
     // starting from n characters in, up to the end of the string
     let ss2 = s.utf8_substr(n, l - n);
-    println f"Start {n}, to end:      {ss2}";
+    println(f"Start {n}, to end:      {ss2}");
 
     // whole string minus last character
     let ss3 = s.utf8_substr(0, l - 1);
-    println f"All but last:         {ss3}";
+    println(f"All but last:         {ss3}");
 
     // starting from a known character within the string and of m length
     let dx = -1;
@@ -35,7 +36,7 @@ fn main() {
     if dx >= 0 {
         let ss4 = s.utf8_substr(dx, m);
         let kcs = String::from_rune(kc);
-        println f"Start '{kcs}', length {m}:  {ss4}";
+        println(f"Start '{kcs}', length {m}:  {ss4}");
     }
 
     // starting from a known substring within the string and of m length
@@ -50,6 +51,6 @@ fn main() {
     }
     if (sx >= 0) {
         let ss5 = s.utf8_substr(sx, m);
-        println f"Start '{ks}', length {m}: {ss5}";
+        println(f"Start '{ks}', length {m}: {ss5}");
     }
 }

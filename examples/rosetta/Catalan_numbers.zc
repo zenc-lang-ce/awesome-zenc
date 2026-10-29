@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn factorial(n: u64) -> u64 {
@@ -19,9 +20,9 @@ fn catalan_rec(n: u64) -> u64 {
 
 fn main() {
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println " n  Catalan number";
-    println "------------------";
+    println(" n  Catalan number");
+    println("------------------");
     for i in 0..=15 { printf("%2d  %'9lu\n", i, catalan((u64)i)); }
-    println "\nand again using a recursive function:\n";
+    println("\nand again using a recursive function:\n");
     for i in 0..=15 { printf("%2d  %'9lu\n", i, catalan_rec((u64)i)); }
 }

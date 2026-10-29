@@ -1,14 +1,15 @@
+import "std/io.zc"
 import "std/stack.zc"
 
 fn main() {
     let s = Stack<int>::new();
-    println "Stack created.";
+    println("Stack created.");
     let i = 2;
     s.push(i);
-    println f"'{i}' pushed onto the stack.";
+    println(f"'{i}' pushed onto the stack.");
     if s.length() > 0 {
          i = s.pop().unwrap();
-         println f"'{i}' popped from the stack.";
+         println(f"'{i}' popped from the stack.");
     }
-    if s.is_empty() { println "Stack is now empty." }
+    if s.is_empty() { println("Stack is now empty.") }
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn divisor_count(n: int) -> int {
@@ -19,19 +20,19 @@ fn main() {
     let count = 0;
     let n = 1;
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println "First 50 numbers which are the cube roots of the products of their proper divisors:";
+    println("First 50 numbers which are the cube roots of the products of their proper divisors:");
     loop {
         let dc = divisor_count(n);
         if n == 1 || dc  == 8 {
             if ++count <= 50 {
-                print f"{n:3d} ";
-                if !(count % 10) { println ""; }
+                print(f"{n:3d} ");
+                if !(count % 10) { println(""); }
             } else if count == 500 {
-                println f"\n500th    : {n:'7d}";
+                println(f"\n500th    : {n:'7d}");
             } else if count == 5_000 {
-                println f"\n5,000th  : {n:'7d}";
+                println(f"\n5,000th  : {n:'7d}");
             } else if count == 50_000 {
-                println f"\n50,000th : {n:'7d}";
+                println(f"\n50,000th : {n:'7d}");
                 break;
             }
         }

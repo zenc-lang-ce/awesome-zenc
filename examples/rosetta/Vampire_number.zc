@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/math.zc"
 
@@ -50,10 +51,10 @@ fn fangs(x: u64) -> Vec<u64> {
 }
 
 fn show_fangs(x: u64, f: Vec<u64>*) {
-    print f"{x}";
-    if f.length() > 1 { println ""; }
+    print(f"{x}");
+    if f.length() > 1 { println(""); }
     for a in *f {
-        println f" = {a} x {x / a}";
+        println(f" = {a} x {x / a}");
     }
 }
 
@@ -64,18 +65,18 @@ fn main() {
         let f = fangs(x);
         if f.length() > 0 {
             n++;
-            print f"{n:2d}: ";
+            print(f"{n:2d}: ");
             show_fangs(x, &f);
         }
     }
-    println "";
+    println("");
     let nums: u64[3] = [16758243290880, 24959017348650, 14593825548650];
     for x in nums {
         let f = fangs(x);
         if f.length() > 0 {
             show_fangs(x, &f);
         } else {
-            println f"{x} is not vampiric";
+            println(f"{x} is not vampiric");
         }
     }
 }

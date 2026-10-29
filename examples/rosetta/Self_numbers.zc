@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h";
 
 fn sieve(sv: bool*) {
@@ -33,15 +34,15 @@ fn main() {
     defer free(sv);
     sieve(sv);
     let count = 0;
-    println "The first 50 self numbers are:";
+    println("The first 50 self numbers are:");
     for let i = 0; count <= 50; ++i {
         if !sv[i] {
             if ++count <= 50 {
-                print f"{i:3d}  ";
-                if !(count % 10) { println ""; }
+                print(f"{i:3d}  ");
+                if !(count % 10) { println(""); }
             } else {
                 setlocale(LC_NUMERIC, "");
-                println "\n       Index     Self number";
+                println("\n       Index     Self number");
             }
         }
     }
@@ -50,7 +51,7 @@ fn main() {
     for let i = 0; i < MC; ++i {
         if !sv[i] {
             if ++count == limit {
-                println f"{count:'12d}  {i:'13d}";
+                println(f"{count:'12d}  {i:'13d}");
                 limit *= 10;
             }
         }

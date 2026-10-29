@@ -1,18 +1,19 @@
+import "std/io.zc"
 fn middle3(n: int) {
     let nn = n >= 0 ? n : -n;
     let s = f"{nn}";
     let c = strlen(s);
-    print f"{n:9d} -> ";
+    print(f"{n:9d} -> ");
     if c < 3 {
-        println f"Minimum is 3 digits, only has {c}.";
+        println(f"Minimum is 3 digits, only has {c}.");
     } else if !(c % 2) {
-        println f"Number of digits must be odd, {c} is even.";
+        println(f"Number of digits must be odd, {c} is even.");
     } else if c == 3 {
-        println f"{s}";
+        println(f"{s}");
     } else {
         let d = (c - 3) / 2;
         s[d + 3] = '\0';
-        println f"{s + d}";
+        println(f"{s + d}");
    }
 }
 

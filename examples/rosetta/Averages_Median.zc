@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/sort.zc"
 
 fn median(a: f64*, len: const usize) -> f64 {
@@ -17,5 +18,5 @@ fn main() {
     let a2 = [4.1, 7.2, 1.7, 9.3, 4.4, 3.2];
     let as: f64*[2] = [a1, a2];
     let lens = [7, 6];
-    for i in 0..2 { println f"{median(as[i], lens[i]):g}" };
+    for i in 0..2 { println(f"{median(as[i], lens[i]):g}") };
 }

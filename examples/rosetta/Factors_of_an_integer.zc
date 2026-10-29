@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn divisors(n: int) -> Vec<int> {
@@ -23,11 +24,11 @@ fn divisors(n: int) -> Vec<int> {
 
 fn main() {
     let a = [11, 21, 32, 45, 67, 96, 159, 723, 1024, 5673, 12345, 32767, 123459, 999997];
-    println "The factors of the following numbers are:";
+    println("The factors of the following numbers are:");
     for e in a {
-        print f"{e:6d} => [";
+        print(f"{e:6d} => [");
         let divs = divisors(e);
-        for i in 0..divs.length() { print f"{divs[i]}, "; }
-        println "\b\b]";
+        for i in 0..divs.length() { print(f"{divs[i]}, "); }
+        println("\b\b]");
     }
 }

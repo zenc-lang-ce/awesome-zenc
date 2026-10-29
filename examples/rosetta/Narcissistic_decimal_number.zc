@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn narc(n: int) -> Vec<int> {
@@ -22,10 +23,10 @@ fn narc(n: int) -> Vec<int> {
 }
 
 fn main() {
-    println "The first 25 narcissistic decimal numbers are:"
+    println("The first 25 narcissistic decimal numbers are:")
     let res = narc(25);
     for n in res {
-        print f"{n} ";
+        print(f"{n} ");
     }
-    println "";
+    println("");
 }

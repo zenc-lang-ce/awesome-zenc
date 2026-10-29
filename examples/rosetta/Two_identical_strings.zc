@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn batoi(s: string) -> int {
     let res = 0;
     for i in 0..strlen(s) {
@@ -16,9 +17,9 @@ fn main() {
         strcat(s, b2);
         let d = batoi(s);
         if d >= 1000 { break; }
-        println f"{d:3d} : {s}";
+        println(f"{d:3d} : {s}");
         i++;
         s[0] = '\0';
     }
-    println f"\nFound {i - 1} numbers.";
+    println(f"\nFound {i - 1} numbers.");
 }

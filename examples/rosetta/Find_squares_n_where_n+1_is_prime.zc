@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 
 fn is_prime(n: int) -> bool {
@@ -18,14 +19,14 @@ fn main() {
     let limit: const int = (int)Math::sqrt(1000.0);
     let i = 1;
     let count = 0;
-    println "Square numbers 'n' where 'n + 1' is prime: ";
+    println("Square numbers 'n' where 'n + 1' is prime: ");
     while i <= limit {
         let n = i * i;
         if is_prime(n + 1) {
-            print f"{n}, ";
+            print(f"{n}, ");
             count++;
         }
         i = (i == 1) ? 2 : i + 2;
     }
-    println f"\b\b \n\nFound {count} such numbers."
+    println(f"\b\b \n\nFound {count} such numbers.")
 }

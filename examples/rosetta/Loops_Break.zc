@@ -1,12 +1,13 @@
+import "std/io.zc"
 import "std/random.zc"
 
 fn main() {
     let rng = Random::new();
     loop {
         let a = rng.next_int_range(0, 19);
-        println f"{a}";
+        println(f"{a}");
         if a == 10 { break; }
         let b = rng.next_int_range(0, 19);
-        println f"{b}";
+        println(f"{b}");
     }
 }

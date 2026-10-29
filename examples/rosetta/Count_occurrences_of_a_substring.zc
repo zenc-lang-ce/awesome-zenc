@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn str_occurs(s: string, t: string) -> int {
     let ptr = s;
     let count = 0;
@@ -31,6 +32,6 @@ fn main() {
         let t = ts[i];
         let count = str_occurs(t[0], t[1]);
         str_quote(t[1], q);
-        println f"{q:6s} occurs {count} times in '{t[0]}'";
+        println(f"{q:6s} occurs {count} times in '{t[0]}'");
     }
 }

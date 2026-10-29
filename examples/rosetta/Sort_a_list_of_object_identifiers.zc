@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/string.zc"
 
 fn string_comparer(a: const void*, b: const void*) -> int {
@@ -34,7 +35,7 @@ fn main() {
      for i in 0..6 {
          let s = String::from(oids2[i]);
          let t = s.replace(" ", "");
-         println f"{t}";
+         println(f"{t}");
          free(oids2[i]);
      }
 }

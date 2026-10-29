@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
     let a: int[3] = [1, 2, 3];
     let b: int[2] = [4, 5];
@@ -9,12 +10,12 @@ fn main() {
     // Offset by 3 integers to append 'b'
     memcpy((int*)c + 3, b, sizeof(int) * 2);
     
-    print "Concatenated array: [";
+    print("Concatenated array: [");
     for let i = 0; i < 5; i += 1 {
-        print f"{c[i]}";
+        print(f"{c[i]}");
         if i < 4 {
-            print ", ";
+            print(", ");
         }
     }
-    println "]";
+    println("]");
 }

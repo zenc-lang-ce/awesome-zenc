@@ -1,12 +1,13 @@
+import "std/io.zc"
 struct MyStruct {}
 
 impl MyStruct {
     fn static_method() {
-        println "static method called";
+        println("static method called");
     }
 
     fn method(self) {
-        println "instance method called";
+        println("instance method called");
     }
 }
 

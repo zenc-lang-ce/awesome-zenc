@@ -1,15 +1,16 @@
 
+import "std/io.zc"
 import "std/net/tcp.zc"
 
 def SIZE = 1024;
 
 fn main() {
     setbuf(stdout, NULL);
-    "Starting Echo Server on 127.0.0.1:8080...";
+    println("Starting Echo Server on 127.0.0.1:8080...");
     
     let listener_res = TcpListener::bind("127.0.0.1", 8080);
     if !listener_res.is_ok() {
-        !f"Failed to bind: {listener_res.err}";
+        eprintln(f"Failed to bind: {listener_res.err}");
         return 1;
     }
 
@@ -20,7 +21,7 @@ fn main() {
         if client_res.is_ok() {
             let stream = client_res.unwrap();
             
-            "New Connection!";
+            println("New Connection!");
             
             let buf: char[SIZE];
             
@@ -28,23 +29,23 @@ fn main() {
                 let read_res = stream.read(&buf[0], SIZE);
                 
                 if read_res.is_err() {
-                    !f"Read error: {read_res.err}";
+                    eprintln(f"Read error: {read_res.err}");
                     break;
                 }
                 
                 let bytes = read_res.unwrap();
                 if bytes == 0 {
-                    "Client disconnected.";
+                    println("Client disconnected.");
                     break;
                 }
                 
                 let write_res = stream.write((u8*)&buf[0], bytes);
                  if write_res.is_err() {
-                    !f"Write error: {write_res.err}";
+                    eprintln(f"Write error: {write_res.err}");
                     break;
                 }
 
-                f"Echoed {bytes} bytes.";
+                println(f"Echoed {bytes} bytes.");
             }
         }
     }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn count_jewels(stones: string, jewels: string) -> int {
     let count = 0;
     for i in 0..strlen(stones) {
@@ -11,5 +12,5 @@ fn count_jewels(stones: string, jewels: string) -> int {
 fn main() {
     let stones = "aAAbbbb";
     let jewels = "aA";
-    println f"{count_jewels(stones, jewels)}";
+    println(f"{count_jewels(stones, jewels)}");
 }

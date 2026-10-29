@@ -1,13 +1,14 @@
+import "std/io.zc"
 fn main() {
     let prev = 0.0;
-    ? "" (prev);
+    readln(prev);
     let count = 0;
     loop {
         let next = (prev + 3) * 0.86;
         if prev == next { break; }
         prev = next;
-        print f"{prev:9.6f} ";
-        if ++count % 10 == 0 { println ""; }
+        print(f"{prev:9.6f} ");
+        if ++count % 10 == 0 { println(""); }
     }
-    println f"\nTook {count + 1} iterations.";
+    println(f"\nTook {count + 1} iterations.");
 }

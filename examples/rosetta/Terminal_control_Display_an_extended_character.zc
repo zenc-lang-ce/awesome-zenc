@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
-    println "£";
+    println("£");
 }

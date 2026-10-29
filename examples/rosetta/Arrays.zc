@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn main() {
     def SIZE = 3;
 
@@ -11,13 +12,13 @@ fn main() {
     zeros[0] = 42;
     zeros[2] = 100;
     
-    println "Iterating over ints array:";
+    println("Iterating over ints array:");
     for val in ints {
-        println f"{val}";
+        println(f"{val}");
     }
     
-    println "\nIterating over zeros array:";
+    println("\nIterating over zeros array:");
     for val in zeros {
-        println f"{val}";
+        println(f"{val}");
     }
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc"
 import "std/vec.zc"
 import "std/sort.zc"
@@ -93,14 +94,14 @@ fn ord(n: u64, ch: char[3]) {
 
 fn main() {
     all_primes = prime_sieve(99_999_999);
-    println "First 100 brilliant numbers:";
+    println("First 100 brilliant numbers:");
     let brilliant = get_brilliant(2, 10000, false);
     sort_long(brilliant.data, brilliant.len);
     for i in 0..100 {
-        print f"{brilliant[i]:4lu} ";
-        if !((i + 1) % 10) { println ""; }
+        print(f"{brilliant[i]:4lu} ");
+        if !((i + 1) % 10) { println(""); }
     }
-    println "";
+    println("");
     setlocale(LC_NUMERIC, "");
     let limit: u64 = 1
     let ch: [char; 3];
@@ -110,7 +111,7 @@ fn main() {
         let count = res[0] + 1;
         let next = res[1];
         ord(count, ch);
-        println f"First >= {limit:'18lu} is {count:'14lu}{ch} in the series: {next:'18lu}";
+        println(f"First >= {limit:'18lu} is {count:'14lu}{ch} in the series: {next:'18lu}");
     }
     all_primes.free();
 }

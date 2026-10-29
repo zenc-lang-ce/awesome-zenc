@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/fs.zc"
 import "std/vec.zc"
 import "std/string.zc"
@@ -57,7 +58,7 @@ fn main() {
     // Generate and print 5 passphrases for n = 5.
     for _ in 0..5 {
         let pp = passphrase(5);
-        println f"{pp}";
+        println(f"{pp}");
     }
     for c in candidates { c.free(); }
     candidates.free();

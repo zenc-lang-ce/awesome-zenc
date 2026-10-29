@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 
 fn prime_factors(n: int) -> Vec<int> {
@@ -52,15 +53,15 @@ fn mu(n: int) -> int {
 }
 
 fn main() {
-    println "The first 199 Möbius numbers are:";
+    println("The first 199 Möbius numbers are:");
     for i in 0..10 {
         for j in 0..20 {
             if i == 0 && j == 0 {
-                print "    ";
+                print("    ");
             } else {
-                print f"{mu(i * 20 + j): 3d} ";
+                print(f"{mu(i * 20 + j): 3d} ");
             }
         }
-        println "";
+        println("");
     }
 }

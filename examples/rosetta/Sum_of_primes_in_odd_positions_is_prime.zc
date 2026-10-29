@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "locale.h"
 
 fn is_prime(n: int) -> bool {
@@ -18,8 +19,8 @@ fn main() {
     setlocale(LC_NUMERIC, "");
     let sum = 0;
     let i = 1;
-    println " i   p[i]  Σp[i]";
-    println "----------------";
+    println(" i   p[i]  Σp[i]");
+    println("----------------");
     let p = 2;
     while p < 1000 {
         if is_prime(p) {

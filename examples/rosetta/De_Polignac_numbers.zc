@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "locale.h"
 
@@ -43,11 +44,11 @@ fn main() {
         }
     }
     setlocale(LC_NUMERIC, "");
-    println "First 50 De Polignac numbers:";
+    println("First 50 De Polignac numbers:");
     for i in 0..dp.length() {
-        print f"{dp[i]:'5d} ";
-        if !((i + 1) % 10) { println ""; }
+        print(f"{dp[i]:'5d} ");
+        if !((i + 1) % 10) { println(""); }
     }
-    println f"\nOne thousandth: {dp1000:'d}";
-    println f"\nTen thousandth: {dp10000:'d}";
+    println(f"\nOne thousandth: {dp1000:'d}");
+    println(f"\nTen thousandth: {dp10000:'d}");
 }

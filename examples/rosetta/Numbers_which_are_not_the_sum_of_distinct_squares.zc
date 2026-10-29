@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/vec.zc"
 import "std/math.zc"
 
@@ -30,9 +31,9 @@ fn main() {
         }
         i++;
     }
-    println "Numbers which are not the sum of distinct squares:";
-    for v in a { print f"{v}, "; }
-    println "\b\b ";
-    println f"\nFound {a.length()} such numbers.";
+    println("Numbers which are not the sum of distinct squares:");
+    for v in a { print(f"{v}, "); }
+    println("\b\b ");
+    println(f"\nFound {a.length()} such numbers.");
     printf(sf, i - g, g);
 }

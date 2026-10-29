@@ -1,3 +1,4 @@
+import "std/io.zc"
 import "std/math.zc";
 
 fn sum_series(n: int) -> f64 {
@@ -7,7 +8,7 @@ fn sum_series(n: int) -> f64 {
 }
 
 fn main() {
-    println f"s(1000) = {sum_series(1000):0.16f}";
+    println(f"s(1000) = {sum_series(1000):0.16f}");
     let zeta2 = Math::PI() * Math::PI() / 6.0;
-    println f"zeta(2) = {zeta2:0.16f}";
+    println(f"zeta(2) = {zeta2:0.16f}");
 }

@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn is_prime(n: int) -> bool {
     if n < 2 { return false; }
     if n % 2 == 0 { return n == 2; }
@@ -9,8 +10,8 @@ fn is_prime(n: int) -> bool {
 
 fn main() {
     let tests = [2, 5, 12, 19, 57, 61, 97];
-    println "Are the following prime?";
+    println("Are the following prime?");
     for t in tests {
-        println f"{t:2d} -> {is_prime(t)}";
+        println(f"{t:2d} -> {is_prime(t)}");
     }
 }

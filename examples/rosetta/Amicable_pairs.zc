@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn proper_divisor_sum(n: int) -> int {
     let i = 1;
     let k = (n % 2 == 0) ? 1 : 2;
@@ -15,11 +16,11 @@ fn proper_divisor_sum(n: int) -> int {
 
 fn main() {
     def LIMIT = 20_000;
-    println f"The amicable pairs below {LIMIT} are:";
+    println(f"The amicable pairs below {LIMIT} are:");
     for m in 1..LIMIT {
         let n = proper_divisor_sum(m);
         if m < n && m == proper_divisor_sum(n) {
-            println f"  {m:5d} and {n:5d}";
+            println(f"  {m:5d} and {n:5d}");
         }
     }
 }

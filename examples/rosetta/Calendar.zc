@@ -1,3 +1,4 @@
+import "std/io.zc"
 fn IS_LEAP(Y: int) -> int {
     if Y > 1582 return (Y % 4 == 0 && Y % 100 != 0) || (Y % 400 == 0) ? 1 : 0;
     return Y % 4 == 0 ? 1 : 0;
@@ -22,9 +23,9 @@ fn GET_START_DAY(Y: int, M: int) -> int {
 fn PRINT_MONTH_NAME(M: int) {
     let NAMES: char*[12] = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
     let NAME = NAMES[M-1];
-    print f"      {NAME}";
+    print(f"      {NAME}");
     // Simple padding for 20-char width
-    for I in 0..(14 - (M == 9 ? 9 : (M == 1 || M == 3 || M == 7 || M == 8 ? 7 : 8))) { print " "; }
+    for I in 0..(14 - (M == 9 ? 9 : (M == 1 || M == 3 || M == 7 || M == 8 ? 7 : 8))) { print(" "); }
 }
 
 fn main() {
@@ -32,31 +33,31 @@ fn main() {
     let WIDTH = 80;
     let MONTHS_PER_ROW = WIDTH / 20;
 
-    println "                                    ,-~~-.___.";
-    println "                                   / ()=(()   \\";
-    println "                                  (   (        0";
-    println "                                   \\._\\, ,----'";
-    println "                              ##XXXxxxxxxx";
-    println "                                     /  ---'~;";
-    println "                                    /    /~|-";
-    println "                              _____=(   ~~  |______";
-    println "                             /_____________________\\";
-    println "                            /_______________________\\";
-    println "                           /_________________________\\";
-    println "                          /___________________________\\";
-    println "                             |____________________|";
-    println "                             |____________________|";
-    println "                             |____________________|";
-    println f"                               CALENDAR FOR {YEAR}";
+    println("                                    ,-~~-.___.");
+    println("                                   / ()=(()   \\");
+    println("                                  (   (        0");
+    println("                                   \\._\\, ,----'");
+    println("                              ##XXXxxxxxxx");
+    println("                                     /  ---'~;");
+    println("                                    /    /~|-");
+    println("                              _____=(   ~~  |______");
+    println("                             /_____________________\\");
+    println("                            /_______________________\\");
+    println("                           /_________________________\\");
+    println("                          /___________________________\\");
+    println("                             |____________________|");
+    println("                             |____________________|");
+    println("                             |____________________|");
+    println(f"                               CALENDAR FOR {YEAR}");
 
     for ROW in 0..(12 / MONTHS_PER_ROW) {
         let START_M = ROW * MONTHS_PER_ROW + 1;
         
         // Headers
         for M_OFF in 0..MONTHS_PER_ROW { PRINT_MONTH_NAME(START_M + M_OFF); }
-        println "";
-        for M_OFF in 0..MONTHS_PER_ROW { print "SU MO TU WE TH FR SA "; }
-        println "";
+        println("");
+        for M_OFF in 0..MONTHS_PER_ROW { print("SU MO TU WE TH FR SA "); }
+        println("");
 
         // Weeks (Max 6)
         for W in 0..6 {
@@ -67,14 +68,14 @@ fn main() {
                 for D in 0..7 {
                     let DATE = W * 7 + D - S + 1;
                     if DATE > 0 && DATE <= D_MAX {
-                        if DATE < 10 print " ";
-                        print f"{DATE} ";
+                        if DATE < 10 print(" ");
+                        print(f"{DATE} ");
                     } else {
-                        print "   ";
+                        print("   ");
                     }
                 }
             }
-            println "";
+            println("");
         }
     }
 }
