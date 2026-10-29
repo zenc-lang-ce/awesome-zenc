@@ -8,7 +8,7 @@ let label: gtk::GtkWidget*;
 fn on_button_clicked(_: gtk::GtkWidget*, __: gtk::gpointer) {
     counter += 1;
     
-    let text = "Button clicked {counter} times";
+    let text = f"Button clicked {counter} times";
     if counter == 1 {
         text = "Button clicked 1 time";
     }

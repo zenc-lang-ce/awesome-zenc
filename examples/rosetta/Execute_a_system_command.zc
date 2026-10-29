@@ -7,6 +7,6 @@ fn main() {
     let cmd = is_windows ? "dir" : "ls";
     let exit_code = Command::new(cmd).status();
     if exit_code {
-        println "Command failed with code {exit_code}";
+        println f"Command failed with code {exit_code}";
     }
 }

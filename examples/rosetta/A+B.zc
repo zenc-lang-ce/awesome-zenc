@@ -5,6 +5,6 @@ fn main() {
     // Read two space-separated integers directly from the input stream
     if (? a, b) == 2 {
         let sum = a + b;
-        println "{sum}";
+        println f"{sum}";
     }
 }

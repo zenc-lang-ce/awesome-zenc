@@ -6,6 +6,6 @@ fn factorial(n: i64) -> i64 {
 fn main() {
     for i in 0..=15 {
         let res = factorial(i);
-        println "{i}! = {res}";
+        println f"{i}! = {res}";
     }
 }

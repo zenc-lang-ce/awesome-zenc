@@ -9,7 +9,7 @@ import "lualib.h";
 
 fn l_zenc_hello(L: lua_State*) -> int {
     let name: string = (string)luaL_optstring(L, 1, "world");
-    println "hello from Zen-C, {name}"
+    println f"hello from Zen-C, {name}"
     return 0;
 }
 
@@ -31,18 +31,18 @@ fn main() {
 
     if (luaL_dostring(L, script) != LUA_OK) {
         let err: string = (string)lua_tostring(L, -1);
-        !"lua error: {err}"
+        !f"lua error: {err}"
         lua_pop(L, 1);
     }
 
     // Run some Lua from a script file
     if (luaL_loadfile(L, "script.lua") != LUA_OK) {
         let err: string = (string)lua_tostring(L, -1);
-        !"lua load-error: {err}"
+        !f"lua load-error: {err}"
         lua_pop(L, 1);
     } else if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
         let err: string = (string)lua_tostring(L, -1);
-        !"lua error: {err}"
+        !f"lua error: {err}"
         lua_pop(L, 1);
     }
 }

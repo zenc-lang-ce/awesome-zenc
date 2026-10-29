@@ -22,7 +22,7 @@ fn binary_search(arr: int*, size: isize, target: int) -> isize {
 fn print_array(arr: int*, size: isize) {
     "["..;
     for i in 0..size {
-        "{arr[i]}"..;
+        f"{arr[i]}"..;
         if i < size - 1 { ", "..; }
     }
     "]";
@@ -43,5 +43,5 @@ fn main() {
     let target = 7;
     let result = binary_search(v.data, (isize)v.len, target);
     
-    "Found {target} at index {result}";
+    f"Found {target} at index {result}";
 }

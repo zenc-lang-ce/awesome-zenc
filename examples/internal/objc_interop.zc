@@ -30,7 +30,7 @@ fn main() {
     // Pass it back to ObjC
     print_description(s);
 
-    "Zen C interpolated string: {s}";
+    f"Zen C interpolated string: {s}";
 
     raw {
         // You can also  raw ObjC syntax anywhere.

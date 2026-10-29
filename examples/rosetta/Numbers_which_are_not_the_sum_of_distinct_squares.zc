@@ -31,8 +31,8 @@ fn main() {
         i++;
     }
     println "Numbers which are not the sum of distinct squares:";
-    for v in a { print "{v}, "; }
+    for v in a { print f"{v}, "; }
     println "\b\b ";
-    println "\nFound {a.length()} such numbers.";
+    println f"\nFound {a.length()} such numbers.";
     printf(sf, i - g, g);
 }

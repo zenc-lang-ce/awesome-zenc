@@ -37,15 +37,15 @@ fn main() {
     setlocale(LC_NUMERIC, "");
     let kinds = [" ", " odd ", " prime "];
     for i, kind in kinds {
-        println "First 20{kind}Brazilian numbers:";
+        println f"First 20{kind}Brazilian numbers:";
         let c = 0;
         let n = 7;
         loop {
             if is_brazilian(n) {
-                print "{n} ";
+                print f"{n} ";
                 if ++c == 20 {
                     let nl = i < 2 ? "\n" : "";
-                    println "{nl}";
+                    println f"{nl}";
                     break;
                 }
             }
@@ -67,5 +67,5 @@ fn main() {
         if is_brazilian(n) { c++; }
         n++;
     }
-    println "The 100,000th Brazilian number: {n - 1:'d}";
+    println f"The 100,000th Brazilian number: {n - 1:'d}";
 }

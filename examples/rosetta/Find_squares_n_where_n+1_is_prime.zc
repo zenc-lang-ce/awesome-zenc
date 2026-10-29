@@ -22,10 +22,10 @@ fn main() {
     while i <= limit {
         let n = i * i;
         if is_prime(n + 1) {
-            print "{n}, ";
+            print f"{n}, ";
             count++;
         }
         i = (i == 1) ? 2 : i + 2;
     }
-    println "\b\b \n\nFound {count} such numbers."
+    println f"\b\b \n\nFound {count} such numbers."
 }

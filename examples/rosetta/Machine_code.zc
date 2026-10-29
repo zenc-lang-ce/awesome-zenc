@@ -41,8 +41,8 @@ fn main() {
     let result = add_func(a, b);
 
     println "Executing machine code (x86_64: mov eax, edi; add eax, esi; ret)";
-    println "Arguments: {a}, {b}";
-    println "Result: {result}";
+    println f"Arguments: {a}, {b}";
+    println f"Result: {result}";
 
     // Clean up
     Memory::munmap(addr, size);
@@ -50,7 +50,7 @@ fn main() {
     if result == 19 {
         println "Success!";
     } else {
-        eprintln "Failure: expected 19, got {result}";
+        eprintln f"Failure: expected 19, got {result}";
         exit(1);
     }
 }

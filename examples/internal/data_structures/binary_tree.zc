@@ -46,7 +46,7 @@ impl BST {
     fn _print_in_order(node: Node*) {
         if node != NULL {
             BST::_print_in_order(node.left);
-            "{node.value} "..;
+            f"{node.value} "..;
             BST::_print_in_order(node.right);
         }
     }

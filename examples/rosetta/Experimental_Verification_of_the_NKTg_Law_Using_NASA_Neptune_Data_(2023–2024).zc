@@ -7,13 +7,13 @@ fn compute_nktg(x: f64, v: f64, m: f64, dm_dt: f64) {
     let nktg  = Math::sqrt(nktg1 * nktg1 + nktg2 * nktg2);
 
     println "--------------------------------------------";
-    println "Position (x)         : {x:0.0f}";
-    println "Velocity (v)         : {v:0.2f}";
-    println "Mass (m)             : {m:0.0f}";
-    println "Momentum (p = m * v) : {p:0.0f}";
-    println "NKTg1 = x * p        : {nktg1:0.0f}";
-    println "NKTg2 = dm_dt * p    : {nktg2:0.0f}";
-    println "Total NKTg           : {nktg:0.0f}";
+    println f"Position (x)         : {x:0.0f}";
+    println f"Velocity (v)         : {v:0.2f}";
+    println f"Mass (m)             : {m:0.0f}";
+    println f"Momentum (p = m * v) : {p:0.0f}";
+    println f"NKTg1 = x * p        : {nktg1:0.0f}";
+    println f"NKTg2 = dm_dt * p    : {nktg2:0.0f}";
+    println f"Total NKTg           : {nktg:0.0f}";
 }
 
 fn main() {

@@ -4,16 +4,16 @@ fn collapse(s: string) {
     let ss = String::new(s);
     let c = ss.runes();
     let le = (int)c.length();
-    println "original : length = {le:2d}, string = «««{s}»»»";
+    println f"original : length = {le:2d}, string = «««{s}»»»";
     if le >= 2 {
         for let i = le - 2; i >= 0; --i {
             if c[i] == c[i + 1] { c.remove(i); }
         }
         let cl = (int)c.length();
         let cs = String::from_runes_vec(c);
-        println "collapsed: length = {cl:2d}, string = «««{cs}»»»\n";
+        println f"collapsed: length = {cl:2d}, string = «««{cs}»»»\n";
     } else {
-        println "collapsed: length = {le:2d}, string = «««{s}»»»\n";
+        println f"collapsed: length = {le:2d}, string = «««{s}»»»\n";
     }
 }
 

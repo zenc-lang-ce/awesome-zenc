@@ -38,8 +38,8 @@ fn main() {
     }
     println "First hundred:";
     for i in 0..100 {
-        print "{a[i]:3d}  ";
+        print f"{a[i]:3d}  ";
         if !((i + 1) % 10) { println ""; }
     }
-    println "\nOne thousandth: {a[999]}";
+    println f"\nOne thousandth: {a[999]}";
 }

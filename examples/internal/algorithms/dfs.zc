@@ -122,13 +122,13 @@ fn main() {
 
     "DFS recursive order: "..;
     for i in 0..(int)order_rec.len {
-        "{order_rec.data[i]} "..;
+        f"{order_rec.data[i]} "..;
     }
     "";
 
     "DFS iterative order: "..;
     for i in 0..(int)order_it.len {
-        "{order_it.data[i]} "..;
+        f"{order_it.data[i]} "..;
     }
     "";
 

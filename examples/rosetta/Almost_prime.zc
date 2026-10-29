@@ -24,9 +24,9 @@ fn gen(k: int, n: int) -> Vec<int> {
 
 fn main() {
     for i in 1..6 {
-        print "{i} [";
+        print f"{i} [";
         let res = gen(i, 10);
-        for j in res { print "{j}, "; }
+        for j in res { print f"{j}, "; }
         println "\b\b]";
     }
 }

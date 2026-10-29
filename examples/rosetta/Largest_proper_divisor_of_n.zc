@@ -10,7 +10,7 @@ fn lpd(n: int) -> int {
 fn main() {
     println "Largest proper divisor of n where 1 <= n <= 100:";
     for n in 1..101 {
-        print "{lpd(n):2d}  ";
+        print f"{lpd(n):2d}  ";
         if !(n % 10) { println ""; }
     }
 }

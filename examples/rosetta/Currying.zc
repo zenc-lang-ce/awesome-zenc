@@ -6,5 +6,5 @@ fn add_n(n: int) -> fi {
 
 fn main() {
     let adder = add_n(40);
-    println "The answer to life is {adder(2)}.";
+    println f"The answer to life is {adder(2)}.";
 }

@@ -11,5 +11,5 @@ fn main() {
         e += 1.0 / (f64)fact;
         if Math::abs(e - e0) < EPS { break; }
     }
-    println "e = {e:0.15f}";
+    println f"e = {e:0.15f}";
 }

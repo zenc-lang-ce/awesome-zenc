@@ -45,13 +45,13 @@ fn main() {
     let c = Vector3::new(-5.0, -12.0, -13.0);
 
     println "Vectors:";
-    println "a = {a}";
-    println "b = {b}";
-    println "c = {c}";
+    println f"a = {a}";
+    println f"b = {b}";
+    println f"c = {c}";
     println "";
 
-    println "a . b       = {a.dot(b)}";
-    println "a x b       = {a.cross(b)}";
-    println "a . (b x c) = {a.scalar_triple(b, c)}";
-    println "a x (b x c) = {a.vector_triple(b, c)}";
+    println f"a . b       = {a.dot(b)}";
+    println f"a x b       = {a.cross(b)}";
+    println f"a . (b x c) = {a.scalar_triple(b, c)}";
+    println f"a x (b x c) = {a.vector_triple(b, c)}";
 }

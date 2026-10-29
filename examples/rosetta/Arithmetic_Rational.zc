@@ -29,6 +29,6 @@ fn main() {
         let sum = Rat::new(1, i);
         let pd = divisors(i);
         for j in 1..(pd.length() - 1) { sum += Rat::new(1, pd[j]); }
-        if sum == one { println "  {i}"; }
+        if sum == one { println f"  {i}"; }
     }
 }

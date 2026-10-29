@@ -21,7 +21,7 @@ fn main() {
     let count = 0;
     for let i = 1; count < 100; ++i {
         if !(i % divisor_count(i)) {
-            print "{i:'5d}  ";
+            print f"{i:'5d}  ";
             if !(++count % 10) { println ""; }
         }
     }

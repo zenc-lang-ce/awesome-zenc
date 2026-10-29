@@ -17,6 +17,6 @@ fn main() {
 
     println "Your variables are:";
     for v in vars {
-        println "  {v.key} = {v.val}";
+        println f"  {v.key} = {v.val}";
     }
 }

@@ -6,9 +6,9 @@ fn main() {
     for e in a {
         sum  += e;
         prod *= e;
-        print "{e} ";
+        print f"{e} ";
     }
     println "";
-    println "Sum      : {sum}";
-    println "Product  : {prod}";
+    println f"Sum      : {sum}";
+    println f"Product  : {prod}";
 }

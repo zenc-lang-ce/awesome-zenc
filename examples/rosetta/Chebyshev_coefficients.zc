@@ -46,7 +46,7 @@ fn main() {
     println "Coefficients:";
     for coeff in coeffs {
         let s = coeff >= 0 ? " ": "";
-        println "{s}{coeff:1.14f}";
+        println f"{s}{coeff:1.14f}";
     }
     println "\nApproximations:\n  x      func(x)    approx       diff";
     for i in 0..=20 {
@@ -54,7 +54,7 @@ fn main() {
         let f = Math::cos(x);
         let approx = cheb_approx(x, N, min, max, coeffs);
         let diff = approx - f;
-        let ds = String::from("{diff:g}");
+        let ds = String::from(f"{diff:g}");
         let len = ds.length();
         let e = ds.substring(len - 4, 4);
         let ds2 = ds.substring(0, len - 5);
@@ -66,6 +66,6 @@ fn main() {
             ds3 = ds2.substring(0, 5);
         }
         ds3.append(&e);
-        println "{x:1.3f}  {f:1.8f} {approx:1.8f}  {ds3}";
+        println f"{x:1.3f}  {f:1.8f} {approx:1.8f}  {ds3}";
     }
 }

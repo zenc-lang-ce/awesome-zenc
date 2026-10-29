@@ -13,7 +13,7 @@ fn main() {
     println "The population count of the first 30 powers of 3 is:";
     let p3: u64 = 1;
     for i in 0..30 {
-        print "{pop_count<u64>(p3)} ";
+        print f"{pop_count<u64>(p3)} ";
         p3 *= 3;
     }
     let odious = Vec<int>::new();
@@ -23,7 +23,7 @@ fn main() {
     for ; count < 30; ++n {
         let pc = pop_count<int>(n);
         if !(pc % 2) {
-            print "{n} ";
+            print f"{n} ";
             count++;
         } else {
             odious << n;
@@ -31,6 +31,6 @@ fn main() {
     }
     odious << n;
     println "\n\nThe first 30 odious numbers are:";
-    for o in odious { print "{o} "; }
+    for o in odious { print f"{o} "; }
     println "";
 }

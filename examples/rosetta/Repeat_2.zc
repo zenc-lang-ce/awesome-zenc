@@ -16,6 +16,6 @@ fn main() {
     let count = 0;
     times(fn[&]() {
         count++;
-        println "Iteration {count}";
+        println f"Iteration {count}";
     }, 5);
 }

@@ -7,7 +7,7 @@ fn is_square(n: int) -> bool {
 
 fn main() {
     for i in 101..1000 step 2 {
-        if is_square(i) { print "{i} "; }
+        if is_square(i) { print f"{i} "; }
     }
     println "";
 }

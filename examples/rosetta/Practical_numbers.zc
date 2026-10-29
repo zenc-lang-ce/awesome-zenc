@@ -73,13 +73,13 @@ fn main() {
     for i in 1..=333 {
         if is_practical(i) { practical << i; }
     }
-    println  "  {practical.length()} practical numbers";
+    println  f"  {practical.length()} practical numbers";
     print    "  The first ten are [";
-    for i in 0..10 { print "{practical[i]}, "; }
+    for i in 0..10 { print f"{practical[i]}, "; }
     println "\b\b]";
     print    "  The final ten are [";
     let len = practical.length();
-    for i in (len - 10)..len { print "{practical[i]}, "; }
+    for i in (len - 10)..len { print f"{practical[i]}, "; }
     println "\b\b]";
-    println "\n666 is practical: {is_practical(666)}";
+    println f"\n666 is practical: {is_practical(666)}";
 }

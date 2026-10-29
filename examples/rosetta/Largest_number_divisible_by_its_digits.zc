@@ -19,13 +19,13 @@ fn main() {
     def HIGH  = 9876432 / MAGIC * MAGIC;
     for (let i = HIGH; i >= MAGIC; i -= MAGIC) {
         if !(i % 10) { continue; }  // can't end in '0'
-        let s = "{i}";
+        let s = f"{i}";
         if strchr(s, '0') || strchr(s, '5') { // can't contain '0' or '5'
             continue;
         }
         if !are_digits_distinct(s) { continue; } // digits must be unique
         if is_div_by_all(i, s) {
-            println "Largest decimal number is {i}.";
+            println f"Largest decimal number is {i}.";
             break;
         }
     }

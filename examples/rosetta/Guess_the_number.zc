@@ -10,5 +10,5 @@ fn main() {
         attempt++;
         if comp == guess { break; }
     }
-    println "\nYou guessed correctly after {attempt} attempt(s)!";
+    println f"\nYou guessed correctly after {attempt} attempt(s)!";
 }

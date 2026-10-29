@@ -23,11 +23,11 @@ fn main() {
     for i in 0..4 {
         let a = aa[i];
         print "Original: ["
-        for j in 0..alen[i] { print "{a[j]}, "; }
+        for j in 0..alen[i] { print f"{a[j]}, "; }
         println "\b\b]";
         sattolo(a, alen[i]);
         print "Sattolo : [";
-        for j in 0..alen[i] { print "{a[j]}, "; }
+        for j in 0..alen[i] { print f"{a[j]}, "; }
         println "\b\b]\n";
     }
 
@@ -38,11 +38,11 @@ fn main() {
     for i in 0..2 {
         let b = bb[i];
         print "Original: ["
-        for j in 0..blen[i] { print "{b[j]}, "; }
+        for j in 0..blen[i] { print f"{b[j]}, "; }
         println "\b\b]";
         sattolo(b, blen[i]);
         print "Sattolo : [";
-        for j in 0..blen[i] { print "{b[j]}, "; }
+        for j in 0..blen[i] { print f"{b[j]}, "; }
         println "\b\b]\n";
     }
 }

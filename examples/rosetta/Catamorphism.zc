@@ -14,7 +14,7 @@ fn mul(x: int, y: int) -> int { return x * y; }
 
 fn main() {
     let a = [1, 2, 3, 4, 5];
-    println "{reduce(add, a, a.len)}";
-    println "{reduce(sub, a, a.len)}";
-    println "{reduce(mul, a, a.len)}";
+    println f"{reduce(add, a, a.len)}";
+    println f"{reduce(sub, a, a.len)}";
+    println f"{reduce(mul, a, a.len)}";
 }

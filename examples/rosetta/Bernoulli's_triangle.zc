@@ -18,7 +18,7 @@ fn main() {
     // Print the triangle
     for n in 0..rows {
         for k in 0..=n {
-            print "{triangle[n][k]} ";
+            print f"{triangle[n][k]} ";
         }
         println "";
     }

@@ -34,7 +34,7 @@ fn countdown(numbers: Vec<int>, target: int) -> bool {
                 let numbers_new = numbers2.clone();
                 numbers_new << result;
                 if result == target || countdown(numbers_new, target) {
-                    println "{result} = {n1} + {n0}";
+                    println f"{result} = {n1} + {n0}";
                     return true;
                 }
                 // Multiplication.
@@ -43,7 +43,7 @@ fn countdown(numbers: Vec<int>, target: int) -> bool {
                     let numbers_next = numbers2.clone();
                     numbers_next << result;
                     if result == target || countdown(numbers_next, target) {
-                        println "{result} = {n1} * {n0}";
+                        println f"{result} = {n1} * {n0}";
                         return true;
                     }
                 }
@@ -53,7 +53,7 @@ fn countdown(numbers: Vec<int>, target: int) -> bool {
                     let numbers_next = numbers2.clone();
                     numbers_next << result;
                     if result == target || countdown(numbers_next, target) {
-                        println "{result} = {n1} - {n0}";
+                        println f"{result} = {n1} - {n0}";
                         return true;
                     }
                 }
@@ -63,7 +63,7 @@ fn countdown(numbers: Vec<int>, target: int) -> bool {
                     let numbers_next = numbers2.clone();
                     numbers_next << result;
                     if result == target || countdown(numbers_next, target) {
-                        println "{result} = {n1} / {n0}";
+                        println f"{result} = {n1} / {n0}";
                         return true;
                     }
                 }
@@ -88,11 +88,11 @@ fn main() {
         let v = Vec<int>::new();
         print "Using : [";
         for j in 0..6 {
-            print "{aa[i][j]}, ";
+            print f"{aa[i][j]}, ";
             v << aa[i][j];
         }
         println "\b\b]";
-        println "Target: {target_list[i]}";
+        println f"Target: {target_list[i]}";
         let done = countdown(v, target_list[i]);
         if !done { println "No exact solution found."; }
         println "";

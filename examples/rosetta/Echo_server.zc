@@ -16,7 +16,7 @@ fn handle_client(stream_ptr: TcpStream*) {
     while true {
         let res = stream_ptr.read(read_buf, 1023);
         if res.is_err() {
-            eprintln "[Thread] Error reading from stream: {res.err}";
+            eprintln f"[Thread] Error reading from stream: {res.err}";
             break;
         }
         
@@ -59,7 +59,7 @@ fn main() {
     
     let listener_res = TcpListener::bind("127.0.0.1", 12321);
     if listener_res.is_err() {
-        eprintln "Failed to bind: {listener_res.err}";
+        eprintln f"Failed to bind: {listener_res.err}";
         return 0;
     }
     
@@ -69,7 +69,7 @@ fn main() {
     loop {
         let client_res = listener.accept();
         if client_res.is_err() {
-            eprintln "Accept failed: {client_res.err}";
+            eprintln f"Accept failed: {client_res.err}";
             continue;
         }
         
@@ -83,7 +83,7 @@ fn main() {
         });
         
         if thread_res.is_err() {
-            eprintln "Failed to spawn thread: {thread_res.err}";
+            eprintln f"Failed to spawn thread: {thread_res.err}";
             stream_ptr.close(); // Zen C auto-dereferences the pointer
             free(stream_ptr);
         } else {

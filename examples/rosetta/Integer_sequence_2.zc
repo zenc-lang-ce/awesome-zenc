@@ -5,7 +5,7 @@ fn main() {
     let one = BigInt::from_int(1);
     let count = 0;
     loop {
-         println "{bi}";
+         println f"{bi}";
          bi.add_in_place(&one);
     }
 }

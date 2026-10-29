@@ -33,9 +33,9 @@ fn main() {
     for digits in 1..10 { generate(1, 0, digits); }
     let len = asc_primes.length();
     sort_int(asc_primes.data, len);
-    println "There are {len} ascending primes, namely:";
+    println f"There are {len} ascending primes, namely:";
     for i in 0..len {
-        print "{asc_primes[i]:8d} ";
+        print f"{asc_primes[i]:8d} ";
         if !((i + 1) % 10) { println ""; }
     }
     asc_primes.free();

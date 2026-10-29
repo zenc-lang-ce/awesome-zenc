@@ -21,13 +21,13 @@ fn duration(s: int) {
     for i in 0..5 {
         let u = s / t;
         if u > 0 {
-            strcat(dur, "{u} {units[i]}, ");
+            strcat(dur, f"{u} {units[i]}, ");
             s %= t;
         }
         t /= divs[i];
     }
     if ends_with(dur, ", ") { dur[strlen(dur) - 2] = '\0'; }
-    println "{dur}";
+    println f"{dur}";
 }
 
 fn main() {

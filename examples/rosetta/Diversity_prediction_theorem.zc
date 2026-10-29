@@ -28,8 +28,8 @@ fn main() {
     res[1] = diversity_theorem(truth, a2, 4);
     for i in 0..res.len {
         let (ae, ce, div) = res[i];
-        println "Average-error {ae:6.3f}";
-        println "Crowd-error   {ce:6.3f}";
-        println "Diversity     {div:6.3f}\n";
+        println f"Average-error {ae:6.3f}";
+        println f"Crowd-error   {ce:6.3f}";
+        println f"Diversity     {div:6.3f}\n";
     }
 }

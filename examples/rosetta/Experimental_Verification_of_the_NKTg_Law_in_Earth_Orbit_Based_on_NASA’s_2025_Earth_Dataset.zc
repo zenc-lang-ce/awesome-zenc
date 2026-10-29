@@ -23,7 +23,7 @@ struct ResultRow {
 
 impl ResultRow {
     fn display(self) -> void {
-        println "{.date:-12s} {.p:14.3e} {.nktg1:14.3e} {.nktg2:14.3e} {.v_sim:12.3e} {.v_nasa:12.3e} {.error:10.4f}%";
+        println f"{.date:-12s} {.p:14.3e} {.nktg1:14.3e} {.nktg2:14.3e} {.v_sim:12.3e} {.v_nasa:12.3e} {.error:10.4f}%";
     }
 }
 

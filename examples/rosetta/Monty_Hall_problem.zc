@@ -18,9 +18,9 @@ fn monty_hall(games: int) {
         switch_wins += doors[3 - choice - shown];
     }
     setlocale(LC_NUMERIC, "en_US.UTF-8");
-    println "Simulating {games:'d} games:";
-    println "Staying   wins {stay_wins:'d} times";
-    println "Switching wins {switch_wins:'d} times";
+    println f"Simulating {games:'d} games:";
+    println f"Staying   wins {stay_wins:'d} times";
+    println f"Switching wins {switch_wins:'d} times";
 }
 
 fn main() {

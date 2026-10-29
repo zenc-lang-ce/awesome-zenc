@@ -16,7 +16,7 @@ fn main() {
     // elements to 0 instead.
     for i in new_len..old_len { a[i] = 0; }
     for i in 0..new_len {
-        print "{a[i]}, ";
+        print f"{a[i]}, ";
     }
     println "\b\b ";
 }

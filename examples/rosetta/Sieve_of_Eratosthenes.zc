@@ -28,6 +28,6 @@ fn sieve_of_eratosthenes(n: int) -> Vec<int> {
 fn main() {
     println "Primes less than 100:";
     let primes = sieve_of_eratosthenes(100);
-    for p in primes { print "{p} "; }
+    for p in primes { print f"{p} "; }
     println "";
 }

@@ -73,10 +73,10 @@ fn main() {
     def LIMIT = 10;
     println "Sequence, starting with 1, then:";
     for kind in 0..3 {
-        println "\nlexicographically earliest {kinds[kind]} integer such that no subsequence sums to a prime:";
+        println f"\nlexicographically earliest {kinds[kind]} integer such that no subsequence sums to a prime:";
         let nps = no_prime_sums(1, LIMIT, kind);
         print "[";
-        for i in 0..nps.length() { print "{nps[i]}, "; }
+        for i in 0..nps.length() { print f"{nps[i]}, "; }
         println "\b\b]";
     }
     free(nc);

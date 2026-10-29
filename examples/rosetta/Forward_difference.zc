@@ -1,9 +1,9 @@
 fn forward_diff(a: int*, ac: int, order: const uint) {
     if ac == 0 || order == 0 { return; }
     for o in 0..=order {
-        print "{o:2u}: ";
+        print f"{o:2u}: ";
         for i in 0..ac {
-            print "{a[i]:5d} ";
+            print f"{a[i]:5d} ";
             if i == ac - 1 { break; }
             a[i] = a[i + 1] - a[i];
         }

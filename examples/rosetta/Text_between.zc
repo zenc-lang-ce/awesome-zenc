@@ -59,10 +59,10 @@ fn main() {
     ];
 
     for i, text in texts {
-        println "Text   : \"{text}\"";
-        println "Start  : \"{starts[i]}\"";
-        println "End    : \"{ends[i]}\"";
+        println f"Text   : \"{text}\"";
+        println f"Start  : \"{starts[i]}\"";
+        println f"End    : \"{ends[i]}\"";
         let b = text_between(text, starts[i], ends[i]);
-        println "Result : \"{b}\"\n"; 
+        println f"Result : \"{b}\"\n"; 
     }
 }

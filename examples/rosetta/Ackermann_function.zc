@@ -13,7 +13,7 @@ fn main() {
     for let m = 0; m <= 3; m += 1 {
         for let n = 0; n <= 4; n += 1 {
             let a = ackermann(m, n);
-            println "A({m}, {n}) = {a}";
+            println f"A({m}, {n}) = {a}";
         }
     }
 }

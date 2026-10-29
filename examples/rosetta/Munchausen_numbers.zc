@@ -19,6 +19,6 @@ fn main() {
     init();
     println "The Munchausen numbers <= 5000 are:";
     for let i: uint = 1; i <= 5000; ++i {
-       if munchausen(i) { println "{i}"; }
+       if munchausen(i) { println f"{i}"; }
     }
 }

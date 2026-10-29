@@ -37,7 +37,7 @@ fn main() {
     for let i = 0; count <= 50; ++i {
         if !sv[i] {
             if ++count <= 50 {
-                print "{i:3d}  ";
+                print f"{i:3d}  ";
                 if !(count % 10) { println ""; }
             } else {
                 setlocale(LC_NUMERIC, "");
@@ -50,7 +50,7 @@ fn main() {
     for let i = 0; i < MC; ++i {
         if !sv[i] {
             if ++count == limit {
-                println "{count:'12d}  {i:'13d}";
+                println f"{count:'12d}  {i:'13d}";
                 limit *= 10;
             }
         }

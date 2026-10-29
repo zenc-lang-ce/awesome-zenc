@@ -28,10 +28,10 @@ fn list_divide(a: int*, c: const usize, n: const int) {
     print "[";
     for i in 0..res.length() {
         print "[";
-        for j in res[i] { print "{j}, "; }
-        print "{BS2}], ";
+        for j in res[i] { print f"{j}, "; }
+        print f"{BS2}], ";
     }
-    println "{BS2}]";
+    println f"{BS2}]";
 }
 
 fn main() {

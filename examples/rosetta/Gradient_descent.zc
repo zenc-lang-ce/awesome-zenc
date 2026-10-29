@@ -61,5 +61,5 @@ fn main() {
     let x = [0.1, -1.0]; // Initial guess of location of minimum.
     steepest_descent(x, x.len, alpha, tol);
     println "Testing steepest descent method:";
-    println "The minimum is at x = {x[0]}, y = {x[1]} for which f(x, y) = {g(x)}."
+    println f"The minimum is at x = {x[0]}, y = {x[1]} for which f(x, y) = {g(x)}."
 }

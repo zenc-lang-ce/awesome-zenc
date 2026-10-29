@@ -54,9 +54,9 @@ fn main() {
     def BS2 = "\x08\x08";
     for i in 0..6 {
         print "[";
-        for j in 0..lens[i] { print "{tests[i][j]}, " };
-        print "{BS2}] -> ";
+        for j in 0..lens[i] { print f"{tests[i][j]}, " };
+        print f"{BS2}] -> ";
         lcs(tests[i], res, lens[i]);
-        println "\"{res}\"";
+        println f"\"{res}\"";
     }
 }

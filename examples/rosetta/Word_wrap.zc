@@ -37,7 +37,7 @@ took a golden ball, and threw it up on high and caught it, and this
 ball was her favorite plaything."""
 
     println "Greedy algorithm - wrapped at 72:";
-    println "{greedy_word_wrap(text, 72)}";
+    println f"{greedy_word_wrap(text, 72)}";
     println "\nGreedy algorithm - wrapped at 80:";
-    println "{greedy_word_wrap(text, 80)}";
+    println f"{greedy_word_wrap(text, 80)}";
 }

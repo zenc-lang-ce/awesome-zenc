@@ -52,16 +52,16 @@ fn main() {
                 if bc == 50 {
                     println "First 50 Blum integers:";
                     for j in 0..50 {
-                        print "{blum[j]:3d} ";
+                        print f"{blum[j]:3d} ";
                         if !((j + 1) % 10) { println ""; }
                     }
                     println "";
                 } else if bc == 26_828 || bc % 100_000 == 0 {
-                    println "The {bc:'7d}th Blum integer is: {i:'9d}";
+                    println f"The {bc:'7d}th Blum integer is: {i:'9d}";
                     if bc == 400_000 {
                         println "\n% distribution of the first 400,000 Blum integers:";
                         for j in digits {
-                            println "  {counts[j] / 4000.0:6.3f}% end in {j}";
+                            println f"  {counts[j] / 4000.0:6.3f}% end in {j}";
                         }
                         break;
                     }

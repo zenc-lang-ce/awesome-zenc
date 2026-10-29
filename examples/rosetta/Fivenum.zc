@@ -15,7 +15,7 @@ fn fivenum(a: f64*, size: const usize) {
     }
     print "[";
     for i in 0..5 {
-        print "{n5[i]:0.9g}";
+        print f"{n5[i]:0.9g}";
         if i < 4 {
             print ", ";
         } else {

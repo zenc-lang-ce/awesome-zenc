@@ -42,8 +42,8 @@ fn main() {
             let eq = equal_birthdays(sharers, gs, 50_000);
             if eq > 50.0 {
                 group_est = gs;
-                print "{sharers} independent people in a group of {gs:3d} ";
-                println "share a common birthday ({eq:2.1f}%)";
+                print f"{sharers} independent people in a group of {gs:3d} ";
+                println f"share a common birthday ({eq:2.1f}%)";
                 break;
             }
         }

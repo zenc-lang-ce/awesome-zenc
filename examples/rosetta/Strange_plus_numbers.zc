@@ -27,9 +27,9 @@ fn main() {
     for n in 101..500 {
         let d = digits(n);
         if is_prime(d[0] + d[1]) && is_prime(d[1] + d[2]) {
-            print "{n} ";
+            print f"{n} ";
             if !(++count % 10) { println ""; }
         }
     }
-    println "\n\nFound {count} such numbers.";
+    println f"\n\nFound {count} such numbers.";
 }

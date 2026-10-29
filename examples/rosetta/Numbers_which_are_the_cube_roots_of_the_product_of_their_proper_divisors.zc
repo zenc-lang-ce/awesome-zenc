@@ -24,14 +24,14 @@ fn main() {
         let dc = divisor_count(n);
         if n == 1 || dc  == 8 {
             if ++count <= 50 {
-                print "{n:3d} ";
+                print f"{n:3d} ";
                 if !(count % 10) { println ""; }
             } else if count == 500 {
-                println "\n500th    : {n:'7d}";
+                println f"\n500th    : {n:'7d}";
             } else if count == 5_000 {
-                println "\n5,000th  : {n:'7d}";
+                println f"\n5,000th  : {n:'7d}";
             } else if count == 50_000 {
-                println "\n50,000th : {n:'7d}";
+                println f"\n50,000th : {n:'7d}";
                 break;
             }
         }

@@ -20,6 +20,6 @@ fn main() {
         n++;
         sum += i;
         let avg = (f64)sum / (f64)n;
-        println "  The current average rainfall is {avg:g}";
+        println f"  The current average rainfall is {avg:g}";
     }
 }

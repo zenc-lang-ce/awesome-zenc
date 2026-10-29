@@ -58,7 +58,7 @@ fn do_trials(trials: int, np: int, strategy: string) {
         if !next_trial { pardoned++; }
     }
     let rf = (f64)pardoned / (f64)trials * 100.0;
-    println "  strategy = {strategy:-7s}  pardoned = {pardoned:'6d}  relative frequency = {rf:5.2f}%\n";
+    println f"  strategy = {strategy:-7s}  pardoned = {pardoned:'6d}  relative frequency = {rf:5.2f}%\n";
 }
 
 fn main() {
@@ -68,7 +68,7 @@ fn main() {
     let nps = [10, 100];
     let strategies = ["random", "optimal"];
     for np in nps {
-        println "Results from {trials:'d} trials with {np} prisoners:\n";
+        println f"Results from {trials:'d} trials with {np} prisoners:\n";
         for i in 0..strategies.len { do_trials(trials, np, strategies[i]); }
     }
 }

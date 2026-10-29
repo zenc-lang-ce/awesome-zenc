@@ -27,10 +27,10 @@ fn main() {
     let count = 0;
     while i < 500 {
         if is_prime(i) && is_prime(digit_sum(i)) {
-            print "{i:3d}  ";
+            print f"{i:3d}  ";
             if !(++count % 10) { println ""; }
         }
         i = (i > 2) ? i + 2 : 3;
     }
-    println "\n\n{count} such primes found.";
+    println f"\n\n{count} such primes found.";
 }

@@ -151,7 +151,7 @@ fn mandelbrot_kernel(output: int*, width: int, height: int, max_iter: int) {
 fn print_gpu_info() {
 
     let device_count = cuda_device_count();
-    "Found {device_count} CUDA device(s)\n";
+    f"Found {device_count} CUDA device(s)\n";
 }
 
 // ========================================
@@ -159,7 +159,7 @@ fn print_gpu_info() {
 // ========================================
 
 fn benchmark_matrix_multiply(N: int) {
-    "Benchmark 1: Matrix Multiplication ({N}x{N}) ";
+    f"Benchmark 1: Matrix Multiplication ({N}x{N}) ";
 
     let size = N * N;
 
@@ -173,7 +173,7 @@ fn benchmark_matrix_multiply(N: int) {
     defer free(h_C);
 
     // Initialize matrices
-    "-> Initializing {N}x{N} matrices...";
+    f"-> Initializing {N}x{N} matrices...";
     for i in 0..size {
         h_A[i] = (float)(i % 100) / 100.0f;
         h_B[i] = (float)((i + 50) % 100) / 100.0f;
@@ -197,7 +197,7 @@ fn benchmark_matrix_multiply(N: int) {
     def BLOCK_SIZE = 16;
     let blocks_per_grid = (N + BLOCK_SIZE - 1) / BLOCK_SIZE;
 
-    "-> Launching kernel: {blocks_per_grid}x{blocks_per_grid} blocks, {BLOCK_SIZE}x{BLOCK_SIZE} threads each";
+    f"-> Launching kernel: {blocks_per_grid}x{blocks_per_grid} blocks, {BLOCK_SIZE}x{BLOCK_SIZE} threads each";
     " GPU IS NOW WORKING HARD - Check nvtop!\n";
 
     let start = clock();
@@ -209,18 +209,18 @@ fn benchmark_matrix_multiply(N: int) {
             block: BLOCK_SIZE
         };
         cuda_sync();
-        "  Iteration {iter + 1}/10 complete";
+        f"  Iteration {iter + 1}/10 complete";
     }
 
     let elapsed = (clock() - start) / CLOCKS_PER_SEC;
-    " Completed in {elapsed} seconds\n";
+    f" Completed in {elapsed} seconds\n";
 
     // Copy result back
     cuda_copy_to_host(h_C, d_C, size * sizeof(float));
 
     "-> Sample results:";
-    "  C[0,0] = {h_C[0]}";
-    "  C[N-1,N-1] = {h_C[size - 1]}";
+    f"  C[0,0] = {h_C[0]}";
+    f"  C[N-1,N-1] = {h_C[size - 1]}";
 }
 
 // ========================================
@@ -230,7 +230,7 @@ fn benchmark_matrix_multiply(N: int) {
 fn benchmark_monte_carlo_pi(num_samples: u64) {
     "Benchmark 2: Monte Carlo Pi Estimation ";
 
-    "-> Estimating Pi with {num_samples} samples";
+    f"-> Estimating Pi with {num_samples} samples";
 
     def BLOCK_SIZE = 256;
     def NUM_BLOCKS = 1024;
@@ -243,7 +243,7 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
     let d_results = cuda_alloc<float>(total_threads);
     defer cuda_free(d_results);
 
-    "-> Launching kernel: {NUM_BLOCKS} blocks x {BLOCK_SIZE} threads";
+    f"-> Launching kernel: {NUM_BLOCKS} blocks x {BLOCK_SIZE} threads";
     " GPU IS NOW WORKING HARD - Check nvtop!\n";
 
     let start = clock();
@@ -259,12 +259,12 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
         cuda_sync();
 
         if iter % 10 == 0 {
-            "  Iteration {iter}/100 complete";
+            f"  Iteration {iter}/100 complete";
         }
     }
 
     let elapsed = (clock() - start) / CLOCKS_PER_SEC;
-    "\n Completed in {elapsed} seconds\n";
+    f"\n Completed in {elapsed} seconds\n";
 
     // Copy results and calculate Pi
     cuda_copy_to_host(h_results, d_results, total_threads * sizeof(float));
@@ -278,9 +278,9 @@ fn benchmark_monte_carlo_pi(num_samples: u64) {
     let error = fabs(pi_estimate - 3.14159265359);
 
     "-> Results:";
-    "  Estimated Pi: {pi_estimate}";
+    f"  Estimated Pi: {pi_estimate}";
     "  Actual Pi:    3.14159265359";
-    "  Error:        {error}";
+    f"  Error:        {error}";
 }
 
 // ========================================
@@ -291,7 +291,7 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
 
     "Benchmark 3: N-Body Simulation ";
 
-    "-> Simulating {num_bodies} bodies for {num_steps} steps";
+    f"-> Simulating {num_bodies} bodies for {num_steps} steps";
 
     // Allocate host memory
     let h_x = alloc_n<float>(num_bodies);
@@ -346,7 +346,7 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
     let num_blocks = (num_bodies + BLOCK_SIZE - 1) / BLOCK_SIZE;
     let dt = 0.01f;
 
-    "-> Launching simulation: {num_blocks} blocks x {BLOCK_SIZE} threads";
+    f"-> Launching simulation: {num_blocks} blocks x {BLOCK_SIZE} threads";
     " GPU IS NOW WORKING HARD - Check nvtop!\n";
 
     let start = clock();
@@ -359,12 +359,12 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
         cuda_sync();
 
         if step % 100 == 0 {
-            "  Step {step}/{num_steps} complete";
+            f"  Step {step}/{num_steps} complete";
         }
     }
 
     let elapsed = (clock() - start) / CLOCKS_PER_SEC;
-    "\n Completed in {elapsed} seconds\n";
+    f"\n Completed in {elapsed} seconds\n";
 
     // Copy results back
     cuda_copy_to_host(h_x, d_x, num_bodies * sizeof(float));
@@ -372,8 +372,8 @@ fn benchmark_nbody(num_bodies: int, num_steps: int) {
     cuda_copy_to_host(h_z, d_z, num_bodies * sizeof(float));
 
     "-> Sample final positions:";
-    "  Body 0: ({h_x[0]}, {h_y[0]}, {h_z[0]})";
-    "  Body {num_bodies-1}: ({h_x[num_bodies-1]}, {h_y[num_bodies-1]}, {h_z[num_bodies-1]})";
+    f"  Body 0: ({h_x[0]}, {h_y[0]}, {h_z[0]})";
+    f"  Body {num_bodies-1}: ({h_x[num_bodies-1]}, {h_y[num_bodies-1]}, {h_z[num_bodies-1]})";
 }
 
 

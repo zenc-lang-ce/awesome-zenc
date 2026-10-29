@@ -11,6 +11,6 @@ fn main() {
     let tests = [2, 5, 12, 19, 57, 61, 97];
     println "Are the following prime?";
     for t in tests {
-        println "{t:2d} -> {is_prime(t)}";
+        println f"{t:2d} -> {is_prime(t)}";
     }
 }

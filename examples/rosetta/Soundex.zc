@@ -53,6 +53,6 @@ fn main() {
         let (p1, p2) = pairs[i];
         let s = soundex(p1);
         let ps = String::from(p2);
-        println "{p1:-9s} -> {p2} -> {s == &ps}";
+        println f"{p1:-9s} -> {p2} -> {s == &ps}";
     }
 }

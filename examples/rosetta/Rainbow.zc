@@ -10,8 +10,8 @@ fn main() {
     ];
     let s = "RAINBOW";
     for i in 0..7 {
-        let fore = "\e[38;2;{colors[i].0};{colors[i].1};{colors[i].2}m";
-        print "{fore}{s[i]:c}";
+        let fore = f"\e[38;2;{colors[i].0};{colors[i].1};{colors[i].2}m";
+        print f"{fore}{s[i]:c}";
     }
     println "";
 }

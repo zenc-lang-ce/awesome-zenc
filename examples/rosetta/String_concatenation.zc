@@ -22,6 +22,6 @@ fn main() {
     let to_zen = String::from("to Zen C!");
     s2.append(&to_zen);
 
-    println "Original string: {s1}";
-    println "Concatenated string: {s2}";
+    println f"Original string: {s1}";
+    println f"Concatenated string: {s2}";
 }

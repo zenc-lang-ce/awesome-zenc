@@ -34,6 +34,6 @@ fn beating_probability(n_sides1: int, n_dice1: int, n_sides2: int, n_dice2: int)
 }
 
 fn main() {
-    println "{beating_probability( 4, 9, 6, 6):0.16f}";
-    println "{beating_probability(10, 5, 7, 6):0.16f}";
+    println f"{beating_probability( 4, 9, 6, 6):0.16f}";
+    println f"{beating_probability(10, 5, 7, 6):0.16f}";
 }

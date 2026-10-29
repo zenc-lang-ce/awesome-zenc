@@ -34,7 +34,7 @@ fn main() {
      for i in 0..6 {
          let s = String::from(oids2[i]);
          let t = s.replace(" ", "");
-         println "{t}";
+         println f"{t}";
          free(oids2[i]);
      }
 }

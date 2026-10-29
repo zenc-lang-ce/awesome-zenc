@@ -1,9 +1,9 @@
 fn logical_ops(a: bool, b: bool) {
-    println "Inputs -> a: {a}, b: {b}";
-    println "  a AND b: {a && b}";
-    println "  a OR b:  {a || b}";
-    println "  NOT a:   {!a}";
-    println "  a XOR b: {a ^ b}";
+    println f"Inputs -> a: {a}, b: {b}";
+    println f"  a AND b: {a && b}";
+    println f"  a OR b:  {a || b}";
+    println f"  NOT a:   {!a}";
+    println f"  a XOR b: {a ^ b}";
 }
 
 fn main() {

@@ -13,7 +13,7 @@ fn main() {
     println "The square-free integers between 1 and 145 inclusive are:";
     for let i: u64 = 1; i <= 145; ++i {
         if is_square_free(i) {
-            print "{i:3lu} ";
+            print f"{i:3lu} ";
             if !(++count % 20) { println ""; }
         }
     }
@@ -22,7 +22,7 @@ fn main() {
     println "\n\nThe square-free integers between 1000000000000 and 1000000000145 inclusive are:";
     for let i: u64 = 1000000000000; i <= 1000000000145; ++i {
         if is_square_free(i) {
-            print "{i:3lu} ";
+            print f"{i:3lu} ";
             if !(++count % 5) { println ""; }
         }
     }
@@ -33,7 +33,7 @@ fn main() {
     for let i: u64 = 1; i <= 1000000; ++i {
         if is_square_free(i) { count++; }
         if i == pow {
-             println "  from 1 to {pow:-7lu} = {count}";
+             println f"  from 1 to {pow:-7lu} = {count}";
              pow *= 10;
         }
     }

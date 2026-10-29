@@ -28,7 +28,7 @@ fn main() {
         if is_prime(i) {
             let s = i;
             while s >= 10  { s = digit_sum(s); }
-            if is_prime(s) { println "{++c:2d}: {i} -> Σ = {s}"; }
+            if is_prime(s) { println f"{++c:2d}: {i} -> Σ = {s}"; }
         }
     }
 }

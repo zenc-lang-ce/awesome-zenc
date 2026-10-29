@@ -44,7 +44,7 @@ fn passphrase(n: int) -> String {
         let word  = candidates.get_ref(rci[i]);
         let first = (*word).vec.get_ref(0);
         *first = toupper(*first);
-        word.append_c("{rns[i]}");
+        word.append_c(f"{rns[i]}");
         if i < n - 1 { word.append_c("-"); }
         pp.append_c(word.c_str());
     }
@@ -57,7 +57,7 @@ fn main() {
     // Generate and print 5 passphrases for n = 5.
     for _ in 0..5 {
         let pp = passphrase(5);
-        println "{pp}";
+        println f"{pp}";
     }
     for c in candidates { c.free(); }
     candidates.free();

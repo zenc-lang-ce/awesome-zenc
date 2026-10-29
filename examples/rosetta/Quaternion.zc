@@ -54,7 +54,7 @@ impl Quaternion {
     }
 
     fn to_string(self) -> string {
-        return "({self.a:g}, {self.b:g}, {self.c:g}, {self.d:g})";
+        return f"({self.a:g}, {self.b:g}, {self.c:g}, {self.d:g})";
     }
 
     // static functions
@@ -80,20 +80,20 @@ fn main() {
     let q4 = q2 * q1;
     let r = 7.0;
 
-    println "q           = {q}";
-    println "q1          = {q1}";
-    println "q2          = {q2}";
-    println "r           = {r:g}";
-    println "norm(q)     = {q.norm():0.14f}";
-    println "-q          = {-q}";
-    println "conj(q)     = {q.conj()}";
-    println "r + q       = {Quaternion::real_add(r, q)}";
-    println "q + r       = {q.add_real(r)}";
-    println "q1 + q2     = {q1 + q2}";
-    println "q2 + q1     = {q2 + q1}";
-    println "rq          = {Quaternion::real_mul(r, q)}";
-    println "qr          = {q.mul_real(r)}";
-    println "q1q2        = {q3}";
-    println "q2q1        = {q4}";
-    println "q1q2 ≠ q2q1 = {btos(q3 != q4)}";
+    println f"q           = {q}";
+    println f"q1          = {q1}";
+    println f"q2          = {q2}";
+    println f"r           = {r:g}";
+    println f"norm(q)     = {q.norm():0.14f}";
+    println f"-q          = {-q}";
+    println f"conj(q)     = {q.conj()}";
+    println f"r + q       = {Quaternion::real_add(r, q)}";
+    println f"q + r       = {q.add_real(r)}";
+    println f"q1 + q2     = {q1 + q2}";
+    println f"q2 + q1     = {q2 + q1}";
+    println f"rq          = {Quaternion::real_mul(r, q)}";
+    println f"qr          = {q.mul_real(r)}";
+    println f"q1q2        = {q3}";
+    println f"q2q1        = {q4}";
+    println f"q1q2 ≠ q2q1 = {btos(q3 != q4)}";
 }

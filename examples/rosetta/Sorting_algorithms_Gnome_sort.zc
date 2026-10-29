@@ -25,14 +25,14 @@ fn main() {
     let ba: bool[2] = [true, false];
     for asc in ba {
         let dir = asc ? "ascending" : "descending";
-        println "Sorting in {dir} order:\n";
+        println f"Sorting in {dir} order:\n";
         for i in 0..aa.len {
             print "  Before: [";
-            for j in 0..lens[i] { print "{aa[i][j]}, "; }
+            for j in 0..lens[i] { print f"{aa[i][j]}, "; }
             println "\b\b]";
             gnome_sort(aa[i], lens[i], asc);
             print "  After : [";
-            for j in 0..lens[i] { print "{aa[i][j]}, "; }
+            for j in 0..lens[i] { print f"{aa[i][j]}, "; }
             println "\b\b]\n";
         }
     }

@@ -52,13 +52,13 @@ fn is_attractive(n: int) -> bool {
 
 fn main() {
     let lim: const int = 120;
-    println "The attractive numbers up to and including {lim} are:";
+    println f"The attractive numbers up to and including {lim} are:";
     let count = 0;
     for i in 1..=lim {
         if is_attractive(i) {
-            print "{i:4d}";
+            print f"{i:4d}";
             if !(++count % 20) { println ""; }
         }
     }
-    println "\n\n{count} such numbers found.";
+    println f"\n\n{count} such numbers found.";
 }

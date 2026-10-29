@@ -24,10 +24,10 @@ fn pancake_sort(a: int*, len: const usize) {
 fn main() {
     let list = [31, 41, 59, 26, 53, 58, 97, 93, 23, 84];
     print "unsorted: [";
-    for e in list { print "{e}, "; }
+    for e in list { print f"{e}, "; }
     println "\b\b]";
     pancake_sort((int*)list, list.len);
     print "sorted  : [";
-    for e in list { print "{e}, "; }
+    for e in list { print f"{e}, "; }
     println "\b\b]";
 }

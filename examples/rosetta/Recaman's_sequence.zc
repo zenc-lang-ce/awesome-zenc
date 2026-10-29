@@ -22,15 +22,15 @@ fn main() {
         if n == 14 {
             println "The first 15 terms of the Recaman's sequence are:";
             print "[";
-            for v in a { print "{v}, "; }
+            for v in a { print f"{v}, "; }
             println "\b\b]";
         }
         if !found_dup && already_used {
-            println "\nThe first duplicated term is a[{n}] = {next}.";
+            println f"\nThe first duplicated term is a[{n}] = {next}.";
             found_dup = true;
         }
         if used1000.length() == 1001 {
-            println "\nTerms up to a[{n}] are needed to generate 0 to 1000.";
+            println f"\nTerms up to a[{n}] are needed to generate 0 to 1000.";
         }
         n++;
     }

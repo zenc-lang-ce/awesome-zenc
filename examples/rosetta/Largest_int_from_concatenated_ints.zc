@@ -1,15 +1,15 @@
 fn catcmp(a: const void*, b: const void*) -> int {
-    let ab = "{*(int*)a}{*(int*)b}";
-    let ba = "{*(int*)b}{*(int*)a}";
+    let ab = f"{*(int*)a}{*(int*)b}";
+    let ba = f"{*(int*)b}{*(int*)a}";
     return strcmp(ba, ab);
 }
 
 fn maxcat(a: int*, len: int) {
     print "[";
-    for i in 0..len { print "{a[i]}, "; }
+    for i in 0..len { print f"{a[i]}, "; }
     print "\b\b] -> ";
     qsort(a, len, sizeof(int), catcmp);
-    for i in 0..len { print "{a[i]}"; }
+    for i in 0..len { print f"{a[i]}"; }
     println "";
 }
 

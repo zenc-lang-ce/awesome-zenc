@@ -46,7 +46,7 @@ impl Image {
 impl Drop for Image {
     fn drop(self) {
         if self.pixels != NULL {
-            println "[RAII] Freeing image buffer ({self.width}x{self.height})";
+            println f"[RAII] Freeing image buffer ({self.width}x{self.height})";
             free(self.pixels);
         }
     }
@@ -54,7 +54,7 @@ impl Drop for Image {
 
 fn main() {
     let img = Image::new(3, 3);
-    println "Created {img.width}x{img.height} image.";
+    println f"Created {img.width}x{img.height} image.";
 
     // Fill image with blue
     let blue = Color { r: 0, g: 0, b: 255 };
@@ -70,8 +70,8 @@ fn main() {
     let c11 = img.get_pixel(1, 1);
     let c00 = img.get_pixel(0, 0);
 
-    println "Pixel (1, 1): R={c11.r}, G={c11.g}, B={c11.b}";
-    println "Pixel (0, 0): R={c00.r}, G={c00.g}, B={c00.b}";
+    println f"Pixel (1, 1): R={c11.r}, G={c11.g}, B={c11.b}";
+    println f"Pixel (0, 0): R={c00.r}, G={c00.g}, B={c00.b}";
 
     assert(c11.r == 255 && c11.g == 0 && c11.b == 0, "Pixel (1,1) should be red");
     assert(c00.r == 0 && c00.g == 0 && c00.b == 255, "Pixel (0,0) should be blue");

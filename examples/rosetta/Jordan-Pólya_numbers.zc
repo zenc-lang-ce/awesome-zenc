@@ -114,20 +114,20 @@ fn main() {
     let v = jordan_polya((u64)1 << 53);
     println "First 50 Jordan-Pólya numbers:";
     for i in 0..50 {
-        print "{v[i]:4lu} ";
+        print f"{v[i]:4lu} ";
         if !((i + 1) % 10) { println ""; }
     }
 
     printf("\nThe largest Jordan-Pólya number before 100 million: ");
     setlocale(LC_NUMERIC, "");
     let ix = find_nearest_in_vec(&v, (u64)100_000_000);    
-    println "{v[ix - 1]:'lu}\n\n";
+    println f"{v[ix - 1]:'lu}\n\n";
 
     let targets: u64[5] = [800, 1050, 1800, 2800, 3800];
     let t: u64;
     for let i = 0; i < 5; ++i {
         t = v[targets[i] - 1];
-        println "The {targets[i]:'lu}th Jordan-Pólya number is : {t:'lu}";
+        println f"The {targets[i]:'lu}th Jordan-Pólya number is : {t:'lu}";
         let w = decompose(t, 18);
         let count = 1;
         t = w[0];
@@ -136,10 +136,10 @@ fn main() {
             let u = w[j];
             if u != t {
                 if count == 1 {
-                    print "{t}! x ";
+                    print f"{t}! x ";
                 } else {
                     let ss = superscript(count);
-                    print "({t}!){ss} x ";
+                    print f"({t}!){ss} x ";
                     count = 1;
                 }
                 t = u;
@@ -148,10 +148,10 @@ fn main() {
             }
         }
         if count == 1 {
-            print "{t}! x ";
+            print f"{t}! x ";
         } else {
             let ss = superscript(count);
-            print "({t}!){ss} x ";
+            print f"({t}!){ss} x ";
         }
         print "\b\b \n\n";
     }

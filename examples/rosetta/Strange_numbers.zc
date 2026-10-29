@@ -20,10 +20,10 @@ fn main() {
             j /= 10;
         }
         if is_prime((d[0] - d[1]).abs()) && is_prime((d[1] - d[2]).abs()) {
-            print "{i} ";
+            print f"{i} ";
             if !(++count % 10) { println ""; }
         }
     }
     if count % 10 { println ""; }
-    println "\n{count} strange numbers in all.";
+    println f"\n{count} strange numbers in all.";
 }

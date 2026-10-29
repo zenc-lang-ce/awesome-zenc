@@ -12,7 +12,7 @@ impl Point {
     // Instance method
     fn print_coords(self) {
         // Using the .field shorthand for self.x and self.y
-        println "Point coordinates: ({.x}, {.y})";
+        println f"Point coordinates: ({.x}, {.y})";
     }
     
     // Method that mutates state using 'self' directly

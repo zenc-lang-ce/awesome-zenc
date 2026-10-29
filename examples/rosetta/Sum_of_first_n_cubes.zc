@@ -6,7 +6,7 @@ fn main() {
     let sum = 0;
     for i in 0..50 {
         sum += i * i * i;
-        print "{sum:'9d} ";
+        print f"{sum:'9d} ";
         if i % 10 == 9 { println ""; }
     }
 }

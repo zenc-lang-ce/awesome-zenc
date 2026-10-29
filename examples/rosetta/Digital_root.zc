@@ -25,6 +25,6 @@ fn main() {
     let a: u64[8] = [1, 14, 267, 8128, 627615, 39390, 588225, 393900588225];
     for n in a {
         let (dr, ap) = digital_root(n);
-        println "{n:'15lu} has additive persistence {ap} and digital root of {dr}";
+        println f"{n:'15lu} has additive persistence {ap} and digital root of {dr}";
     }
 }

@@ -58,7 +58,7 @@ fn main() {
             if i == 0 && j == 0 {
                 print "    ";
             } else {
-                print "{mu(i * 20 + j): 3d} ";
+                print f"{mu(i * 20 + j): 3d} ";
             }
         }
         println "";

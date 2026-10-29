@@ -22,9 +22,9 @@ fn main() {
             }
             if fifteens >= 2 {
                 print "The six values are: ";
-                for v in vals { print "{v}, "; }
+                for v in vals { print f"{v}, "; }
                 println "\b\b ";
-                println "Their total is: {total} and {fifteens} of them are >= 15.";
+                println f"Their total is: {total} and {fifteens} of them are >= 15.";
                 break;
             }
         }
