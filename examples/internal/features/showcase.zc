@@ -93,7 +93,7 @@ fn main() {
     println("");
 
     println("=> Lambdas");
-    let sum = run_op(10, 20, (a, b) -> a + b);
+    let sum = run_op(10, 20, (a, b) => a + b);
     println(f"10 + 20 = {sum}");
     println("");
 }
