@@ -3,6 +3,6 @@ import "std/crypto/sha1.zc"
 import "std/encoding/hex.zc"
 
 fn main() {
-    let digest = Sha1::hash("Rosetta Code", 12);
+    let digest = Sha1::hash((u8*)"Rosetta Code", 12);
     println(f"{Hex::encode(digest.bytes, 20)}");
 }

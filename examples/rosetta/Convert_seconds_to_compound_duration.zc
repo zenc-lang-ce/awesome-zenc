@@ -14,7 +14,7 @@ fn duration(s: int) {
         println("0 sec");
         return;
     }
-    let dur: char[30] = [0];
+    let dur: char[30] = "";
     let divs: int[5] = [7, 24, 60, 60, 1];
     let units: string[5] = ["wk", "d", "hr", "min", "sec"];
     let t = 1;

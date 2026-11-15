@@ -3,9 +3,11 @@ import "std/vec.zc"
 import "std/string.zc"
 import "locale.h"
 
-let factorials: u64[19] = [1, 1];
+let factorials: u64[19];
 
 fn cache_factorials() {
+    factorials[0] = 1;
+    factorials[1] = 1;
     let fact: u64 = 1;
     for i in 2..19 {
         fact *= i;

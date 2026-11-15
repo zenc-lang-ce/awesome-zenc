@@ -22,7 +22,8 @@ fn main() {
         println("42 evaluates to true");
     }
     
-    if zero_float {
+    // A float is not a condition: compare it with 0.0.
+    if zero_float != 0.0 {
         println("0.0 is true");
     } else {
         println("0.0 evaluates to false");
