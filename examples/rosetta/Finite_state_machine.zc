@@ -51,6 +51,10 @@ fn fsm() {
             EXIT => {
                 println("OK, quitting");
                 return;
+            },
+            _ => {
+                // The state is an integer: every match needs a default case.
+                return;
             }
         }
     }
